@@ -5,6 +5,7 @@
 // ~35 slides | 1 stack | 2 graphs (262: 500 palavras, 269: 200 letras)
 
 import React from "react";
+import { staticFile } from "remotion";
 import { T, Spacer, AccentLine, WaveformBars } from "./components";
 
 type UseStackVisible = (slide: number, itemIndex: number) => boolean;
@@ -137,14 +138,17 @@ R.set(311, () => (
 // 12:23.80 — "Paul Nation"
 R.set(312, () => (
   <div className="slide left">
-    <AccentLine />
-    <T size={50} weight={700} opacity={0.8} anim="anim-slideLeft" className="bold">
-      Paul Nation.
-    </T>
-    <Spacer h={8} />
-    <T size={34} weight={400} opacity={0.3} anim="anim-slideLeft" delay="d2">
-      Linguista.
-    </T>
+    <div style={{ display: "flex", alignItems: "center", gap: 24 }} className="anim-slideLeft">
+      <img src={staticFile("photos/paulnation.jpg")} style={{
+        width: 90, height: 90, borderRadius: "50%", objectFit: "cover",
+        border: "2px solid rgba(78,205,196,0.4)",
+        boxShadow: "0 0 20px rgba(78,205,196,0.15)",
+      }} />
+      <div>
+        <T size={50} weight={700} opacity={0.8}><span className="bold">Paul Nation</span>.</T>
+        <T size={34} weight={400} opacity={0.3}>Linguista — Victoria University</T>
+      </div>
+    </div>
   </div>
 ));
 

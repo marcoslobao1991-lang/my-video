@@ -14,6 +14,7 @@ export const STACK_TIMINGS: StackTiming[] = [
   { slide: 115, items: [276.00, 277.40, 278.60] }, // Motivados / Horario / Melhor material
   { slide: 121, items: [310.70, 311.60, 312.56, 313.88] }, // Sentar / Prestar atencao / Processar / Energia mental
   { slide: 203, items: [467.90, 469.62, 475.50] }, // Esforco / Repetir 50x / Porque quer
+  { slide: 711, items: [1267.34, 1268.24, 1268.78, 1269.72, 1270.50] }, // Blocos / Trilhas / Discursos / Series / Material bilingue
 ];
 
 // Helper: get how many items should be visible for a given slide at a given time

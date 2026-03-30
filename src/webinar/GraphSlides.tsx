@@ -51,7 +51,7 @@ const GraphWrap = ({ children, title, subtitle }: { children: React.ReactNode; t
     }}>
       <style dangerouslySetInnerHTML={{ __html: GRAPH_STYLES }} />
       <div style={{ position: "absolute", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(78,205,196,0.07), transparent 70%)", top: "15%", left: "20%", filter: "blur(80px)", pointerEvents: "none" }} />
-      <div style={{ transform: `scale(${isV ? 1.15 : 1.45})`, transformOrigin: "center center", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div style={{ transform: `scale(${isV ? 1.65 : 1.45})`, transformOrigin: "center center", display: "flex", flexDirection: "column", alignItems: "center" }}>
         {title && <div style={{ fontSize: 22, fontWeight: 600, opacity: 0.4, letterSpacing: 3, textTransform: "uppercase", marginBottom: 14, animation: "fadeIn .5s ease both" }}>{title}</div>}
         {subtitle && <div style={{ fontSize: 18, opacity: 0.3, marginBottom: 36, animation: "fadeIn .5s ease .2s both" }}>{subtitle}</div>}
         {children}
@@ -284,99 +284,121 @@ export const Graph_500Words = () => {
 // GRAPH 6: Mercado <5% vs IC 1-2h/dia
 // ═══════════════════════════════════════════════════════════
 export const Graph_MercadoVsIC = () => (
-  <GraphWrap title="CONCLUSÃO DE CURSO">
-    <div style={{ display: "flex", gap: 60, alignItems: "flex-end" }}>
+  <GraphWrap title="POR QUE É DIFERENTE">
+    <div style={{ display: "flex", gap: 80, alignItems: "flex-end" }}>
       {/* Mercado */}
       <div style={{ textAlign: "center" }}>
-        <div style={{ fontSize: 14, opacity: 0.35, marginBottom: 12 }}>Média do mercado</div>
-        <div style={{ width: 100, height: 200, borderRadius: 12, background: "rgba(255,255,255,0.04)", position: "relative", overflow: "hidden", display: "flex", alignItems: "flex-end" }}>
+        <div style={{ fontSize: 18, opacity: 0.35, marginBottom: 16 }}>Cursos tradicionais</div>
+        <div style={{ width: 140, height: 300, borderRadius: 16, background: "rgba(255,255,255,0.04)", position: "relative", overflow: "hidden", display: "flex", alignItems: "flex-end" }}>
           <div style={{
-            width: "100%", borderRadius: "0 0 12px 12px",
+            width: "100%", borderRadius: "0 0 16px 16px",
             background: C.red,
             // @ts-ignore
             "--target-h": "5%", height: "var(--target-h)",
             animation: "fillBarH 1s ease .5s both",
-            boxShadow: `0 0 20px rgba(255,107,107,0.3)`,
+            boxShadow: `0 0 30px rgba(255,107,107,0.4)`,
           } as React.CSSProperties} />
         </div>
-        <div style={{ fontSize: 36, fontWeight: 900, color: C.red, marginTop: 12, animation: "countUp .5s ease 1.2s both" }}>&lt;5%</div>
-        <div style={{ fontSize: 13, opacity: 0.3 }}>conclusão</div>
+        <div style={{ fontSize: 52, fontWeight: 900, color: C.red, marginTop: 16, animation: "countUp .5s ease 1.2s both", textShadow: "0 0 40px rgba(255,107,107,0.3)" }}>&lt;5%</div>
+        <div style={{ fontSize: 16, opacity: 0.3 }}>terminam</div>
       </div>
       {/* IC */}
       <div style={{ textAlign: "center" }}>
-        <div style={{ fontSize: 14, opacity: 0.35, marginBottom: 12 }}>Inglês Cantado</div>
-        <div style={{ width: 100, height: 200, borderRadius: 12, background: "rgba(255,255,255,0.04)", position: "relative", overflow: "hidden", display: "flex", alignItems: "flex-end" }}>
+        <div style={{ fontSize: 18, opacity: 0.35, marginBottom: 16 }}>Inglês Cantado</div>
+        <div style={{ width: 140, height: 300, borderRadius: 16, background: "rgba(255,255,255,0.04)", position: "relative", overflow: "hidden", display: "flex", alignItems: "flex-end" }}>
           <div style={{
-            width: "100%", borderRadius: "0 0 12px 12px",
+            width: "100%", borderRadius: "0 0 16px 16px",
             background: `linear-gradient(0deg, ${C.teal}, ${C.purple})`,
             // @ts-ignore
             "--target-h": "85%", height: "var(--target-h)",
             animation: "fillBarH 1.5s cubic-bezier(.16,1,.3,1) .8s both",
-            boxShadow: `0 0 30px rgba(78,205,196,0.3)`,
+            boxShadow: `0 0 40px rgba(78,205,196,0.35)`,
           } as React.CSSProperties} />
         </div>
-        <div style={{ fontSize: 36, fontWeight: 900, color: C.teal, marginTop: 12, animation: "countUp .5s ease 1.8s both" }}>1-2h</div>
-        <div style={{ fontSize: 13, opacity: 0.3 }}>por dia</div>
+        <div style={{ fontSize: 52, fontWeight: 900, color: C.teal, marginTop: 16, animation: "countUp .5s ease 1.8s both", textShadow: "0 0 40px rgba(78,205,196,0.3)" }}>1-2h</div>
+        <div style={{ fontSize: 16, opacity: 0.3 }}>por dia, no automático</div>
       </div>
     </div>
   </GraphWrap>
 );
 
 // ═══════════════════════════════════════════════════════════
-// GRAPH 7: Preço âncora — Stack descending
+// GRAPH 7: Preço âncora — Fullscreen vertical comparison
 // ═══════════════════════════════════════════════════════════
 export const Graph_PrecoAncora = () => (
   <GraphWrap>
-    <div style={{ width: "80%", maxWidth: 500, display: "flex", flexDirection: "column", gap: 16 }}>
-      {/* R$12.000 */}
-      <div style={{ animation: "slideIn .5s ease .3s both" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ flex: 1, height: 28, borderRadius: 6, background: "rgba(255,107,107,0.15)" }}>
-            <div style={{ width: "100%", height: "100%", borderRadius: 6, background: `linear-gradient(90deg, rgba(255,107,107,0.3), rgba(255,107,107,0.1))` }} />
-          </div>
-          <div style={{ fontSize: 22, fontWeight: 700, color: C.red, position: "relative", minWidth: 120 }}>
-            R$12.000
-            <div style={{ position: "absolute", left: "-4%", top: "50%", width: "108%", height: 2, background: C.red, transform: "rotate(-4deg)" }} />
-          </div>
-        </div>
-        <div style={{ fontSize: 13, opacity: 0.25, marginTop: 4, marginLeft: 4 }}>Escola presencial (2 anos)</div>
+    <div style={{ width: "90%", maxWidth: 560, display: "flex", flexDirection: "column", gap: 28 }}>
+      {/* Header */}
+      <div style={{ textAlign: "center", animation: "fadeIn .5s ease both" }}>
+        <div style={{ fontSize: 16, fontWeight: 600, opacity: 0.25, letterSpacing: 3, textTransform: "uppercase" }}>COMPARATIVO DE INVESTIMENTO</div>
       </div>
-      {/* R$3.000 */}
-      <div style={{ animation: "slideIn .5s ease .6s both" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ flex: 1, height: 28, borderRadius: 6, background: "rgba(255,107,107,0.1)" }}>
-            <div style={{ width: "25%", height: "100%", borderRadius: 6, background: "rgba(255,107,107,0.2)" }} />
-          </div>
-          <div style={{ fontSize: 22, fontWeight: 700, color: C.red, position: "relative", minWidth: 120, opacity: 0.7 }}>
-            R$3.000
-            <div style={{ position: "absolute", left: "-4%", top: "50%", width: "108%", height: 2, background: C.red, transform: "rotate(-4deg)" }} />
-          </div>
-        </div>
-        <div style={{ fontSize: 13, opacity: 0.25, marginTop: 4, marginLeft: 4 }}>Cursos online famosos</div>
-      </div>
-      {/* R$199 */}
-      <div style={{ animation: "slideIn .5s ease .9s both" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ flex: 1, height: 28, borderRadius: 6, background: "rgba(255,255,255,0.04)" }}>
-            <div style={{ width: "8%", height: "100%", borderRadius: 6, background: "rgba(255,255,255,0.08)" }} />
-          </div>
-          <div style={{ fontSize: 22, fontWeight: 700, opacity: 0.4, position: "relative", minWidth: 120 }}>
-            R$199
-            <div style={{ position: "absolute", left: "-4%", top: "50%", width: "108%", height: 2, background: "rgba(255,255,255,0.3)", transform: "rotate(-4deg)" }} />
+
+      {/* R$12.000 — Escola */}
+      <div style={{ animation: "slideIn .6s ease .3s both" }}>
+        <div style={{ padding: "24px 28px", borderRadius: 16, background: "rgba(255,107,107,0.06)", border: "1px solid rgba(255,107,107,0.12)" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div>
+              <div style={{ fontSize: 15, opacity: 0.35, marginBottom: 6 }}>Escola presencial</div>
+              <div style={{ fontSize: 13, opacity: 0.2 }}>2 anos · 3x por semana · aulas</div>
+            </div>
+            <div style={{ position: "relative" }}>
+              <div style={{ fontSize: 36, fontWeight: 800, color: C.red }}>R$12.000</div>
+              <div style={{ position: "absolute", left: "-4%", top: "50%", width: "108%", height: 3, background: C.red, transform: "rotate(-4deg)", borderRadius: 2 }} />
+            </div>
           </div>
         </div>
       </div>
+
+      {/* R$3.000 — Cursos online */}
+      <div style={{ animation: "slideIn .6s ease .7s both" }}>
+        <div style={{ padding: "24px 28px", borderRadius: 16, background: "rgba(255,107,107,0.04)", border: "1px solid rgba(255,107,107,0.08)" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div>
+              <div style={{ fontSize: 15, opacity: 0.35, marginBottom: 6 }}>Cursos online</div>
+              <div style={{ fontSize: 13, opacity: 0.2 }}>500 aulas · você assiste 10%</div>
+            </div>
+            <div style={{ position: "relative" }}>
+              <div style={{ fontSize: 32, fontWeight: 700, color: C.red, opacity: 0.7 }}>R$3.000</div>
+              <div style={{ position: "absolute", left: "-4%", top: "50%", width: "108%", height: 3, background: C.red, transform: "rotate(-4deg)", borderRadius: 2, opacity: 0.7 }} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* R$199 riscado */}
+      <div style={{ animation: "slideIn .6s ease 1.1s both" }}>
+        <div style={{ padding: "20px 28px", borderRadius: 16, background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.04)" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ fontSize: 15, opacity: 0.25 }}>Valor normal IC</div>
+            <div style={{ position: "relative" }}>
+              <div style={{ fontSize: 28, fontWeight: 600, opacity: 0.35 }}>R$199</div>
+              <div style={{ position: "absolute", left: "-4%", top: "50%", width: "108%", height: 2, background: "rgba(255,255,255,0.3)", transform: "rotate(-4deg)", borderRadius: 2 }} />
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* R$99 — THE ONE */}
-      <div style={{ animation: "slideIn .5s ease 1.4s both", marginTop: 8 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ flex: 1, height: 36, borderRadius: 8, background: "rgba(78,205,196,0.08)" }}>
-            <div style={{ width: "4%", height: "100%", borderRadius: 8, background: C.gradient, boxShadow: `0 0 20px rgba(78,205,196,0.3)` }} />
+      <div style={{ animation: "slideIn .6s ease 1.6s both" }}>
+        <div style={{
+          padding: "28px 32px", borderRadius: 18,
+          background: "linear-gradient(135deg, rgba(78,205,196,0.1), rgba(167,139,250,0.05))",
+          border: "1px solid rgba(78,205,196,0.2)",
+          boxShadow: "0 0 40px rgba(78,205,196,0.08), 0 0 80px rgba(167,139,250,0.04)",
+        }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div>
+              <div style={{ fontSize: 16, fontWeight: 600, color: C.teal, marginBottom: 6 }}>Inglês Cantado</div>
+              <div style={{ fontSize: 13, opacity: 0.35 }}>Acesso completo · cancela quando quiser</div>
+            </div>
+            <div style={{
+              fontSize: 44, fontWeight: 900,
+              background: C.gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+              filter: "drop-shadow(0 0 24px rgba(78,205,196,0.35))",
+            }}>R$99</div>
           </div>
-          <div style={{ fontSize: 32, fontWeight: 900, background: C.gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", minWidth: 120, filter: "drop-shadow(0 0 20px rgba(78,205,196,0.3))" }}>
-            R$99
-          </div>
+          <div style={{ marginTop: 12, fontSize: 14, opacity: 0.3, textAlign: "center" }}>por mês — menos que R$3,30/dia</div>
         </div>
-        <div style={{ fontSize: 14, opacity: 0.4, marginTop: 4, marginLeft: 4 }}>por mês — Inglês Cantado</div>
       </div>
     </div>
   </GraphWrap>

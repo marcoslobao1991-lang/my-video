@@ -5,6 +5,7 @@
 // ~45 slides | 3 stacks | 5 graphs (258, 259, 260, 267, 268)
 
 import React from "react";
+import { staticFile } from "remotion";
 import { T, Spacer, AccentLine } from "./components";
 
 type UseStackVisible = (slide: number, itemIndex: number) => boolean;
@@ -162,13 +163,18 @@ R.set(113, () => (
 // 4:29.00 — "Kris Nielson — 150 funcionários"
 R.set(114, () => (
   <div className="slide left">
-    <AccentLine />
-    <T size={38} weight={400} opacity={0.35} anim="anim-fadeIn">2014</T>
-    <Spacer h={8} />
-    <T size={48} weight={600} opacity={0.7} anim="anim-slideLeft" delay="d2">
-      <span className="bold">Kris Nielson</span>.
-    </T>
-    <Spacer h={8} />
+    <div style={{ display: "flex", alignItems: "center", gap: 24 }} className="anim-slideLeft">
+      <img src={staticFile("photos/nielson.jpg")} style={{
+        width: 90, height: 90, borderRadius: "50%", objectFit: "cover",
+        border: "2px solid rgba(78,205,196,0.4)",
+        boxShadow: "0 0 20px rgba(78,205,196,0.15)",
+      }} />
+      <div>
+        <T size={48} weight={600} opacity={0.7}><span className="bold">Kris Nielson</span>.</T>
+        <T size={32} weight={400} opacity={0.3}>Pesquisadora — 2014</T>
+      </div>
+    </div>
+    <Spacer h={12} />
     <T size={38} weight={400} opacity={0.4} anim="anim-slideLeft" delay="d3">
       150 funcionarios do governo americano.
     </T>
@@ -369,12 +375,18 @@ R.set(131, () => (
 // 6:11.70 — "Johns Hopkins 2024"
 R.set(132, () => (
   <div className="slide left">
-    <AccentLine />
-    <T size={38} weight={400} opacity={0.35} anim="anim-fadeIn">2024</T>
-    <Spacer h={8} />
-    <T size={52} weight={700} opacity={0.8} anim="anim-slideLeft" delay="d2" className="bold">
-      Johns Hopkins.
-    </T>
+    <div style={{ display: "flex", alignItems: "center", gap: 24 }} className="anim-slideLeft">
+      <img src={staticFile("photos/jhu_logo.png")} style={{
+        width: 90, height: 90, borderRadius: 16, objectFit: "contain",
+        background: "rgba(255,255,255,0.05)", padding: 10,
+        border: "2px solid rgba(78,205,196,0.4)",
+        boxShadow: "0 0 20px rgba(78,205,196,0.15)",
+      }} />
+      <div>
+        <T size={52} weight={700} opacity={0.8}><span className="bold">Johns Hopkins</span>.</T>
+        <T size={32} weight={400} opacity={0.3}>2024</T>
+      </div>
+    </div>
   </div>
 ));
 
@@ -427,7 +439,7 @@ R.set(136, () => (
 R.set(137, () => (
   <div className="slide center">
     <div className="double-glow" />
-    <T size={70} weight={900} opacity={1} anim="anim-scaleIn" className="gradient-animated glow-gradient-text">
+    <T size={70} weight={900} opacity={1} anim="anim-scaleIn" className="red glow-red-text">
       FADIGA COGNITIVA.
     </T>
   </div>

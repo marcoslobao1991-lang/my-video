@@ -4,6 +4,7 @@
 // ~40 slides | 1 stack | 1 graph (261: dopamina)
 
 import React from "react";
+import { staticFile } from "remotion";
 import { T, Spacer, AccentLine, HeadphoneSVG } from "./components";
 
 type UseStackVisible = (slide: number, itemIndex: number) => boolean;
@@ -190,14 +191,17 @@ R.set(216, () => (
 // 9:15.20 — "Robert Zatorre — neurocientista"
 R.set(217, () => (
   <div className="slide left">
-    <AccentLine />
-    <T size={52} weight={700} opacity={0.85} anim="anim-slideLeft" className="bold">
-      Robert Zatorre.
-    </T>
-    <Spacer h={10} />
-    <T size={34} weight={400} opacity={0.3} anim="anim-slideLeft" delay="d2">
-      Neurocientista.
-    </T>
+    <div style={{ display: "flex", alignItems: "center", gap: 24 }} className="anim-slideLeft">
+      <img src={staticFile("photos/zatorre.jpg")} style={{
+        width: 90, height: 90, borderRadius: "50%", objectFit: "cover",
+        border: "2px solid rgba(78,205,196,0.4)",
+        boxShadow: "0 0 20px rgba(78,205,196,0.15)",
+      }} />
+      <div>
+        <T size={52} weight={700} opacity={0.85}><span className="bold">Robert Zatorre</span>.</T>
+        <T size={34} weight={400} opacity={0.3}>Neurocientista — McGill</T>
+      </div>
+    </div>
   </div>
 ));
 

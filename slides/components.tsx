@@ -2,9 +2,9 @@ import React from "react";
 
 // ─── Scale for 68% width layout (1312px available) ───────────
 export const hScale = (px: number) => {
-  if (px >= 150) return Math.round(px * 0.7);
-  if (px >= 100) return Math.round(px * 0.8);
-  return px;
+  if (px >= 150) return Math.round(px * 0.77);
+  if (px >= 100) return Math.round(px * 0.88);
+  return Math.round(px * 1.1);
 };
 
 // ─── T: text block with animation ───────────────────────────
