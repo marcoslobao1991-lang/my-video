@@ -3009,7 +3009,7 @@ const slides: (() => JSX.Element)[] = [
 ];
 
 // ─── Append graph slides (258-269) ──────────────────────────
-const allSlides = [...slides, ...GRAPH_SLIDES.map(G => () => <G />)];
+const allSlides = [...slides, ...[...GRAPH_SLIDES.values()].map(G => () => <G />)];
 
 // ─── Slide content renderer ─────────────────────────────────
 // When forceBrollOverlay=true, dark slides become transparent overlay (B-roll visible behind)

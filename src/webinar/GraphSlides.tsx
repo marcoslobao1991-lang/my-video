@@ -562,21 +562,32 @@ export const Graph_200vs1 = () => (
   </GraphWrap>
 );
 
-// ─── Export: horizontal (68% left) ──────────────────────────
-export const GRAPH_SLIDES = [
-  Graph_15vs150,       // 258
-  Graph_150Dots,       // 259
-  Graph_90Abandono,    // 260
-  Graph_Dopamina,      // 261
-  Graph_500Words,      // 262
-  Graph_MercadoVsIC,   // 263
-  Graph_PrecoAncora,   // 264
-  Graph_3Camadas,      // 265
-  Graph_JornadaEpisodio, // 266
-  Graph_95Resultado,   // 267
-  Graph_FadigaTimeline, // 268
-  Graph_200vs1,        // 269
-];
+// ─── Export as Map (ID → component) ─────────────────────────
+// Graph IDs and their approximate Whisper timestamps:
+//   258: 15h vs 150h        → 3:39 (219.6s)  — PROBLEMA
+//   259: 150 dots (Kris)    → 6:26 (386.3s)  — PROBLEMA
+//   260: 90% abandono       → 4:20 (260.5s)  — PROBLEMA
+//   261: Dopamina           → 10:29 (629.1s) — MECANISMO
+//   262: 500 palavras       → 12:30 (750.4s) — SOLUÇÃO
+//   263: Mercado vs IC      → 20:13 (1213.5s)— PREÇO
+//   264: Preço âncora       → 19:47 (1186.9s)— PREÇO
+//   265: 3 Camadas          → 15:57 (957.4s) — PRODUTO
+//   266: Jornada episódio   → 16:37 (997s)   — PRODUTO
+//   267: 95% resultado      → 7:04 (424s)    — PROBLEMA
+//   268: Fadiga timeline    → 6:36 (395.6s)  — PROBLEMA
+//   269: 200 letras ≠ 1     → 13:11 (790.9s) — SOLUÇÃO
 
-// ─── Export: vertical (full width) ──────────────────────────
-export const GRAPH_SLIDES_VERTICAL = GRAPH_SLIDES;
+export const GRAPH_SLIDES = new Map<number, () => React.JSX.Element>([
+  [258, Graph_15vs150],
+  [259, Graph_150Dots],
+  [260, Graph_90Abandono],
+  [261, Graph_Dopamina],
+  [262, Graph_500Words],
+  [263, Graph_MercadoVsIC],
+  [264, Graph_PrecoAncora],
+  [265, Graph_3Camadas],
+  [266, Graph_JornadaEpisodio],
+  [267, Graph_95Resultado],
+  [268, Graph_FadigaTimeline],
+  [269, Graph_200vs1],
+]);

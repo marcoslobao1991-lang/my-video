@@ -2,6 +2,38 @@ node_modules
 dist
 .DS_Store
 .env
+.agents/
+.claude/
 
 # Ignore the output video from Git but not videos you import into src/.
 out
+
+# Old scripts (legacy, not needed)
+auto_timeline.js.CORRUPTED
+*.json.bak
+surgical_*.js
+surgical_*.txt
+gen_*.js
+gen_*.txt
+fix_*.js
+merge_*.js
+rebuild_*.js
+build_timeline.js
+apply_stacks.js
+show_impact.js
+verify_timeline.js
+gaps.json
+missing_slides.json
+intervention_plan.json
+dupes_to_remove.json
+gap_words.txt
+new_slides_*.txt
+vsl_copy.txt
+
+# Unused source files
+src/Scene1.tsx
+src/Slides.tsx
+src/webinar/VSLSlides_unused.tsx
+src/webinar/WowSlides.tsx
+src/webinar/design.ts
+src/webinar/whisperSegments.ts

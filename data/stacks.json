@@ -1,0 +1,80 @@
+[
+  {
+    "slide": 5,
+    "items": [
+      6.98,
+      7.86,
+      8.66
+    ],
+    "desc": "Transito / Academia / Dormir"
+  },
+  {
+    "slide": 9,
+    "items": [
+      19.24,
+      20.1,
+      21.22
+    ],
+    "desc": "Legenda / Esforco / Estudado"
+  },
+  {
+    "slide": 14,
+    "items": [
+      40.24,
+      41.08,
+      41.74,
+      42.3
+    ],
+    "desc": "Hopkins / McGill / Stanford / MIT"
+  },
+  {
+    "slide": 24,
+    "items": [
+      70.8,
+      72.36,
+      73.42,
+      75.12,
+      77.24
+    ],
+    "desc": "Multinacional / Entrevista / Series / Viagens / Emprego"
+  },
+  {
+    "slide": 106,
+    "items": [
+      196.24,
+      198.88,
+      201.54,
+      203.1,
+      204.18
+    ],
+    "desc": "Conteudo / Didatica / Modulos / Ordem / Contratei"
+  },
+  {
+    "slide": 115,
+    "items": [
+      276,
+      277.4,
+      278.6
+    ],
+    "desc": "Motivados / Horario / Melhor material"
+  },
+  {
+    "slide": 121,
+    "items": [
+      310.7,
+      311.6,
+      312.56,
+      313.88
+    ],
+    "desc": "Sentar / Prestar atencao / Processar / Energia mental"
+  },
+  {
+    "slide": 203,
+    "items": [
+      467.9,
+      469.62,
+      475.5
+    ],
+    "desc": "Esforco / Repetir 50x / Porque quer"
+  }
+]
