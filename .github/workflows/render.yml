@@ -1,0 +1,31 @@
+name: Render VSL Overlay
+
+on:
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Render video
+        run: npx remotion render src/index.ts vsl-overlay out/vsl-overlay.mp4 --image-format=jpeg --jpeg-quality=90 --scale=0.5 --timeout=120000 --concurrency=2
+
+      - name: Upload video
+        uses: actions/upload-artifact@v4
+        with:
+          name: vsl-overlay
+          path: out/vsl-overlay.mp4
+          retention-days: 7
