@@ -32,5 +32,3 @@ vsl_copy.txt
 
 # Unused source files
 src/webinar/VSLSlides_unused.tsx
-src/webinar/design.ts
-src/webinar/whisperSegments.ts
