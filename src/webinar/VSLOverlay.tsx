@@ -174,22 +174,16 @@ export const VSLOverlayComposition: React.FC = () => {
         </AbsoluteFill>
       ) : (
         <>
-          {/* ─── TOP: Slides with gradient border ─── */}
+          {/* ─── TOP: Slides ─── */}
           <div style={{
-            position: "absolute", top: 24, left: 24, right: 24, height: SLIDE_HEIGHT - 48,
-            borderRadius: 24, padding: 3,
-            background: "linear-gradient(160deg, #4ECDC4, #A78BFA 50%, rgba(78,205,196,0.3))",
-            boxShadow: "0 0 50px rgba(78,205,196,0.12), 0 0 100px rgba(167,139,250,0.06)",
+            position: "absolute", top: 0, left: 0, right: 0, height: SLIDE_HEIGHT,
+            overflow: "hidden", background: "#0A0A0A",
           }}>
-            <div style={{
-              width: "100%", height: "100%", borderRadius: 21, overflow: "hidden", background: "#0A0A0A",
-            }}>
-              <GraphModeProvider value="vertical">
-                <div key={`slide-${currentSlide}`} style={{ width: "100%", height: "100%" }}>
-                  <SlideContent index={currentSlide} />
-                </div>
-              </GraphModeProvider>
-            </div>
+            <GraphModeProvider value="vertical">
+              <div key={`slide-${currentSlide}`} style={{ width: "100%", height: "100%" }}>
+                <SlideContent index={currentSlide} />
+              </div>
+            </GraphModeProvider>
           </div>
 
           {/* ─── BOTTOM: Video ─── */}
@@ -208,7 +202,7 @@ export const VSLOverlayComposition: React.FC = () => {
                 width: "100%", height: "100%", borderRadius: 21, overflow: "hidden", background: "#0A0A0A",
               }}>
                 <Video
-                  src={staticFile("vsl_marcos.mp4")}
+                  src={staticFile("vsl_marcos_render.mp4")}
                   startFrom={0}
                   volume={0}
                   style={{

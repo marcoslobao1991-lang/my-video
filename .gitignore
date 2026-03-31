@@ -31,9 +31,6 @@ new_slides_*.txt
 vsl_copy.txt
 
 # Unused source files
-src/Scene1.tsx
-src/Slides.tsx
 src/webinar/VSLSlides_unused.tsx
-src/webinar/WowSlides.tsx
 src/webinar/design.ts
 src/webinar/whisperSegments.ts
