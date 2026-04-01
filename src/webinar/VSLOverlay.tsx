@@ -202,7 +202,7 @@ export const VSLOverlayComposition: React.FC = () => {
                 width: "100%", height: "100%", borderRadius: 21, overflow: "hidden", background: "#0A0A0A",
               }}>
                 <Video
-                  src={staticFile("vsl_marcos_render.mp4")}
+                  src={staticFile("vsl_marcos_linux.mp4")}
                   startFrom={0}
                   volume={0}
                   style={{
