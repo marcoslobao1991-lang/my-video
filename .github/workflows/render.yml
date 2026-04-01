@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npx remotion render src/index.ts vsl-overlay out/vsl-overlay.mp4 --image-format=jpeg --jpeg-quality=90 --timeout=120000 --concurrency=2
+      - run: npx remotion render src/index.ts vsl-overlay out/vsl-overlay.mp4 --image-format=jpeg --jpeg-quality=90 --scale=0.7 --timeout=120000 --concurrency=6
       - uses: actions/upload-artifact@v4
         with:
           name: vsl-overlay
