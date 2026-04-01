@@ -62,6 +62,87 @@ function SlideContent({ index }: { index: number }) {
   return <SlideComponent />;
 }
 
+// ─── Repetition counter overlay (LEAD 4.78s–18.12s) ───────
+// Counter 1→40 synced to speech. "30" @ ~5.8s, "40" @ ~6.2s
+function RepetitionCounter({ time }: { time: number }) {
+  if (time < 4.78 || time >= 18.12) return null;
+
+  // Interpolate count: ramp 1→30 (4.78-5.8s), 30→40 (5.8-6.2s), hold 40 after
+  let count: number;
+  if (time < 5.8) {
+    const p = (time - 4.78) / (5.8 - 4.78);
+    count = Math.round(1 + p * 29);
+  } else if (time < 6.2) {
+    const p = (time - 5.8) / (6.2 - 5.8);
+    count = Math.round(30 + p * 10);
+  } else {
+    count = 40;
+  }
+
+  // Progress bar fills proportionally
+  const progress = count / 40;
+
+  return (
+    <div style={{
+      position: "absolute",
+      top: 16,
+      right: 32,
+      zIndex: 30,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "flex-end",
+      gap: 8,
+      animation: "fadeIn 0.4s ease both",
+    }}>
+      {/* Counter number */}
+      <div style={{
+        fontSize: 52,
+        fontWeight: 900,
+        fontFamily: "'DM Sans', sans-serif",
+        color: progress >= 1 ? "transparent" : "#4ECDC4",
+        background: progress >= 1 ? "linear-gradient(135deg, #4ECDC4, #A78BFA)" : "none",
+        WebkitBackgroundClip: progress >= 1 ? "text" : "unset",
+        WebkitTextFillColor: progress >= 1 ? "transparent" : undefined,
+        textShadow: progress >= 1 ? "none" : "0 0 30px rgba(78,205,196,0.4)",
+        filter: progress >= 1 ? "drop-shadow(0 0 20px rgba(78,205,196,0.4))" : "none",
+        lineHeight: 1,
+      }}>
+        {count}×
+      </div>
+      {/* Mini progress bar */}
+      <div style={{
+        width: 100,
+        height: 4,
+        borderRadius: 2,
+        background: "rgba(255,255,255,0.06)",
+        overflow: "hidden",
+      }}>
+        <div style={{
+          height: "100%",
+          width: `${progress * 100}%`,
+          borderRadius: 2,
+          background: progress >= 1
+            ? "linear-gradient(90deg, #4ECDC4, #A78BFA)"
+            : "#4ECDC4",
+          transition: "width 0.15s linear",
+          boxShadow: `0 0 8px rgba(78,205,196,0.3)`,
+        }} />
+      </div>
+      {/* Label */}
+      <div style={{
+        fontSize: 12,
+        fontWeight: 600,
+        letterSpacing: 2,
+        opacity: 0.3,
+        fontFamily: "'DM Sans', sans-serif",
+        textTransform: "uppercase",
+      }}>
+        repetições
+      </div>
+    </div>
+  );
+}
+
 // ─── Layout constants (1080×1920) ──────────────────────────
 const VIDEO_W = 720;      // narrower = shows more body height
 const VIDEO_H = 1920 - 620; // stretches to bottom of screen
@@ -139,6 +220,62 @@ const OVERLAY_STYLES = `
 .slide.right{align-items:flex-end;text-align:right;padding-right:56px}
 `;
 
+// ─── Slides-only (no video — ultra fast render) ───────────
+export const SlidesOnlyComposition: React.FC = () => {
+  const frame = useCurrentFrame();
+  const currentSlide = getCurrentSlide(frame);
+  const timeInSeconds = frame / FPS;
+  const isGraph = GRAPH_SLIDES.has(currentSlide);
+  const PRECO_FULL = new Set([701, 702, 703, 707, 7071, 7072, 708, 710, 711, 713, 716, 718, 7081]);
+  const GARANTIA_FULL = new Set([800, 804, 805]);
+  const isFullscreen = isGraph || PRECO_FULL.has(currentSlide) || GARANTIA_FULL.has(currentSlide);
+
+  return (
+    <TimeContext.Provider value={timeInSeconds}>
+    <AbsoluteFill style={{ backgroundColor: "#0A0A0A", fontFamily: "'DM Sans', -apple-system, sans-serif" }}>
+      <style dangerouslySetInnerHTML={{ __html: OVERLAY_STYLES }} />
+
+      <Audio src={staticFile("vsl_audio_hq.mp3")} startFrom={0} volume={1} />
+
+      {isFullscreen ? (
+        <AbsoluteFill key={`full-${currentSlide}`} style={{
+          animation: (PRECO_FULL.has(currentSlide) || GARANTIA_FULL.has(currentSlide))
+            ? "slideFromRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) both"
+            : "graphEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) both",
+          zIndex: 20,
+        }}>
+          <GraphModeProvider value="vertical">
+            <SlideContent index={currentSlide} />
+          </GraphModeProvider>
+        </AbsoluteFill>
+      ) : (
+        <div style={{
+          position: "absolute", top: 0, left: 0, right: 0, height: SLIDE_HEIGHT,
+          overflow: "hidden", background: "#0A0A0A",
+        }}>
+          <GraphModeProvider value="vertical">
+            <div key={`slide-${currentSlide}`} style={{ width: "100%", height: "100%" }}>
+              <SlideContent index={currentSlide} />
+            </div>
+          </GraphModeProvider>
+          <RepetitionCounter time={timeInSeconds} />
+        </div>
+      )}
+
+      {/* ─── Progress bar ─── */}
+      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "rgba(255,255,255,0.03)", zIndex: 10 }}>
+        <div style={{
+          height: "100%",
+          width: `${((currentSlide + 1) / SLIDE_REGISTRY.size) * 100}%`,
+          background: "linear-gradient(90deg,#4ECDC4,#A78BFA)",
+          transition: "width .35s cubic-bezier(.4,0,.2,1)",
+        }} />
+      </div>
+    </AbsoluteFill>
+    </TimeContext.Provider>
+  );
+};
+
 // ─── Composition ───────────────────────────────────────────
 export const VSLOverlayComposition: React.FC = () => {
   const frame = useCurrentFrame();
@@ -184,6 +321,7 @@ export const VSLOverlayComposition: React.FC = () => {
                 <SlideContent index={currentSlide} />
               </div>
             </GraphModeProvider>
+            <RepetitionCounter time={timeInSeconds} />
           </div>
 
           {/* ─── BOTTOM: Video ─── */}

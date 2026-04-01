@@ -77,6 +77,9 @@ jobs:
           pattern: chunk-*
           path: chunks/
 
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
       - name: Stitch chunks with ffmpeg
         run: |
           WORKERS=${{ github.event.inputs.workers || '20' }}

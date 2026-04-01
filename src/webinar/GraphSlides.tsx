@@ -584,6 +584,129 @@ export const Graph_200vs1 = () => (
   </GraphWrap>
 );
 
+// ═══════════════════════════════════════════════════════════
+// GRAPH 13: "Entender tudo" fullscreen explosion (LEAD 18.12s)
+// Counter hits 40×, bar 100%, comprehension burst
+// ═══════════════════════════════════════════════════════════
+export const Graph_EntenderTudo = () => (
+  <GraphWrap>
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+      {/* Big 40× */}
+      <div style={{
+        fontSize: 100, fontWeight: 900, lineHeight: 1,
+        background: C.gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+        filter: "drop-shadow(0 0 40px rgba(78,205,196,0.5)) drop-shadow(0 0 80px rgba(167,139,250,0.3))",
+        animation: "countUp 0.6s cubic-bezier(.16,1,.3,1) both",
+      }}>
+        40×
+      </div>
+
+      {/* Full progress bar */}
+      <div style={{ width: 300, height: 8, borderRadius: 4, background: "rgba(255,255,255,0.04)", marginTop: 24, overflow: "hidden" }}>
+        <div style={{
+          height: "100%", borderRadius: 4,
+          background: `linear-gradient(90deg, ${C.teal}, ${C.purple})`,
+          // @ts-ignore
+          "--target-w": "100%", width: "var(--target-w)",
+          animation: "fillBar 0.8s cubic-bezier(.16,1,.3,1) .2s both",
+          boxShadow: `0 0 20px rgba(78,205,196,0.4)`,
+        } as React.CSSProperties} />
+      </div>
+
+      {/* "Você entende tudo" */}
+      <div style={{ marginTop: 40, animation: "fadeUp .6s ease .4s both" }}>
+        <div style={{
+          fontSize: 36, fontWeight: 800,
+          background: C.gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+          filter: "drop-shadow(0 0 30px rgba(78,205,196,0.35))",
+        }}>
+          Você entende tudo.
+        </div>
+      </div>
+
+      <div style={{ fontSize: 16, opacity: 0.3, marginTop: 14, animation: "fadeIn .5s ease .8s both" }}>
+        Sem legenda. Sem esforço. Sem ter estudado.
+      </div>
+    </div>
+  </GraphWrap>
+);
+
+// ═══════════════════════════════════════════════════════════
+// GRAPH 14: Fluência por episódio (LEAD 23.16s–29.54s)
+// Curva ascendente: cada episódio = mais compreensão
+// ═══════════════════════════════════════════════════════════
+export const Graph_FluenciaEpisodio = () => {
+  const frame = useCurrentFrame();
+  const FPS = 30;
+  const t = frame / FPS;
+
+  // 23.16s → "SÉRIE CANTADA" — graph appears
+  // 24.24s → "mesmas estruturas se repetem"
+  // 29.54s → next slide
+
+  const show = t >= 23.16;
+  const showLabel = t >= 24.24;
+
+  const episodes = [
+    { ep: 1, height: 18, delay: 0.3 },
+    { ep: 2, height: 32, delay: 0.5 },
+    { ep: 3, height: 48, delay: 0.7 },
+    { ep: 4, height: 62, delay: 0.9 },
+    { ep: 5, height: 78, delay: 1.1 },
+    { ep: 6, height: 88, delay: 1.3 },
+    { ep: 7, height: 95, delay: 1.5 },
+    { ep: 8, height: 100, delay: 1.7 },
+  ];
+
+  return (
+    <GraphWrap title="COMPREENSÃO POR EPISÓDIO">
+      <div style={{ display: "flex", alignItems: "flex-end", gap: 10, height: 220, opacity: show ? 1 : 0, transition: "opacity 0.5s ease" }}>
+        {episodes.map((ep) => (
+          <div key={ep.ep} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+            <div style={{
+              width: 40, borderRadius: 8,
+              background: ep.ep >= 7
+                ? `linear-gradient(0deg, ${C.teal}, ${C.purple})`
+                : ep.ep >= 4
+                  ? C.teal
+                  : "rgba(78,205,196,0.5)",
+              // @ts-ignore
+              "--target-h": `${ep.height * 2}px`, height: "var(--target-h)",
+              animation: show ? `fillBarH 1s cubic-bezier(.16,1,.3,1) ${ep.delay}s both` : "none",
+              boxShadow: ep.ep === 8
+                ? `0 0 30px rgba(78,205,196,0.4), 0 0 60px rgba(167,139,250,0.2)`
+                : "none",
+            } as React.CSSProperties} />
+            <div style={{
+              fontSize: 13, fontWeight: 600,
+              color: ep.ep === 8 ? C.teal : "rgba(255,255,255,0.4)",
+            }}>Ep {ep.ep}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Ascending line overlay */}
+      <div style={{
+        marginTop: 32, textAlign: "center",
+        opacity: showLabel ? 1 : 0, transition: "opacity 0.6s ease",
+      }}>
+        <div style={{
+          fontSize: 22, fontWeight: 600,
+          animation: showLabel ? "fadeUp .6s ease both" : "none",
+        }}>
+          <span style={{ opacity: 0.5 }}>O inglês</span>{" "}
+          <span style={{ color: C.teal, fontWeight: 800 }}>se repete</span>{" "}
+          <span style={{ opacity: 0.5 }}>dentro das mesmas</span>{" "}
+          <span style={{ background: C.gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 800 }}>estruturas</span>
+        </div>
+        <div style={{ fontSize: 15, opacity: 0.25, marginTop: 10 }}>
+          Cada episódio reforça o anterior
+        </div>
+      </div>
+    </GraphWrap>
+  );
+};
+
 // ─── Export as Map (ID → component) ─────────────────────────
 // Graph IDs and their approximate Whisper timestamps:
 //   258: 15h vs 150h        → 3:39 (219.6s)  — PROBLEMA
@@ -612,4 +735,6 @@ export const GRAPH_SLIDES = new Map<number, () => React.JSX.Element>([
   [267, Graph_95Resultado],
   [268, Graph_FadigaTimeline],
   [269, Graph_200vs1],
+  [26, Graph_EntenderTudo],
+  [27, Graph_FluenciaEpisodio],
 ]);

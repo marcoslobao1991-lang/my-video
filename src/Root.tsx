@@ -19,7 +19,7 @@ import {
 } from "./webinar/WowSlides";
 import { LeadComposition } from "./webinar/Lead";
 import { VSLComposition } from "./webinar/VSLSlides";
-import { VSLOverlayComposition } from "./webinar/VSLOverlay";
+import { VSLOverlayComposition, SlidesOnlyComposition } from "./webinar/VSLOverlay";
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -48,6 +48,16 @@ export const RemotionRoot: React.FC = () => {
 			<Composition
 				id="vsl-overlay"
 				component={VSLOverlayComposition}
+				durationInFrames={43950}
+				fps={30}
+				width={1080}
+				height={1920}
+			/>
+
+			{/* ─── SLIDES ONLY: sem vídeo/áudio, render ultra rápido ─── */}
+			<Composition
+				id="slides-only"
+				component={SlidesOnlyComposition}
 				durationInFrames={43950}
 				fps={30}
 				width={1080}
