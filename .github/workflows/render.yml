@@ -1,20 +1,98 @@
 name: Render VSL Overlay
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+      workers:
+        description: "Number of parallel workers"
+        required: false
+        default: "20"
+
 jobs:
-  render:
+  # ── Step 1: figure out total frames ──
+  setup:
     runs-on: ubuntu-latest
-    timeout-minutes: 360
+    outputs:
+      total_frames: "43950"
+      matrix: ${{ steps.matrix.outputs.value }}
+    steps:
+      - id: matrix
+        run: |
+          WORKERS=${{ github.event.inputs.workers || '20' }}
+          TOTAL=43950
+          CHUNK=$(( (TOTAL + WORKERS - 1) / WORKERS ))
+          JSON="["
+          for i in $(seq 0 $(( WORKERS - 1 ))); do
+            START=$(( i * CHUNK ))
+            END=$(( START + CHUNK ))
+            if [ $END -gt $TOTAL ]; then END=$TOTAL; fi
+            if [ $START -ge $TOTAL ]; then break; fi
+            if [ "$JSON" != "[" ]; then JSON="$JSON,"; fi
+            JSON="$JSON{\"index\":$i,\"start\":$START,\"end\":$END}"
+          done
+          JSON="$JSON]"
+          echo "value=$JSON" >> "$GITHUB_OUTPUT"
+
+  # ── Step 2: render chunks in parallel ──
+  render:
+    needs: setup
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        chunk: ${{ fromJson(needs.setup.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
         with:
           lfs: true
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+
       - run: npm ci
-      - run: npx remotion render src/index.ts vsl-overlay out/vsl-overlay.mp4 --image-format=jpeg --jpeg-quality=90 --scale=0.7 --timeout=120000 --concurrency=2
+
+      - name: Render chunk ${{ matrix.chunk.index }}
+        run: |
+          npx remotion render src/index.ts vsl-overlay \
+            "out/chunk-${{ matrix.chunk.index }}.mp4" \
+            --image-format=jpeg --jpeg-quality=90 --scale=0.7 \
+            --timeout=120000 --concurrency=2 \
+            --frames=${{ matrix.chunk.start }}-$(( ${{ matrix.chunk.end }} - 1 ))
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ matrix.chunk.index }}
+          path: out/chunk-${{ matrix.chunk.index }}.mp4
+          retention-days: 1
+
+  # ── Step 3: stitch all chunks together ──
+  stitch:
+    needs: [setup, render]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: chunk-*
+          path: chunks/
+
+      - name: Stitch chunks with ffmpeg
+        run: |
+          WORKERS=${{ github.event.inputs.workers || '20' }}
+          # Build concat list in order
+          for i in $(seq 0 $(( WORKERS - 1 ))); do
+            FILE="chunks/chunk-$i/chunk-$i.mp4"
+            if [ -f "$FILE" ]; then
+              echo "file '$FILE'" >> filelist.txt
+            fi
+          done
+          cat filelist.txt
+          ffmpeg -f concat -safe 0 -i filelist.txt -c copy out.mp4
+          ls -lh out.mp4
+
       - uses: actions/upload-artifact@v4
         with:
           name: vsl-overlay
-          path: out/vsl-overlay.mp4
+          path: out.mp4
           retention-days: 7
