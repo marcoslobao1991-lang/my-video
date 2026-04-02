@@ -48,7 +48,7 @@ jobs:
       - run: npm ci
       - name: Render slides chunk ${{ matrix.chunk.index }}
         run: |
-          npx remotion render src/index.ts slides-only \
+          npx remotion render src/index.ts vsl-overlay \
             "out/chunk-${{ matrix.chunk.index }}.mp4" \
             --image-format=jpeg --jpeg-quality=95 --scale=1 \
             --timeout=120000 --concurrency=2 \

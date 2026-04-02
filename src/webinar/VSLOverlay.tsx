@@ -294,7 +294,7 @@ export const VSLOverlayComposition: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: "#0A0A0A", fontFamily: "'DM Sans', -apple-system, sans-serif" }}>
       <style dangerouslySetInnerHTML={{ __html: OVERLAY_STYLES }} />
 
-      <Audio src={staticFile("vsl_audio_hq.mp3")} startFrom={0} volume={1} />
+      {/* Audio removed — ffmpeg will take audio from original video */}
 
       {isFullscreen ? (
         /* ─── FULLSCREEN (graphs + preço) ─── */
@@ -323,7 +323,7 @@ export const VSLOverlayComposition: React.FC = () => {
             <RepetitionCounter time={timeInSeconds} />
           </div>
 
-          {/* ─── BOTTOM: Video ─── */}
+          {/* ─── BOTTOM: Chroma key placeholder (ffmpeg replaces with real video) ─── */}
           <div style={{
             position: "absolute", top: VIDEO_TOP, left: 0, width: 1080, height: 1920 - VIDEO_TOP,
             display: "flex", alignItems: "flex-start", justifyContent: "center",
@@ -336,21 +336,9 @@ export const VSLOverlayComposition: React.FC = () => {
               boxShadow: "0 0 50px rgba(78,205,196,0.12), 0 0 100px rgba(167,139,250,0.06)",
             }}>
               <div style={{
-                width: "100%", height: "100%", borderRadius: 21, overflow: "hidden", background: "#0A0A0A",
-              }}>
-                <Video
-                  src={staticFile("vsl_marcos_linux.mp4")}
-                  startFrom={0}
-                  volume={0}
-                  style={{
-                    width: "100%", height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "center 3%",
-                    transform: "scale(1)",
-                    transformOrigin: "center 3%",
-                  }}
-                />
-              </div>
+                width: "100%", height: "100%", borderRadius: 21, overflow: "hidden",
+                background: "#00FF00",
+              }} />
             </div>
           </div>
         </>
