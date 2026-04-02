@@ -236,8 +236,6 @@ export const SlidesOnlyComposition: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: "#0A0A0A", fontFamily: "'DM Sans', -apple-system, sans-serif" }}>
       <style dangerouslySetInnerHTML={{ __html: OVERLAY_STYLES }} />
 
-      <Audio src={staticFile("vsl_audio_hq.mp3")} startFrom={0} volume={1} />
-
       {isFullscreen ? (
         <AbsoluteFill key={`full-${currentSlide}`} style={{
           animation: (PRECO_FULL.has(currentSlide) || GARANTIA_FULL.has(currentSlide))
