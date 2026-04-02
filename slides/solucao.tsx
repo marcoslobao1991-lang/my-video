@@ -5,7 +5,7 @@
 // ~35 slides | 1 stack | 2 graphs (262: 500 palavras, 269: 200 letras)
 
 import React from "react";
-import { staticFile } from "remotion";
+import { staticFile, useCurrentFrame, OffthreadVideo } from "remotion";
 import { T, Spacer, AccentLine, WaveformBars } from "./components";
 
 type UseStackVisible = (slide: number, itemIndex: number) => boolean;
@@ -75,18 +75,29 @@ R.set(305, () => {
   );
 });
 
-// 11:50.40 — "no começo era difícil"
-R.set(306, () => (
-  <div className="slide center">
-    <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp">
-      No comeco era <span className="red" style={{ fontWeight: 600 }}>dificil</span>.
-    </T>
-    <Spacer h={14} />
-    <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp" delay="d2">
-      Hoje voce faz <span className="teal" style={{ fontWeight: 600 }}>sem pensar</span>.
-    </T>
-  </div>
-));
+// 11:50.40 — "no começo difícil / sem pensar" @ 715.72
+R.set(306, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showSemPensar = time >= 715.72;
+  return (
+    <div className="slide center">
+      <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp">
+        No comeco era <span className="red" style={{ fontWeight: 600 }}>dificil</span>.
+      </T>
+      <div style={{
+        marginTop: 14,
+        opacity: showSemPensar ? 1 : 0,
+        transform: showSemPensar ? "translateY(0)" : "translateY(15px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+      }}>
+        <T size={44} weight={400} opacity={0.4}>
+          Hoje voce faz <span className="teal" style={{ fontWeight: 600 }}>sem pensar</span>.
+        </T>
+      </div>
+    </div>
+  );
+});
 
 // 11:57.70 — "o AUTOMÁTICO"
 R.set(307, () => (
@@ -125,15 +136,30 @@ R.set(310, () => (
   </div>
 ));
 
-// 12:16.20 — "do essencial"
-R.set(311, () => (
-  <div className="slide left">
-    <AccentLine />
-    <T size={46} weight={500} opacity={0.55} anim="anim-slideLeft">
-      Nao do ingles inteiro. Do <span className="bold">essencial</span>.
-    </T>
-  </div>
-));
+// 12:13.64 — "não do inglês inteiro / Do ESSENCIAL" @ 738.04
+R.set(311, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showEssencial = time >= 737.70;
+  return (
+    <div className="slide left">
+      <AccentLine />
+      <T size={46} weight={500} opacity={0.55} anim="anim-slideLeft">
+        Nao do ingles inteiro.
+      </T>
+      <div style={{
+        marginTop: 12,
+        opacity: showEssencial ? 1 : 0,
+        transform: showEssencial ? "translateX(0)" : "translateX(-20px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+      }}>
+        <T size={50} weight={700} opacity={0.8}>
+          Do <span className="teal" style={{ fontWeight: 800 }}>essencial</span>.
+        </T>
+      </div>
+    </div>
+  );
+});
 
 // 12:23.80 — "Paul Nation"
 R.set(312, () => (
@@ -152,18 +178,29 @@ R.set(312, () => (
   </div>
 ));
 
-// 12:27.50 — "500 palavras = 90%"
-R.set(313, () => (
-  <div className="slide center">
-    <T size={80} weight={800} opacity={1} anim="anim-scaleIn" className="teal glow-teal-text">
-      500
-    </T>
-    <Spacer h={8} />
-    <T size={40} weight={400} opacity={0.4} anim="anim-fadeIn" delay="d2">
-      palavras = <span className="bold">90%</span> das conversas.
-    </T>
-  </div>
-));
+// 12:30.44 — "500 palavras = 90%" — sync 90% @ 752.58
+R.set(313, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const show90 = time >= 751.42;
+  return (
+    <div className="slide center">
+      <T size={80} weight={800} opacity={1} anim="anim-scaleIn" className="teal glow-teal-text">
+        500
+      </T>
+      <Spacer h={8} />
+      <div style={{
+        opacity: show90 ? 1 : 0,
+        transform: show90 ? "translateY(0)" : "translateY(10px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+      }}>
+        <T size={40} weight={400} opacity={0.4}>
+          palavras = <span className="bold">90%</span> das conversas.
+        </T>
+      </div>
+    </div>
+  );
+});
 
 // 12:31.40 — GRAPH 262: 500 palavras donut (fica ~5s)
 
@@ -188,18 +225,42 @@ R.set(315, () => (
   </div>
 ));
 
-// 12:49.40 — "Coldplay, Adele, Ed Sheeran"
-R.set(316, () => (
+// 12:47.30 — "conteúdo vem disfarçado"
+R.set(69, () => (
   <div className="slide center">
-    <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp">
-      Coldplay. Adele. Ed Sheeran.
-    </T>
-    <Spacer h={14} />
-    <T size={46} weight={600} opacity={0.65} anim="anim-fadeUp" delay="d2">
-      <span className="red">Nao funciona</span>.
+    <T size={44} weight={400} opacity={0.45} anim="anim-fadeUp">
+      O conteudo vem <span className="teal" style={{ fontWeight: 600 }}>disfarcado</span>. Nao parece estudo.
     </T>
   </div>
 ));
+
+// 12:50.50 — "Coldplay, Adele / Não funciona" @ 775.22
+R.set(316, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showNao = time >= 775.22;
+  return (
+    <div className="slide center">
+      <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp">
+        Coldplay. Adele. Ed Sheeran.
+      </T>
+      <div style={{
+        marginTop: 14,
+        opacity: showNao ? 1 : 0,
+        transform: showNao ? "scale(1)" : "scale(0.7)",
+        transition: "opacity 0.3s ease, transform 0.3s cubic-bezier(.16,1,.3,1)",
+      }}>
+        <span style={{
+          fontSize: 46, fontWeight: 700,
+          color: "#FF6B6B",
+          textShadow: "0 0 30px rgba(255,107,107,0.4)",
+        }}>
+          Nao funciona.
+        </span>
+      </div>
+    </div>
+  );
+});
 
 // 12:57.20 — "ninguém conversa como Coldplay canta"
 R.set(317, () => (
@@ -222,25 +283,18 @@ R.set(318, () => (
 // 13:12.10 — "decorar 200 letras ≠ 1 diálogo"
 // GRAPH 269: 200 letras (fica ~4s)
 
-// 13:16.10 — "o inglês real acontece nas séries"
-R.set(319, () => (
+// 13:14.92 — "inglês real nas séries" → fullscreen graph in GraphSlides (ID 68)
+
+// 13:24.98 — "o inglês essencial que Paul Nation identificou"
+R.set(70, () => (
   <div className="slide center">
-    <T size={46} weight={500} opacity={0.6} anim="anim-fadeUp">
-      O ingles real acontece nas <span className="teal" style={{ fontWeight: 700 }}>series</span>.
+    <T size={44} weight={500} opacity={0.55} anim="anim-fadeUp">
+      O <span className="gradient-text" style={{ fontWeight: 700 }}>ingles essencial</span> que Paul Nation identificou.
     </T>
   </div>
 ));
 
-// 13:19.90 — "conversa, diálogo, expressão, gíria"
-R.set(320, () => (
-  <div className="slide left">
-    <T size={40} weight={400} opacity={0.35} anim="anim-slideLeft">Conversa. Dialogo. Expressao. Giria.</T>
-    <Spacer h={10} />
-    <T size={40} weight={400} opacity={0.35} anim="anim-slideLeft" delay="d2">Mesmas estruturas se <span className="bold">repetindo</span>.</T>
-  </div>
-));
-
-// 13:27.70 — "E aí veio a ideia"
+// 13:27.72 — "E aí veio a ideia"
 R.set(321, () => (
   <div className="slide center">
     <T size={50} weight={600} opacity={0.7} anim="anim-blurIn" className="gradient-text">
@@ -250,30 +304,54 @@ R.set(321, () => (
 ));
 
 // 13:31.40 — "script da série → música"
-R.set(322, () => (
-  <div className="slide center">
-    <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp">
-      Pegar o <span className="bold">script real</span> de uma serie
-    </T>
-    <Spacer h={14} />
-    <T size={48} weight={600} opacity={0.75} anim="anim-scaleIn" delay="d2" className="teal glow-teal-text">
-      e transformar em musica.
-    </T>
-  </div>
-));
+R.set(322, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showTransformar = time >= 812.84;
+  return (
+    <div className="slide center">
+      <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp">
+        Pegar o <span className="bold">script real</span> de uma serie
+      </T>
+      <div style={{
+        marginTop: 14,
+        opacity: showTransformar ? 1 : 0,
+        transform: showTransformar ? "scale(1)" : "scale(0.7)",
+        transition: "opacity 0.3s ease, transform 0.3s cubic-bezier(.16,1,.3,1)",
+      }}>
+        <span style={{
+          fontSize: 48, fontWeight: 600,
+          color: "#4ECDC4",
+          textShadow: "0 0 30px rgba(78,205,196,0.4)",
+        }}>e transformar em musica.</span>
+      </div>
+    </div>
+  );
+});
 
 // 13:39.00 — "30, 40, 50 vezes → reconhecer palavra por palavra"
-R.set(323, () => (
-  <div className="slide left">
-    <T size={44} weight={400} opacity={0.45} anim="anim-slideLeft">
-      Ouviu <span className="bold">50 vezes</span>. Cena toca.
-    </T>
-    <Spacer h={10} />
-    <T size={44} weight={400} opacity={0.45} anim="anim-slideLeft" delay="d2">
-      Reconhece <span className="teal" style={{ fontWeight: 600 }}>palavra por palavra</span>.
-    </T>
-  </div>
-));
+R.set(323, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showReconhece = time >= 821.62;
+  return (
+    <div className="slide left">
+      <T size={44} weight={400} opacity={0.45} anim="anim-slideLeft">
+        Ouviu <span className="bold">50 vezes</span>. Cena toca.
+      </T>
+      <div style={{
+        marginTop: 10,
+        opacity: showReconhece ? 1 : 0,
+        transform: showReconhece ? "translateX(0)" : "translateX(-20px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+      }}>
+        <T size={44} weight={400} opacity={0.45}>
+          Reconhece <span className="teal" style={{ fontWeight: 600 }}>palavra por palavra</span>.
+        </T>
+      </div>
+    </div>
+  );
+});
 
 // 13:46.60 — "não é colocar batida por cima"
 R.set(324, () => (
@@ -322,17 +400,30 @@ R.set(328, () => (
   </div>
 ));
 
-// 14:11.10 — "fomos atrás dos PIORES"
-R.set(329, () => (
-  <div className="slide center">
-    <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp">
-      Nao nos melhores.
-    </T>
-    <Spacer h={16} />
-    <T size={56} weight={700} opacity={0.9} anim="anim-scaleIn" delay="d2" className="red glow-red-text">
-      Nos piores.
-    </T>
-  </div>
-));
+// 14:11.10 — "não nos melhores / NOS PIORES" @ 855.18
+R.set(329, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showPiores = time >= 854.60;
+  return (
+    <div className="slide center">
+      <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp">
+        Nao nos melhores.
+      </T>
+      <div style={{
+        marginTop: 16,
+        opacity: showPiores ? 1 : 0,
+        transform: showPiores ? "scale(1)" : "scale(0.6)",
+        transition: "opacity 0.3s ease, transform 0.3s cubic-bezier(.16,1,.3,1)",
+      }}>
+        <span style={{
+          fontSize: 56, fontWeight: 800,
+          color: "#FF6B6B",
+          textShadow: "0 0 40px rgba(255,107,107,0.5), 0 0 80px rgba(255,107,107,0.2)",
+        }}>Nos piores.</span>
+      </div>
+    </div>
+  );
+});
 
 } // end registerSolucao

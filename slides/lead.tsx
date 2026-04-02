@@ -3,6 +3,7 @@
 // 25 slides | 4 stacks
 
 import React from "react";
+import { useCurrentFrame } from "remotion";
 import { T, Spacer, AccentLine, HeadphoneSVG } from "./components";
 
 type UseStackVisible = (slide: number, itemIndex: number) => boolean;
@@ -40,13 +41,9 @@ R.set(3, () => (
   </div>
 ));
 
-// 0:04.78 — "30, 40 vezes"
+// 0:04.78 — "30, 40 vezes" → counter starts here (rendered by RepetitionCounter in VSLOverlay)
 R.set(4, () => (
-  <div className="slide center">
-    <T size={100} weight={800} opacity={1} anim="anim-scaleIn" className="gradient-animated glow-gradient-text">
-      30, 40 vezes.
-    </T>
-  </div>
+  <div className="slide center" />
 ));
 
 // 0:06.98 — STACK: trânsito / academia / dormir
@@ -63,6 +60,15 @@ R.set(5, () => {
     </div>
   );
 });
+
+// 0:08.50 — "não porque alguém mandou"
+R.set(28, () => (
+  <div className="slide center">
+    <T size={42} weight={400} opacity={0.45} anim="anim-fadeUp">
+      Nao porque alguem <span className="red" style={{ fontWeight: 700 }}>mandou</span> voce ouvir.
+    </T>
+  </div>
+));
 
 // 0:09.42 — "grudou na cabeça"
 R.set(6, () => (
@@ -82,11 +88,12 @@ R.set(7, () => (
   </div>
 ));
 
-// 0:18.12 — "Entender tudo."
+// 0:18.12 — "Entender tudo." — payoff moment
 R.set(8, () => (
   <div className="slide center">
     <div className="double-glow" />
-    <T size={80} weight={700} opacity={1} anim="anim-scaleIn" className="gradient-animated glow-gradient-text">
+    <div className="double-glow" />
+    <T size={90} weight={900} opacity={1} anim="anim-scaleIn" className="gradient-animated glow-gradient-text">
       Entender tudo.
     </T>
   </div>
@@ -106,15 +113,7 @@ R.set(9, () => {
   );
 });
 
-// 0:23.16 — "SÉRIE CANTADA."
-R.set(10, () => (
-  <div className="slide center">
-    <div className="double-glow" />
-    <T size={80} weight={800} opacity={1} anim="anim-scaleIn" className="gradient-animated glow-gradient-text">
-      SERIE CANTADA.
-    </T>
-  </div>
-));
+// 0:23.16 — "SÉRIE CANTADA" → now a fullscreen graph in GraphSlides.tsx (ID 10)
 
 // 0:24.24 — "mesmas estruturas"
 R.set(11, () => (
@@ -126,18 +125,17 @@ R.set(11, () => (
   </div>
 ));
 
-// 0:29.54 — "som embolado → faz sentido"
+// 0:29.54 — "quando você conecta essas estruturas"
 R.set(12, () => (
   <div className="slide center">
-    <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp">
-      <span className="red">Som embolado</span>
-    </T>
-    <Spacer h={16} />
-    <T size={52} weight={600} opacity={0.85} anim="anim-blurIn" delay="d3" className="gradient-text">
-      comeca a fazer sentido.
+    <T size={42} weight={400} opacity={0.45} anim="anim-fadeUp">
+      Quando voce <span className="bold">conecta</span> essas estruturas...
     </T>
   </div>
 ));
+
+// 0:31.78 — "som embolado → faz sentido" — now a fullscreen graph (ID 29 in GraphSlides)
+// 0:32.32 — phase 2 of same graph (ID 52 removed)
 
 // 0:33.78 — "milhares de brasileiros"
 R.set(13, () => (
@@ -148,7 +146,16 @@ R.set(13, () => (
   </div>
 ));
 
-// 0:38.34 — STACK: Hopkins / McGill / Stanford / MIT
+// 0:38.34 — "Método com influência:"
+R.set(87, () => (
+  <div className="slide center">
+    <T size={48} weight={600} opacity={0.7} anim="anim-fadeUp">
+      Metodo com <span className="gradient-text" style={{ fontWeight: 800 }}>influencia</span>:
+    </T>
+  </div>
+));
+
+// 0:40.24 — STACK: Hopkins / McGill / Stanford / MIT
 R.set(14, () => {
   const v = [useStackVisible(14, 0), useStackVisible(14, 1), useStackVisible(14, 2), useStackVisible(14, 3)];
   return (
@@ -179,6 +186,17 @@ R.set(16, () => (
     <div className="glow-purple" style={{ bottom: "15%", right: "5%" }} />
     <T size={46} weight={500} opacity={0.55} anim="anim-slideLeft">
       O <span className="gradient-text" style={{ fontWeight: 600 }}>formato ideal</span> pra qualquer adulto.
+    </T>
+  </div>
+));
+
+// 0:46.98 — "INGLÊS EM DEFINITIVO" — punch
+R.set(53, () => (
+  <div className="slide center">
+    <div className="double-glow" />
+    <div className="double-glow" />
+    <T size={80} weight={900} opacity={1} anim="anim-scaleIn" className="gradient-animated glow-gradient-text">
+      INGLES EM DEFINITIVO.
     </T>
   </div>
 ));
@@ -244,19 +262,44 @@ R.set(22, () => (
   </div>
 ));
 
-// 1:06.36 — "A MÚSICA."
-R.set(23, () => (
+// 1:05.82 — "A MÚSICA." + "ferramenta de repetição" @ 67.38s
+R.set(23, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showSub = time >= 67.38;
+  return (
+    <div className="slide center">
+      <div className="double-glow" />
+      <HeadphoneSVG />
+      <Spacer h={24} />
+      <T size={100} weight={900} opacity={1} anim="anim-scaleIn" delay="d2" className="gradient-animated glow-gradient-text">
+        A MUSICA.
+      </T>
+      <div style={{
+        marginTop: 20,
+        fontSize: 24, fontWeight: 500,
+        color: "rgba(255,255,255,0.35)",
+        letterSpacing: 2,
+        opacity: showSub ? 1 : 0,
+        transform: showSub ? "translateY(0)" : "translateY(10px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+      }}>
+        Ferramenta de <span style={{ color: "#4ECDC4", fontWeight: 700 }}>repeticao</span>.
+      </div>
+    </div>
+  );
+});
+
+// 1:08.90 — "Fluência para:"
+R.set(54, () => (
   <div className="slide center">
-    <div className="double-glow" />
-    <HeadphoneSVG />
-    <Spacer h={24} />
-    <T size={100} weight={900} opacity={1} anim="anim-scaleIn" delay="d2" className="gradient-animated glow-gradient-text">
-      A MUSICA.
+    <T size={52} weight={700} opacity={0.8} anim="anim-fadeUp" className="gradient-text glow-gradient-text">
+      Fluencia para:
     </T>
   </div>
 ));
 
-// 1:09.28 — STACK: objetivos
+// 1:09.92 — STACK: objetivos
 R.set(24, () => {
   const v = [useStackVisible(24, 0), useStackVisible(24, 1), useStackVisible(24, 2), useStackVisible(24, 3), useStackVisible(24, 4)];
   return (
@@ -279,6 +322,20 @@ R.set(25, () => (
   <div className="slide center">
     <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">
       Vai <span className="gradient-text" style={{ fontWeight: 600 }}>mudar completamente</span>.
+    </T>
+  </div>
+));
+
+// 1:21.92 — "aprendizado de INGLÊS" — punch
+R.set(55, () => (
+  <div className="slide center">
+    <div className="double-glow" />
+    <T size={32} weight={500} opacity={0.4} anim="anim-fadeUp">
+      Aprendizado de
+    </T>
+    <Spacer h={8} />
+    <T size={90} weight={900} opacity={1} anim="anim-scaleIn" delay="d2" className="gradient-animated glow-gradient-text">
+      INGLES.
     </T>
   </div>
 ));

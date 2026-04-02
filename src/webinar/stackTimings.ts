@@ -11,9 +11,10 @@ export const STACK_TIMINGS: StackTiming[] = [
   { slide: 14, items: [40.24, 41.08, 41.74, 42.30] }, // Hopkins / McGill / Stanford / MIT
   { slide: 24, items: [70.80, 72.36, 73.42, 75.12, 77.24] }, // Multinacional / Entrevista / Series / Viagens / Emprego
   { slide: 106, items: [196.24, 198.88, 201.54, 203.10, 204.18] }, // Conteudo / Didatica / Modulos / Ordem / Contratei
-  { slide: 115, items: [276.00, 277.40, 278.60] }, // Motivados / Horario / Melhor material
+  { slide: 115, items: [274.94, 276.06, 277.10] }, // Motivados / Horario / Melhor material
   { slide: 121, items: [310.70, 311.60, 312.56, 313.88] }, // Sentar / Prestar atencao / Processar / Energia mental
   { slide: 203, items: [467.90, 469.62, 475.50] }, // Esforco / Repetir 50x / Porque quer
+  { slide: 305, items: [708.84, 709.72, 710.22] }, // Bicicleta / Dirigir / Digitar
   { slide: 711, items: [1267.34, 1268.24, 1268.78, 1269.72, 1270.50] }, // Blocos / Trilhas / Discursos / Series / Material bilingue
 ];
 

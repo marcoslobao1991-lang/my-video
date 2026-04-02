@@ -1,0 +1,616 @@
+// REF: 03_PROBLEMA (60 slides)
+// These are REFERENCE slides from the old version. Copy and improve, do not use directly.
+
+// S43 @ 3:04.2
+  SLIDE_REGISTRY.set(43, () => (
+    <div className="slide center">
+      <T size={44} opacity={0.6} anim="anim-fadeUp">Comecou a crescer um <span className="red" style={{ fontWeight: 700 }}>outro grupo</span>.</T>
+    </div>
+  ));
+
+  // ═══ BLOCK 3 — PROBLEMA ═══
+
+  // 45 — Esse grupo era maior (audio: "esse grupo era maior do que eu gostaria de admitir")
+
+// S44 @ 3:09.4
+  SLIDE_REGISTRY.set(44, () => {
+    const v = [useStackVisible(44, 0), useStackVisible(44, 1), useStackVisible(44, 2)];
+    return (
+      <div className="slide left">
+        {v[0] && <T size={42} weight={500} opacity={0.5} anim="anim-slideLeft">Queriam a fluencia <span className="bold">tanto quanto</span> os outros.</T>}
+        {v[0] && <Spacer h={12} />}
+        {v[1] && <T size={42} weight={500} opacity={0.4} anim="anim-slideLeft">Eles <span className="red" style={{ fontWeight: 700 }}>desistiam</span> e nao voltavam mais.</T>}
+        {v[1] && <Spacer h={12} />}
+        {v[2] && <T size={38} weight={400} opacity={0.3} anim="anim-slideLeft">E no comeco eu fiz o que qualquer dono de curso faria.</T>}
+      </div>
+    );
+  });
+
+  // S45 DELETED — duplicate of S44
+
+  // 47 — Queriam / Desistiam / Nao voltavam
+  // 47 — Achei conteúdo / didática / refizemos / mudei / contratei — STACK synced
+
+// S46 @ 3:16.2
+  SLIDE_REGISTRY.set(46, () => {
+    const v = [useStackVisible(46, 0), useStackVisible(46, 1), useStackVisible(46, 2), useStackVisible(46, 3), useStackVisible(46, 4)];
+    return (
+      <div className="slide left">
+        {v[0] && <T size={38} weight={400} opacity={0.4} anim="anim-slideLeft">Achei que era o conteudo. <span className="bold">Melhorei.</span></T>}
+        {v[0] && <Spacer h={8} />}
+        {v[1] && <T size={38} weight={400} opacity={0.35} anim="anim-slideLeft">Achei que era a didatica. <span className="bold">Melhorei.</span></T>}
+        {v[1] && <Spacer h={8} />}
+        {v[2] && <T size={38} weight={400} opacity={0.3} anim="anim-slideLeft">Refizemos modulos inteiros.</T>}
+        {v[2] && <Spacer h={8} />}
+        {v[3] && <T size={38} weight={400} opacity={0.25} anim="anim-slideLeft">Mudei a ordem das aulas.</T>}
+        {v[3] && <Spacer h={8} />}
+        {v[4] && <T size={38} weight={400} opacity={0.2} anim="anim-slideLeft">Contratei gente nova.</T>}
+      </div>
+    );
+  });
+
+  // S47 DELETED — duplicate of S46
+
+  // 49 — Os numeros nao mudavam
+
+// S48 @ 3:25.7
+  SLIDE_REGISTRY.set(48, () => (
+    <div className="slide center">
+      <T size={52} weight={700} color="#FF6B6B" anim="anim-scaleIn">Os numeros nao mudavam.</T>
+    </div>
+  ));
+
+  // 50 — cursos inacabados
+
+// S49 @ 3:30.2
+  SLIDE_REGISTRY.set(49, () => (
+    <div className="slide center">
+      <T size={42} opacity={0.6}>
+        Isso explica por que voce tem <span className="bold">cursos inacabados</span> agora mesmo.
+      </T>
+    </div>
+  ));
+
+  // 51 — Fui medir as horas REAIS
+
+// S50 @ 3:35.6
+  SLIDE_REGISTRY.set(50, () => (
+    <div className="slide left">
+      <T size={44} anim="anim-slideLeft">
+        Fui medir as horas <span className="teal" style={{ fontWeight: 700 }}>REAIS</span>.
+      </T>
+    </div>
+  ));  // S51 — moved to VSLSlides_unused.tsx  // S52 — moved to VSLSlides_unused.tsx
+
+  // 54 — Nao eram mais inteligentes
+
+// S53 @ 3:58.8
+  SLIDE_REGISTRY.set(53, () => (
+    <div className="slide center">
+      <T size={44}>Nao eram mais inteligentes. <span className="bold">Persistiram mais.</span></T>
+    </div>
+  ));  // S54 — moved to VSLSlides_unused.tsx  // S56 — moved to VSLSlides_unused.tsx
+
+  // 58 — Kris Nielson
+
+// S57 @ 4:29.6
+  SLIDE_REGISTRY.set(57, () => (
+    <div className="slide left">
+      <AccentLine />
+      <T size={44} weight={600} anim="anim-slideLeft">Kris Nielson — 2014</T>
+      <Spacer h={12} />
+      <T size={28} opacity={0.35} anim="anim-slideLeft" delay="d2">Estudo sobre desistencia em cursos de idiomas</T>
+    </div>
+  ));
+
+  // 59 — 150 funcionarios
+
+// S58 @ 4:31.1
+  SLIDE_REGISTRY.set(58, () => (
+    <div className="slide center">
+      <T size={44}>150 funcionarios do governo americano.</T>
+    </div>
+  ));  // S59 — moved to VSLSlides_unused.tsx  // S60 — moved to VSLSlides_unused.tsx  // S61 — moved to VSLSlides_unused.tsx
+
+  // 63 — 1 em 150
+
+// S63 @ 5:16.2
+  SLIDE_REGISTRY.set(63, () => (
+    <div className="slide center">
+      <T size={44} opacity={0.6} anim="anim-blurIn">Tem um <span className="bold">problema</span> nessa logica.</T>
+    </div>
+  ));
+
+  // 65 — Todo curso do mundo = AULA
+
+// S64 @ 5:03.0
+  SLIDE_REGISTRY.set(64, () => (
+    <div className="slide center">
+      <T size={40} opacity={0.5} anim="anim-fadeUp">Todo curso do mundo =</T>
+      <Spacer h={8} />
+      <T size={90} weight={900} color="#FF6B6B" anim="anim-scaleIn" delay="d2" className="glow-red-text">AULA</T>
+    </div>
+  ));
+
+  // 66 — types — synced
+
+// S65 @ 5:03.6
+  SLIDE_REGISTRY.set(65, () => {
+    const items = ["Aula em video", "Aula ao vivo", "Com jogo", "Com nativo", "Com VR"];
+    return (
+      <div className="slide center">
+        {items.map((t, i) => {
+          if (!useStackVisible(65, i)) return null;
+          return (
+            <div key={t}>
+              <T size={40} opacity={0.3} anim="anim-fadeUp">{t}</T>
+              {i < 4 && <Spacer h={8} />}
+            </div>
+          );
+        })}
+      </div>
+    );
+  });
+
+  // 67 — Todos pedem a mesma coisa
+
+// S66 @ 5:08.6
+  SLIDE_REGISTRY.set(66, () => (
+    <div className="slide center">
+      <T size={44} opacity={0.7}>Todos pedem a mesma coisa:</T>
+    </div>
+  ));
+
+  // 68 — Sentar / Prestar atenção / Processar / ENERGIA MENTAL — STACK synced
+
+// S67 @ 5:10.7
+  SLIDE_REGISTRY.set(67, () => {
+    const v = [useStackVisible(67, 0), useStackVisible(67, 1), useStackVisible(67, 2), useStackVisible(67, 3)];
+    return (
+      <div className="slide center">
+        {v[0] && <T size={42} weight={500} opacity={0.4} anim="anim-fadeUp">Sentar.</T>}
+        {v[0] && <Spacer h={10} />}
+        {v[1] && <T size={42} weight={500} opacity={0.4} anim="anim-fadeUp">Prestar atencao.</T>}
+        {v[1] && <Spacer h={10} />}
+        {v[2] && <T size={42} weight={500} opacity={0.4} anim="anim-fadeUp">Processar informacao.</T>}
+        {v[2] && <Spacer h={14} />}
+        {v[3] && <T size={56} weight={800} color="#FF6B6B" anim="anim-scaleIn" className="glow-red-text">ENERGIA MENTAL.</T>}
+      </div>
+    );
+  });
+
+  // 69 — Sabe o que acontece? (audio: "E sabe o que acontece")
+
+// S68 @ 5:47.6
+  SLIDE_REGISTRY.set(68, () => (
+    <div className="slide center">
+      <T size={46} opacity={0.6} anim="anim-blurIn">Sabe o que <span className="bold">acontece</span>?</T>
+    </div>
+  ));
+
+  // 70 — O adulto nao chega assim
+
+// S69 @ 5:25.9
+  SLIDE_REGISTRY.set(69, () => (
+    <div className="slide center">
+      <T size={44}>O adulto nao chega assim.</T>
+    </div>
+  ));  // S70 — moved to VSLSlides_unused.tsx  // S71 — moved to VSLSlides_unused.tsx  // S72 — moved to VSLSlides_unused.tsx  // S73 — moved to VSLSlides_unused.tsx
+
+  // 75 — Academia / projeto na gaveta (audio: "academia que quer ir e não vai, projeto que não sai da gaveta")
+
+// S75 @ 6:10.4
+  SLIDE_REGISTRY.set(75, () => (
+    <div className="slide center">
+      <T size={42} opacity={0.5} anim="anim-fadeUp">E tambem nao e um problema so seu.</T>
+    </div>
+  ));
+
+  // 77 — Nao e falta de vontade
+
+// S76 @ 6:09.6
+  SLIDE_REGISTRY.set(76, () => (
+    <div className="slide center">
+      <T size={48} weight={500} anim="anim-fadeUp">Nao e falta de vontade.</T>
+      <Spacer h={12} />
+      <T size={42} opacity={0.5} anim="anim-fadeUp" delay="d2">Nem de motivacao.</T>
+    </div>
+  ));
+
+  // 78 — JOHNS HOPKINS 2024
+
+// S77 @ 6:13.9
+  SLIDE_REGISTRY.set(77, () => (
+    <div className="slide left">
+      <AccentLine />
+      <T size={48} weight={700} anim="anim-slideLeft">JOHNS HOPKINS — 2024</T>
+    </div>
+  ));
+
+  // 79 — Ofereceram DINHEIRO
+
+// S78 @ 6:21.4
+  SLIDE_REGISTRY.set(78, () => (
+    <div className="slide center">
+      <T size={44}>
+        Ofereceram <span className="teal" style={{ fontWeight: 700 }}>DINHEIRO</span> pra continuar.
+      </T>
+    </div>
+  ));
+
+  // 80 — 90% recusaram
+
+// S82 @ 6:47.9
+  SLIDE_REGISTRY.set(82, () => (
+    <div className="slide center">
+      <T size={44} opacity={0.5} anim="anim-fadeUp">O aluno vai <span className="red" style={{ fontWeight: 700 }}>desistir</span>.</T>
+      <Spacer h={16} />
+      <T size={36} opacity={0.3} anim="anim-fadeUp" delay="d2">E se sentir culpado. Achar que nao leva jeito.</T>
+    </div>
+  ));
+
+  // 84 — Acha que inglês é difícil demais (audio: "acha que o inglês é difícil demais")
+
+// S83 @ 6:53.1
+  SLIDE_REGISTRY.set(83, () => (
+    <div className="slide center">
+      <T size={44} anim="anim-fadeUp">Acha que o ingles e <span className="red" style={{ fontWeight: 700 }}>dificil demais</span>.</T>
+    </div>
+  ));  // S84 — moved to VSLSlides_unused.tsx  // S85 — moved to VSLSlides_unused.tsx  // S86 — moved to VSLSlides_unused.tsx  // S87 — moved to VSLSlides_unused.tsx  // S88 — moved to VSLSlides_unused.tsx  // S89 — moved to VSLSlides_unused.tsx
+
+  // 91 — Com a rotina
+  // S90 — audio: "quem mais precisa chega destruído, sem energia pra aula"
+
+// S410 @ 4:04.5
+SLIDE_REGISTRY.set(410, () => (
+  <div className="slide center">
+    <T size={42} opacity={0.5} anim="anim-fadeUp">Poderia ter parado aqui.</T>
+    <Spacer h={12} />
+    <T size={36} opacity={0.3} anim="anim-fadeUp" delay="d2">O metodo funcionava pra quem ia la e fazia.</T>
+  </div>
+));
+
+
+// S411 @ 4:09.6
+SLIDE_REGISTRY.set(411, () => (
+  <div className="slide center">
+    <T size={44} anim="anim-blurIn">Quis entender por que <span className="red" style={{ fontWeight: 700 }}>desistiam</span> tao rapido.</T>
+  </div>
+));
+
+
+// S412 @ 4:16.3
+SLIDE_REGISTRY.set(412, () => (
+  <div className="slide center">
+    <T size={42} opacity={0.6} anim="anim-fadeUp">O padrao era <span className="bold">identico</span> em todo lugar.</T>
+    <Spacer h={12} />
+    <T size={32} opacity={0.25} anim="anim-fadeUp" delay="d2">Nao importava o preco. Nem a metodologia. Nem o professor.</T>
+  </div>
+));
+
+// #4 area — S62 (4:49-5:04) 15s → 2 novos
+
+// S413 @ 4:50.2
+SLIDE_REGISTRY.set(413, () => (
+  <div className="slide center">
+    <T size={44} anim="anim-fadeUp">O problema <span className="red" style={{ fontWeight: 700 }}>nao podia</span> ser o conteudo.</T>
+  </div>
+));
+
+
+// S414 @ 4:56.0
+SLIDE_REGISTRY.set(414, () => (
+  <div className="slide center">
+    <T size={42} opacity={0.5} anim="anim-blurIn">Todo curso do mundo gira em torno de uma unica coisa:</T>
+  </div>
+));
+
+// #5+6 area — S77+S78 (6:14-6:48) 34s → 4 novos
+
+// S415 @ 6:16.0
+SLIDE_REGISTRY.set(415, () => (
+  <div className="slide center">
+    <T size={40} opacity={0.5} anim="anim-fadeUp">Colocaram voluntarios pra fazer tarefas mentais.</T>
+    <Spacer h={12} />
+    <T size={40} opacity={0.5} anim="anim-fadeUp" delay="d2">Por horas. Ate ficarem <span className="red" style={{ fontWeight: 700 }}>esgotados</span>.</T>
+  </div>
+));
+
+
+// S416 @ 6:27.3
+SLIDE_REGISTRY.set(416, () => (
+  <div className="slide center">
+    <T size={48} weight={700} anim="anim-scaleIn">90% recusaram o dinheiro.</T>
+    <Spacer h={16} />
+    <T size={36} opacity={0.3} anim="anim-fadeUp" delay="d2">E simplesmente foram embora.</T>
+  </div>
+));
+
+
+// S417 @ 6:30.4
+SLIDE_REGISTRY.set(417, () => (
+  <div className="slide center">
+    <T size={40} opacity={0.5} anim="anim-blurIn">A regiao do cerebro que avalia <span className="bold">recompensa</span>:</T>
+    <Spacer h={16} />
+    <T size={56} weight={800} className="red glow-red-text" anim="anim-scaleIn" delay="d2">DESLIGADA.</T>
+  </div>
+));
+
+
+// S418 @ 6:42.2
+SLIDE_REGISTRY.set(418, () => (
+  <div className="slide center">
+    <T size={40} opacity={0.4} anim="anim-fadeUp">O adulto chega com cansaco mental pra uma aula.</T>
+    <Spacer h={16} />
+    <T size={44} weight={700} anim="anim-fadeUp" delay="d2">O ingles <span className="red">nao entra</span>.</T>
+  </div>
+));
+
+// #7 area — S83 (6:50-7:00) 10s → 1 novo
+
+// S419 @ 6:56.1
+SLIDE_REGISTRY.set(419, () => (
+  <div className="slide center">
+    <T size={44} anim="anim-fadeUp">A culpa nunca foi dele.</T>
+    <Spacer h={12} />
+    <T size={44} anim="anim-fadeUp" delay="d2">A culpa e do <span className="gradient-animated" style={{ fontWeight: 800, fontSize: 52 }}>FORMATO</span>.</T>
+  </div>
+));
+
+// #8 area — S95 (7:44-8:04) 20s → 3 novos
+
+// S439 @ 5:17.6
+SLIDE_REGISTRY.set(439, () => (
+  <div className="slide center">
+    <T size={64} weight={800} color="#FF6B6B" anim="anim-scaleIn" className="glow-red-text">AULA</T>
+    <Spacer h={12} />
+    <T size={42} opacity={0.5} anim="anim-fadeUp" delay="d2">funciona pra adolescente.</T>
+  </div>
+));
+
+// S440 — "Cabeça FRESCA" (gap #27, 5:22)
+
+// S440 @ 5:22.1
+SLIDE_REGISTRY.set(440, () => (
+  <div className="slide center">
+    <T size={42} opacity={0.5} anim="anim-fadeUp">Pra quem chega com a cabeca</T>
+    <Spacer h={10} />
+    <T size={60} weight={800} color="#4ECDC4" anim="anim-scaleIn" delay="d2" className="glow-teal-text">FRESCA.</T>
+  </div>
+));
+
+// S441 — Stack: Não faz a aula / Abre e não presta atenção (5:49)
+
+// S441 @ 5:49.1
+SLIDE_REGISTRY.set(441, () => {
+  const v = [useStackVisible(441, 0), useStackVisible(441, 1)];
+  return (
+    <div className="slide center">
+      {v[0] && <T size={44} weight={600} opacity={0.5} anim="anim-fadeUp">Voce nao faz a aula.</T>}
+      {v[0] && <Spacer h={12} />}
+      {v[1] && <T size={44} weight={600} opacity={0.5} anim="anim-fadeUp">Abre e nao presta atencao.</T>}
+    </div>
+  );
+});
+
+// S443 — LATIM punch positivo (9:41)
+
+// S442 @ 5:52.1
+SLIDE_REGISTRY.set(442, () => {
+  const v = [useStackVisible(442, 0), useStackVisible(442, 1), useStackVisible(442, 2)];
+  return (
+    <div className="slide left">
+      {v[0] && <T size={42} weight={500} opacity={0.4} anim="anim-slideLeft">Cerebro no limite do <span className="red" style={{ fontWeight: 700 }}>cansaco</span>.</T>}
+      {v[0] && <Spacer h={12} />}
+      {v[1] && <T size={42} weight={500} opacity={0.45} anim="anim-slideLeft">A <span className="bold">academia</span> que voce quer ir e nao vai.</T>}
+      {v[1] && <Spacer h={12} />}
+      {v[2] && <T size={42} weight={500} opacity={0.5} anim="anim-slideLeft">O <span className="bold">projeto pessoal</span> que nao sai da gaveta.</T>}
+    </div>
+  );
+});
+
+
+// ─── Intermediate slides (IDs 500-656) — auto-generated ────
+
+// S514 @ 3:07.4
+SLIDE_REGISTRY.set(514, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">E esse grupo era <span className="red" style={{ fontWeight: 700 }}>maior</span> do que eu gostaria.</T>
+  </div>
+));
+
+
+// S517 @ 3:33.7
+SLIDE_REGISTRY.set(517, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp"><span className="bold">Eu</span> fui fazer uma coisa que ninguem faz.</T>
+  
+  </div>
+));
+
+
+// S518 @ 4:02.1
+SLIDE_REGISTRY.set(518, () => (
+  <div className="slide center">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Eles so <span className="bold">persistiram</span> mais.</T>
+  
+  </div>
+));
+
+
+// S519 @ 4:07.6
+SLIDE_REGISTRY.set(519, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Pra quem ia la e <span className="bold">fazia</span>.</T>
+  
+  </div>
+));
+
+
+// S520 @ 4:12.6
+SLIDE_REGISTRY.set(520, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-slideLeft">Fui olhar se acontecia com as <span className="bold">outras escolas</span>.</T>
+  
+  </div>
+));
+
+
+// S521 @ 4:15.6
+SLIDE_REGISTRY.set(521, () => (
+  <div className="slide left">
+    
+    <T size={48} weight={600} opacity={0.55} anim="anim-fadeUp">O <span className="red" style={{ fontWeight: 700 }}>padrao</span>.</T>
+  
+  </div>
+));
+
+
+// S522 @ 4:19.4
+SLIDE_REGISTRY.set(522, () => (
+  <div className="slide center">
+    <T size={46} weight={500} opacity={0.5} anim="anim-fadeUp">Nao importava a <span className="bold">metodologia</span>.</T>
+  </div>
+));
+
+
+// S523 @ 4:34.9
+SLIDE_REGISTRY.set(523, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp"><span className="bold">Gente</span> que estava motivada.</T>
+  </div>
+));
+
+
+// S524 @ 4:38.0
+SLIDE_REGISTRY.set(524, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Com o <span className="teal">melhor material</span> disponivel.</T>
+  </div>
+));
+
+
+// S525 @ 4:53.4
+SLIDE_REGISTRY.set(525, () => (
+  <div className="slide right">
+    <T size={44} weight={500} opacity={0.5} anim="anim-slideRight">Que ninguem tinha <span className="bold">percebido</span>.</T>
+  </div>
+));
+
+
+// S526 @ 5:00.2
+SLIDE_REGISTRY.set(526, () => (
+  <div className="slide center">
+    <T size={72} weight={500} opacity={0.7} anim="anim-scaleIn"><span className="red" style={{ fontWeight: 700 }}>Aula.</span></T>
+  </div>
+));
+
+
+// S528 @ 5:29.3
+SLIDE_REGISTRY.set(528, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp"><span className="bold">Pensa</span> na sua rotina. A rotina <span className="bold">real</span>.</T>
+  </div>
+));
+
+
+// S529 @ 5:32.3
+SLIDE_REGISTRY.set(529, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Se acordou ja tinha coisa pra <span className="bold">resolver</span>.</T>
+  </div>
+));
+
+
+// S532 @ 6:19.6
+SLIDE_REGISTRY.set(532, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp"><span className="red" style={{ fontWeight: 700 }}>Mentalmente esgotados</span>.</T>
+  
+  </div>
+));
+
+
+// S533 @ 6:24.5
+SLIDE_REGISTRY.set(533, () => (
+  <div className="slide center">
+    <T size={48} weight={500} opacity={0.55} anim="anim-fadeUp"><span className="bold">Adivinha</span> o que aconteceu.</T>
+  </div>
+));
+
+
+// S534 @ 6:34.0
+SLIDE_REGISTRY.set(534, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Isso tem nome.</T>
+  </div>
+));
+
+
+// S535 @ 6:37.1
+SLIDE_REGISTRY.set(535, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Ela atinge <span className="bold">praticamente todo adulto</span>.</T>
+  </div>
+));
+
+
+// S536 @ 6:40.1
+SLIDE_REGISTRY.set(536, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Na <span className="bold">correria</span> do dia a dia.</T>
+  </div>
+));
+
+
+// S537 @ 6:45.3
+SLIDE_REGISTRY.set(537, () => (
+  <div className="slide center">
+    
+    <T size={48} weight={600} opacity={0.55} anim="anim-fadeUp">O ingles <span className="red" style={{ fontWeight: 700 }}>nao entra</span>.</T>
+  
+  </div>
+));
+
+
+// S538 @ 6:51.4
+SLIDE_REGISTRY.set(538, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Por nao ter se <span className="bold">comprometido</span>.</T>
+  </div>
+));
+
+
+// S264 @ 2:49.0
+SLIDE_REGISTRY.set(264, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Por que voce <span className="red" style={{ fontWeight: 700 }}>nao aprendeu</span> ate agora.</T>
+  </div>
+));
+
+
+// S265 @ 2:54.0
+SLIDE_REGISTRY.set(265, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Milhares que <span className="teal">aprenderam</span>.</T>
+  </div>
+));
+
+
+// S266 @ 6:01.8
+SLIDE_REGISTRY.set(266, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">A qualidade nao <span className="bold">importa</span>.</T>
+  </div>
+));
+
+
+// S302 @ 3:39.6
+GRAPH_SLIDES.forEach((G, i) => SLIDE_REGISTRY.set(302 + i, () => <G />));
+
+

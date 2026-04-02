@@ -1,0 +1,227 @@
+// REF: 08_EMOCIONAL (26 slides)
+// These are REFERENCE slides from the old version. Copy and improve, do not use directly.
+
+// S618 @ 18:21.5
+SLIDE_REGISTRY.set(618, () => (
+  <div className="slide center">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Voce <span className="bold">entende</span>.</T>
+  
+  </div>
+));
+
+
+// S619 @ 18:36.1
+SLIDE_REGISTRY.set(619, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.55} anim="anim-fadeUp">Essa sensacao nao tem <span className="teal">comparacao</span>.</T>
+  </div>
+));
+
+
+// S620 @ 18:39.3
+SLIDE_REGISTRY.set(620, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Nenhum curso ja te deu <span className="bold">isso</span>.</T>
+  </div>
+));
+
+
+// S622 @ 18:57.3
+SLIDE_REGISTRY.set(622, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">O que antes era so <span className="bold">embolado</span>.</T>
+  </div>
+));
+
+
+// S623 @ 19:00.5
+SLIDE_REGISTRY.set(623, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">O ouvido comeca a <span className="teal">reconhecer</span>.</T>
+  
+  </div>
+));
+
+
+// S624 @ 19:06.6
+SLIDE_REGISTRY.set(624, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Chega um dia que voce <span className="bold">nao esperava</span>.</T>
+  
+  </div>
+));
+
+
+// S625 @ 19:18.9
+SLIDE_REGISTRY.set(625, () => (
+  <div className="slide center">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">O ingles ja esta <span className="teal">instalado</span>.</T>
+  
+  </div>
+));
+
+
+// S626 @ 19:33.8
+SLIDE_REGISTRY.set(626, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Momentos antes <span className="bold">desperdicados</span>.</T>
+  
+  </div>
+));
+
+
+// S627 @ 19:36.8
+SLIDE_REGISTRY.set(627, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Sem voce <span className="teal">perceber</span>.</T>
+  
+  </div>
+));
+
+
+// S628 @ 19:42.1
+SLIDE_REGISTRY.set(628, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Quanto voce precisa <span className="bold">investir</span>?</T>
+  
+  </div>
+));
+
+
+// S284 @ 18:24.7
+SLIDE_REGISTRY.set(284, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Nao por <span className="bold">estudar</span>.</T>
+  </div>
+));
+
+
+// S193 @ 20:08.8
+SLIDE_REGISTRY.set(193, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Cerebro esgotado. Zero energia. Da <span className="bold">play</span>. O ingles entra.</T>
+  </div>
+));
+
+
+// S196 @ 18:23.9
+SLIDE_REGISTRY.set(196, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Nao porque ficou <span className="bold">estudando</span>.</T>
+  </div>
+));
+
+
+// S197 @ 18:32.7
+SLIDE_REGISTRY.set(197, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">O ingles ja <span className="teal">estava la</span>. Gravado por musica.</T>
+  </div>
+));
+
+
+// S199 @ 18:43.0
+SLIDE_REGISTRY.set(199, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Gravado por musica. Sem voce <span className="bold">perceber</span>.</T>
+  </div>
+));
+
+
+// S201 @ 18:54.1
+SLIDE_REGISTRY.set(201, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">2o episodio: mais facil. 3o: antecipa as falas. 5o: <span className="teal">estagio diferente</span>.</T>
+  </div>
+));
+
+
+// S203 @ 19:03.4
+SLIDE_REGISTRY.set(203, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">O ingles deixa de ser <span className="bold">barreira</span>. Vira prazer.</T>
+  </div>
+));
+
+
+// S205 @ 19:08.9
+SLIDE_REGISTRY.set(205, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Desce do <span className="bold">aviao</span>.</T>
+    <Spacer h={12} />
+    <T size={36} weight={400} opacity={0.3} anim="anim-fadeUp" delay="d2">Orlando. Lisboa. Nao importa.</T>
+  </div>
+));
+
+
+// S206 @ 19:12.6
+SLIDE_REGISTRY.set(206, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Pede <span className="bold">Uber</span>. Check-in. Conversa.</T>
+  </div>
+));
+
+
+// S207 @ 19:15.6
+SLIDE_REGISTRY.set(207, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Sem <span className="bold">Google Tradutor</span>. Sem no no estomago.</T>
+  </div>
+));
+
+
+// S209 @ 19:21.1
+SLIDE_REGISTRY.set(209, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Aparece a <span className="bold">vaga</span>. O dobro.</T>
+  </div>
+));
+
+
+// S210 @ 19:25.2
+SLIDE_REGISTRY.set(210, () => (
+  <div className="slide center">
+    <T size={48} weight={500} opacity={0.55} anim="anim-fadeUp">"<span className="teal">Ingles fluente</span>."</T>
+  </div>
+));
+
+
+// S211 @ 19:26.3
+SLIDE_REGISTRY.set(211, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Dessa vez voce <span className="bold">nao fecha</span> a aba.</T>
+  </div>
+));
+
+
+// S212 @ 19:30.7
+SLIDE_REGISTRY.set(212, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Tudo isso no <span className="bold">transito</span>. Na academia. Antes de dormir.</T>
+  </div>
+));
+
+
+// S213 @ 19:38.7
+SLIDE_REGISTRY.set(213, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Nao porque teve <span className="bold">disciplina</span>.</T>
+  </div>
+));
+
+
+// S215 @ 19:44.8
+SLIDE_REGISTRY.set(215, () => (
+  <div className="slide center">
+    <T size={44} weight={500} opacity={0} anim="anim-fadeUp"></T>
+  </div>
+));
+
+

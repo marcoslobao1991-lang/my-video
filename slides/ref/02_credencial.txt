@@ -1,0 +1,252 @@
+// REF: 02_CREDENCIAL (25 slides)
+// These are REFERENCE slides from the old version. Copy and improve, do not use directly.
+
+// S29 @ 1:25.8
+  SLIDE_REGISTRY.set(29, () => (
+    <div className="slide left">
+      <T size={hScale(72)} weight={700} anim="anim-slideLeft">Marcos Lobao</T>
+      <Spacer h={16} />
+      <T size={28} opacity={0.35} anim="anim-slideLeft" delay="d2">Fundador da Fluency Route e Ingles Cantado</T>
+    </div>
+  ));
+
+  // ═══ BLOCK 2 — CREDENCIAL ═══
+
+  // 31 — Nunca fiz intercambio (audio: "nunca fiz intercâmbio, nunca morei fora")
+
+// S30 @ 1:29.6
+  SLIDE_REGISTRY.set(30, () => (
+    <div className="slide right">
+      <T size={44} opacity={0.4} anim="anim-slideRight">Nunca fiz intercambio.</T>
+      <Spacer h={8} />
+      <T size={44} weight={600} anim="anim-slideRight" delay="d2">Nunca morei fora.</T>
+    </div>
+  ));
+
+  // S31 DELETED — duplicate of S30
+
+  // 33 — Empresa americana (audio: "cheguei a trabalhar pra uma empresa americana")
+
+// S32 @ 1:36.5
+  SLIDE_REGISTRY.set(32, () => (
+    <div className="slide center">
+      <T size={44} anim="anim-fadeUp">
+        Ja cheguei a trabalhar pra uma <span className="teal" style={{ fontWeight: 700 }}>empresa americana</span>.
+      </T>
+    </div>
+  ));
+
+  // 34 — Fundei a Fluency Route (audio: "fez fundar FluencyRoad")
+
+// S33 @ 1:43.6
+  SLIDE_REGISTRY.set(33, () => (
+    <div className="slide center">
+      <T size={44} weight={500} anim="anim-fadeUp">Essa experiencia me fez fundar a</T>
+      <Spacer h={16} />
+      <T size={72} weight={800} anim="anim-scaleIn" delay="d2">FLUENCY ROUTE</T>
+    </div>
+  ));
+
+  // 35 — Stats (audio: "30 países, 1 milhão de horas")
+
+// S34 @ 1:50.0
+  SLIDE_REGISTRY.set(34, () => (
+    <div className="slide center">
+      {["30+ paises", "1M+ horas", "Milhoes de views"].map((s, i) => (
+        <div key={s}>
+          <T size={48} weight={700} anim="anim-scaleIn" delay={["d1", "d2", "d3"][i]}>{s}</T>
+          {i < 2 && <Spacer h={16} />}
+        </div>
+      ))}
+    </div>
+  ));
+
+  // 36 — Viralizou (audio: "a gente viralizou quando apresentou uma ideia simples")
+
+// S35 @ 1:56.9
+  SLIDE_REGISTRY.set(35, () => (
+    <div className="slide center">
+      <T size={44} opacity={0.5} anim="anim-fadeUp">A gente <span className="bold">viralizou</span> quando apresentou uma ideia simples.</T>
+    </div>
+  ));
+
+  // 37 — Aluno morava fora (audio: "aluno que morava fora, fazia aula nos EUA")
+
+// S36 @ 2:10.3
+  SLIDE_REGISTRY.set(36, () => (
+    <div className="slide left">
+      <T size={42} weight={500} anim="anim-slideLeft">
+        Aluno que morava fora, fazia aula presencial nos <span className="teal" style={{ fontWeight: 700 }}>Estados Unidos</span>.
+      </T>
+    </div>
+  ));
+
+  // 38 — A ultima parada (audio: "a última parada deles, poucos sabem")
+
+// S37 @ 2:23.0
+  SLIDE_REGISTRY.set(37, () => (
+    <div className="slide center">
+      <T size={52} opacity={0.5} anim="anim-blurIn">A ultima parada.</T>
+    </div>
+  ));
+
+  // 39 — Poucos sabem sobre mim (audio: "poucos sabem sobre mim")
+
+// S38 @ 2:24.8
+  SLIDE_REGISTRY.set(38, () => (
+    <div className="slide center">
+      <T size={44} anim="anim-fadeUp">Uma coisa que <span className="bold">poucos sabem</span> sobre mim.</T>
+    </div>
+  ));
+
+  // 40 — Cresci dentro da musica (audio: "cresci dentro da música antes de crescer dentro do inglês")
+
+// S39 @ 2:27.2
+  SLIDE_REGISTRY.set(39, () => (
+    <div className="slide left">
+      <T size={48} anim="anim-slideLeft">
+        Cresci dentro da <span className="teal" style={{ fontWeight: 700 }}>musica</span>.
+      </T>
+      <Spacer h={12} />
+      <T size={36} opacity={0.3} anim="anim-slideLeft" delay="d2">Antes de crescer dentro do ingles.</T>
+    </div>
+  ));
+
+  // 41 — Duas coisas sem conectar (audio: "duas coisas sem nunca conectar uma com a outra")
+
+// S40 @ 2:35.3
+  SLIDE_REGISTRY.set(40, () => (
+    <div className="slide center">
+      <T size={44} opacity={0.6} anim="anim-fadeUp">Duas coisas sem conectar.</T>
+      <Spacer h={24} />
+      <div style={{ display: "flex", alignItems: "center", gap: 24 }} className="anim-fadeUp d2">
+        <T size={36} opacity={0.5}>Musica</T>
+        <T size={36} color="#4ECDC4">x</T>
+        <T size={36} opacity={0.5}>Ingles</T>
+      </div>
+    </div>
+  ));
+
+  // 42 — Ate que esse dia chegou (audio: "Até que esse dia chegou")
+
+// S41 @ 2:38.2
+  SLIDE_REGISTRY.set(41, () => (
+    <div className="slide center">
+      <T size={48} anim="anim-blurIn">Ate que esse dia chegou.</T>
+    </div>
+  ));
+
+  // 43 — Preciso te confessar (audio: "preciso te confessar uma coisa")
+
+// S42 @ 2:40.9
+  SLIDE_REGISTRY.set(42, () => (
+    <div className="slide center">
+      <T size={44} opacity={0.5} anim="anim-blurIn">Preciso te <span className="bold">confessar</span> uma coisa.</T>
+    </div>
+  ));
+
+  // 44 — Comecou a crescer outro grupo (audio: "a fluência começou a crescer um outro grupo")
+
+// S507 @ 1:32.9
+SLIDE_REGISTRY.set(507, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-slideLeft">Sem nada do que dizem ser <span className="bold">obrigatorio</span>.</T>
+  
+  </div>
+));
+
+
+// S508 @ 1:35.9
+SLIDE_REGISTRY.set(508, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Sem nada do que dizem ser <span className="red" style={{ fontWeight: 700 }}>obrigatorio</span>.</T>
+  </div>
+));
+
+
+// S509 @ 1:46.8
+SLIDE_REGISTRY.set(509, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Uma das <span className="teal">maiores</span> escolas de ingles do pais.</T>
+  </div>
+));
+
+
+// S510 @ 1:53.2
+SLIDE_REGISTRY.set(510, () => (
+  <div className="slide center">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Milhoes de <span className="bold">visualizacoes</span>.</T>
+  
+  </div>
+));
+
+
+// S512 @ 2:03.8
+SLIDE_REGISTRY.set(512, () => (
+  <div className="slide center">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Essa ideia sozinha <span className="teal">mudou</span> tudo.</T>
+  
+  </div>
+));
+
+
+// S513 @ 2:13.3
+SLIDE_REGISTRY.set(513, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp"><span className="bold">Largou</span> tudo. E mesmo assim desistiu.</T>
+  </div>
+));
+
+
+// S259 @ 1:39.0
+SLIDE_REGISTRY.set(259, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Vendedor <span className="bold">americano</span>.</T>
+  </div>
+));
+
+
+// S261 @ 2:06.3
+SLIDE_REGISTRY.set(261, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Uma ideia que mudou <span className="teal">milhares</span>.</T>
+  </div>
+));
+
+
+// S262 @ 2:16.0
+SLIDE_REGISTRY.set(262, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Largou <span className="bold">tudo</span>.</T>
+  </div>
+));
+
+
+// S263 @ 2:42.6
+SLIDE_REGISTRY.set(263, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Nenhum dono de escola te falaria isso.</T>
+  </div>
+));
+
+
+// S400 @ 2:31.0
+SLIDE_REGISTRY.set(400, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Filho de <span className="bold">musico</span>. Tio <span className="bold">produtor</span>.</T>
+  </div>
+));
+
+
+// S401 @ 2:00.5
+SLIDE_REGISTRY.set(401, () => (
+  <div className="slide center">
+    <T size={44} weight={500} opacity={0} anim="anim-fadeUp"></T>
+  </div>
+));
+
+// ─── Stack: S178 — 10 da noite / Inglês entra / Resultado ──
+

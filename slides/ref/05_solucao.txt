@@ -1,0 +1,382 @@
+// REF: 05_SOLUCAO (42 slides)
+// These are REFERENCE slides from the old version. Copy and improve, do not use directly.
+
+// S96 @ 11:42.4
+  SLIDE_REGISTRY.set(96, () => (
+    <div className="slide center">
+      <T size={42} opacity={0.5} anim="anim-fadeUp">Tudo que voce ja tem no</T>
+      <Spacer h={10} />
+      <T size={56} weight={700} anim="anim-scaleIn" delay="d2" className="gradient-animated glow-gradient-text">SUBCONSCIENTE.</T>
+    </div>
+  ));  // S97 — moved to VSLSlides_unused.tsx  // S98 — moved to VSLSlides_unused.tsx
+
+  // 100 — Crianca nao aguenta
+
+// S129 @ 11:21.2
+  SLIDE_REGISTRY.set(129, () => (
+    <div className="slide center">
+      <T size={42} opacity={0.6} anim="anim-fadeUp">O formato. A ciencia. A logica. Faltava:</T>
+    </div>
+  ));
+
+  // 131 — O que colocar dentro da musica?
+
+// S130 @ 11:26.1
+  SLIDE_REGISTRY.set(130, () => (
+    <div className="slide center">
+      <T size={48} color="#4ECDC4" weight={600} anim="anim-fadeUp">O que colocar dentro da musica?</T>
+    </div>
+  ));
+
+  // 132 — De onde vem a fluencia?
+
+// S131 @ 11:28.6
+  SLIDE_REGISTRY.set(131, () => (
+    <div className="slide center">
+      <T size={44} opacity={0.7}>De onde vem a fluencia?</T>
+    </div>
+  ));
+
+  // 133 — Fluencia = ingles no subconsciente
+
+// S132 @ 11:40.2
+  SLIDE_REGISTRY.set(132, () => (
+    <div className="slide center">
+      <T size={44}>Fluencia = ingles no subconsciente.</T>
+    </div>
+  ));
+
+  // 134 — Subconsciente = AUTOMATICO
+  // S133 — audio: "o automático do cérebro, todas essas coisas têm em comum"
+
+// S133 @ 12:00.0
+  SLIDE_REGISTRY.set(133, () => (
+    <div className="slide center">
+      <T size={42} opacity={0.5} anim="anim-fadeUp">O que todas tem em <span className="bold">comum</span>?</T>
+    </div>
+  ));
+
+  // 135 — skills STACK
+
+// S134 @ 11:48.8
+  SLIDE_REGISTRY.set(134, () => {
+  const v = [useStackVisible(134, 0), useStackVisible(134, 1), useStackVisible(134, 2)];
+  return (
+    <div className="slide left">
+      {v[0] && <T size={42} weight={500} opacity={0.4} anim="anim-slideLeft">Andar de <span className="bold">bicicleta</span>.</T>}
+      {v[0] && <Spacer h={12} />}
+      {v[1] && <T size={42} weight={500} opacity={0.45} anim="anim-slideLeft"><span className="bold">Dirigir</span>.</T>}
+      {v[1] && <Spacer h={12} />}
+      {v[2] && <T size={42} weight={500} opacity={0.5} anim="anim-slideLeft"><span className="bold">Digitar</span> no celular.</T>}
+    </div>
+  );
+});  // S402 — moved to VSLSlides_unused.tsx  // S403 — moved to VSLSlides_unused.tsx  // S404 — moved to VSLSlides_unused.tsx  // S405 — moved to VSLSlides_unused.tsx  // S408 — moved to VSLSlides_unused.tsx
+
+// ═══ NEW SLIDES — Gap fills 29/03/2026 ═══
+
+// #3 area — S53 (3:59-4:22) 23s → 3 novos
+
+// S428 @ 12:04.0
+SLIDE_REGISTRY.set(428, () => (
+  <div className="slide center">
+    <T size={44} weight={700} className="gradient-animated" anim="anim-scaleIn">REPETICAO.</T>
+    <Spacer h={16} />
+    <T size={36} opacity={0.35} anim="anim-fadeUp" delay="d2">Voce repetiu tanto que ficou automatico.</T>
+  </div>
+));
+
+
+// S429 @ 12:11.9
+SLIDE_REGISTRY.set(429, () => (
+  <div className="slide center">
+    <T size={42} opacity={0.6} anim="anim-fadeUp">Com ingles e <span className="bold">exatamente</span> igual.</T>
+    <Spacer h={12} />
+    <T size={36} opacity={0.3} anim="anim-fadeUp" delay="d2">Repeticao massiva do essencial.</T>
+  </div>
+));
+
+// #16 area — S145 (12:52-13:05) 13s → 2 novos
+
+// S430 @ 12:56.1
+SLIDE_REGISTRY.set(430, () => (
+  <div className="slide center">
+    <T size={42} opacity={0.5} anim="anim-fadeUp">Senao tava todo mundo fluente por ai.</T>
+  </div>
+));
+
+
+// S431 @ 13:00.2
+SLIDE_REGISTRY.set(431, () => (
+  <div className="slide center">
+    <T size={44} anim="anim-blurIn">Ninguem conversa como o <span className="teal" style={{ fontWeight: 700 }}>Coldplay</span> canta.</T>
+  </div>
+));
+
+// #17 area — S153 (13:39-13:53) 14s → 2 novos
+
+// S432 @ 13:43.5
+SLIDE_REGISTRY.set(432, () => (
+  <div className="slide center">
+    <T size={42} opacity={0.5} anim="anim-fadeUp">Transformar dialogo real de serie em musica</T>
+    <Spacer h={12} />
+    <T size={42} weight={700} anim="anim-fadeUp" delay="d2"><span className="red">nao e simples</span>.</T>
+  </div>
+));
+
+
+// S433 @ 13:50.3
+SLIDE_REGISTRY.set(433, () => (
+  <div className="slide center">
+    <T size={40} opacity={0.4} anim="anim-fadeUp">Cada cena precisa de uma <span className="bold">composicao original</span>.</T>
+    <Spacer h={12} />
+    <T size={36} opacity={0.3} anim="anim-fadeUp" delay="d2">Melodia. Arranjo. Producao completa.</T>
+  </div>
+));
+
+// #18-19 area — S281+S176 (15:10-15:33) 23s → 2 novos
+
+// S567 @ 11:45.4
+SLIDE_REGISTRY.set(567, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Coisas que voce ja faz no <span className="bold">automatico</span>.</T>
+  
+  </div>
+));
+
+
+// S568 @ 11:55.1
+SLIDE_REGISTRY.set(568, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp"><span className="teal">Hoje</span> voce faz sem pensar.</T>
+  </div>
+));
+
+
+// S569 @ 11:58.3
+SLIDE_REGISTRY.set(569, () => (
+  <div className="slide center">
+    <T size={46} weight={500} opacity={0.55} anim="anim-fadeUp">O <span className="bold">automatico</span> do nosso cerebro.</T>
+  </div>
+));
+
+
+// S570 @ 12:07.0
+SLIDE_REGISTRY.set(570, () => (
+  <div className="slide center">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Com o ingles e <span className="bold">exatamente igual</span>.</T>
+  
+  </div>
+));
+
+
+// S571 @ 12:10.3
+SLIDE_REGISTRY.set(571, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Pra instalar ele no seu <span className="teal">subconsciente</span>.</T>
+  </div>
+));
+
+
+// S572 @ 12:17.7
+SLIDE_REGISTRY.set(572, () => (
+  <div className="slide center">
+    <T size={52} weight={500} opacity={0.6} anim="anim-scaleIn">Mas do <span className="bold">essencial</span>.</T>
+  </div>
+));
+
+
+// S573 @ 12:20.8
+SLIDE_REGISTRY.set(573, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Mais de <span className="teal">90%</span> de tudo que e falado no dia a dia.</T>
+  </div>
+));
+
+
+// S574 @ 12:23.8
+SLIDE_REGISTRY.set(574, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Dos <span className="bold">nativos americanos</span>.</T>
+  </div>
+));
+
+
+// S575 @ 12:33.9
+SLIDE_REGISTRY.set(575, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">De todas as <span className="teal">conversas</span> em ingles.</T>
+  
+  </div>
+));
+
+
+// S576 @ 12:42.4
+SLIDE_REGISTRY.set(576, () => (
+  <div className="slide center">
+    <T size={46} weight={500} opacity={0.55} anim="anim-fadeUp">Dezenas de <span className="bold">vezes</span>. Sem perceber.</T>
+  </div>
+));
+
+
+// S577 @ 12:45.6
+SLIDE_REGISTRY.set(577, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Nao parece <span className="bold">estudo</span>.</T>
+  
+  </div>
+));
+
+
+// S578 @ 13:36.1
+SLIDE_REGISTRY.set(578, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Ouvisse essa musica <span className="teal">30, 40, 50 vezes</span>.</T>
+  
+  </div>
+));
+
+
+// S276 @ 11:33.0
+SLIDE_REGISTRY.set(276, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">A resposta sai <span className="teal">antes</span> de pensar.</T>
+  </div>
+));
+
+
+// S277 @ 11:38.3
+SLIDE_REGISTRY.set(277, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn"><span className="bold">Automatico</span>.</T>
+  </div>
+));
+
+
+// S278 @ 12:46.7
+SLIDE_REGISTRY.set(278, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Conteudo <span className="teal">disfarcado</span>.</T>
+  </div>
+));
+
+
+// S279 @ 13:04.9
+SLIDE_REGISTRY.set(279, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Musicas sao <span className="bold">poesia</span>.</T>
+  </div>
+));
+
+
+// S280 @ 14:05.8
+SLIDE_REGISTRY.set(280, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Resultado. Hora de <span className="teal">testar</span>.</T>
+  </div>
+));
+
+
+// S135 @ 11:51.5
+SLIDE_REGISTRY.set(135, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">No <span className="bold">comeco</span> era dificil. Voce era travado.</T>
+  </div>
+));
+
+
+// S136 @ 12:36.1
+SLIDE_REGISTRY.set(136, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">O ingles que <span className="teal">importa</span> quando ta comecando.</T>
+  </div>
+));
+
+
+// S138 @ 12:14.6
+SLIDE_REGISTRY.set(138, () => (
+  <div className="slide center">
+    <T size={48} weight={500} opacity={0.55} anim="anim-fadeUp">Nao do ingles <span className="bold">inteiro</span>.</T>
+  </div>
+));
+
+
+// S141 @ 12:30.9
+SLIDE_REGISTRY.set(141, () => (
+  <div className="slide center">
+    <T size={48} weight={500} opacity={0.55} anim="anim-fadeUp"><span className="teal">500 palavras</span> = 90% das conversas.</T>
+  </div>
+));
+
+
+// S143 @ 12:39.2
+SLIDE_REGISTRY.set(143, () => (
+  <div className="slide center">
+    <div className="glow-teal" style={{ top: "25%", left: "25%" }} />
+    <T size={56} weight={700} opacity={0.6} anim="anim-scaleIn"><span className="bold">REPETICAO MUSICAL</span>.</T>
+  </div>
+));
+
+
+// S151 @ 13:30.8
+SLIDE_REGISTRY.set(151, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">E se pegasse o <span className="bold">script</span> real de uma serie...</T>
+  </div>
+));
+
+
+// S152 @ 13:32.8
+SLIDE_REGISTRY.set(152, () => (
+  <div className="slide center">
+    <T size={48} weight={500} opacity={0.55} anim="anim-fadeUp">...e transformasse em <span className="teal">musica</span>.</T>
+  </div>
+));
+
+
+// S153 @ 13:39.0
+SLIDE_REGISTRY.set(153, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Ouvisse <span className="bold">40, 50 vezes</span>...</T>
+  </div>
+));
+
+
+// S154 @ 13:45.7
+SLIDE_REGISTRY.set(154, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Nao e <span className="bold">batida por cima</span>.</T>
+    <Spacer h={12} />
+    <T size={36} weight={400} opacity={0.3} anim="anim-fadeUp" delay="d2">Cada cena precisa de uma composicao original.</T>
+  </div>
+));
+
+
+// S156 @ 13:53.2
+SLIDE_REGISTRY.set(156, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp"><span className="bold">Melodia</span>. Arranjo. Producao completa.</T>
+  </div>
+));
+
+
+// S157 @ 13:56.2
+SLIDE_REGISTRY.set(157, () => (
+  <div className="slide center">
+    <T size={46} weight={500} opacity={0.55} anim="anim-fadeUp">Musica que voce escuta por <span className="teal">prazer</span>.</T>
+  </div>
+));
+
+
+// S158 @ 14:00.8
+SLIDE_REGISTRY.set(158, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Primeiro episodio de <span className="bold">Serie Cantada</span>.</T>
+  </div>
+));
+
+

@@ -1,0 +1,398 @@
+// REF: 01_LEAD (33 slides)
+// These are REFERENCE slides from the old version. Copy and improve, do not use directly.
+
+// S2 @ 0:00.0
+  SLIDE_REGISTRY.set(2, () => (
+    <div className="slide left">
+      <div className="glow-teal" style={{ top: "25%", left: "-5%" }} />
+      <T size={48} weight={400} opacity={0.7} anim="anim-slideLeft">
+        Voce acabou de ouvir uma cena de <span className="teal" style={{ fontWeight: 700 }}>Friends</span>.
+      </T>
+    </div>
+  ));
+
+  // 4 — So que nao do jeito (audio: "só que não do jeito que você tá acostumado")
+
+// S3 @ 0:02.1
+  SLIDE_REGISTRY.set(3, () => (
+    <div className="slide right">
+      <T size={48} weight={400} opacity={0.5} anim="anim-slideRight">
+        So que nao do jeito que voce ta <span className="bold">acostumado</span>.
+      </T>
+    </div>
+  ));
+
+  // 5 — Uma unica vez (audio: "Você ouviu isso uma única vez")
+
+// S4 @ 0:03.4
+  SLIDE_REGISTRY.set(4, () => (
+    <div className="slide center">
+      <T size={52} weight={400} opacity={0.7} anim="anim-fadeUp">
+        Voce ouviu isso <span className="gradient-animated" style={{ fontWeight: 700 }}>uma unica vez</span>.
+      </T>
+    </div>
+  ));
+
+  // 6 — Agora imagina (audio: "Agora imagina você ouvindo isso")
+
+// S5 @ 0:04.8
+  SLIDE_REGISTRY.set(5, () => (
+    <div className="slide center">
+      <T size={42} weight={400} opacity={0.3} anim="anim-blurIn">Agora imagina ouvindo isso</T>
+    </div>
+  ));
+
+  // S6 DELETED — duplicate of S5
+
+  // 8 — 30x / 40x (audio: "30, 40 vezes" — now @ 5.70s, synced!)
+
+// S7 @ 0:05.7
+  SLIDE_REGISTRY.set(7, () => (
+    <div className="slide center">
+      <div style={{ position: "absolute", fontSize: 300, fontWeight: 900, color: "rgba(78,205,196,.02)", pointerEvents: "none" }} className="anim-fadeIn">40</div>
+      <T size={60} weight={700} color="rgba(78,205,196,.3)" anim="anim-scaleIn">30x</T>
+      <Spacer h={16} />
+      <T size={hScale(220)} weight={900} color="#4ECDC4" anim="anim-scaleIn" delay="d2" className="glow-teal-text">40x</T>
+    </div>
+  ));
+
+  // 9 — No transito / Na academia / Antes de dormir — stack synced (now @ 7.00s!)
+
+// S8 @ 0:07.5
+  SLIDE_REGISTRY.set(8, () => {
+    const v = [useStackVisible(9, 0), useStackVisible(9, 1), useStackVisible(9, 2)];
+    return (
+      <div className="slide left">
+        {v[0] && <T size={44} weight={500} opacity={0.3} anim="anim-slideLeft" style={{ paddingLeft: 0 }}>No transito.</T>}
+        {v[0] && <Spacer h={12} />}
+        {v[1] && <T size={44} weight={500} opacity={0.4} anim="anim-slideLeft" style={{ paddingLeft: 30 }}>Na academia.</T>}
+        {v[1] && <Spacer h={12} />}
+        {v[2] && <T size={44} weight={500} opacity={0.55} anim="anim-slideLeft" style={{ paddingLeft: 60 }}>Antes de dormir.</T>}
+      </div>
+    );
+  });
+
+  // 10 — Grudou (audio: "grudou na sua cabeça, igual aquela música" — now @ 11.70s!)
+
+// S9 @ 0:11.3
+  SLIDE_REGISTRY.set(9, () => (
+    <div className="slide center">
+      <T size={52} weight={500}>
+        Porque <span className="gradient-animated" style={{ fontWeight: 700 }}>grudou</span> na sua cabeca.
+      </T>
+      <Spacer h={20} />
+      <T size={28} opacity={0.25} anim="anim-fadeUp" delay="d2">
+        Igual aquela musica que voce nao consegue parar de cantar.
+      </T>
+    </div>
+  ));
+
+  // 11 — Cena real tocasse (audio: "O que aconteceria quando a cena real tocasse?" — now @ 14.80s!)
+
+// S10 @ 0:15.3
+  SLIDE_REGISTRY.set(10, () => (
+    <div className="slide center">
+      <T size={46} opacity={0.5} anim="anim-fadeUp">
+        O que aconteceria quando a <span className="bold">cena real</span> tocasse?
+      </T>
+    </div>
+  ));
+
+  // 12 — Voce ia entender tudo (audio: "você ia entender tudo" — now @ 18.30s)
+
+// S11 @ 0:18.4
+  SLIDE_REGISTRY.set(11, () => (
+    <div className="slide center">
+      <div className="glow-teal" style={{ top: "30%", left: "30%" }} />
+      <T size={hScale(72)} weight={700} color="#4ECDC4" className="glow-teal-text" anim="anim-scaleIn">
+        Voce ia entender tudo.
+      </T>
+    </div>
+  ));
+
+  // 13 — Sem legenda / Sem esforço / Sem ter estudado — stack synced (now @ 19.20s)
+
+// S12 @ 0:19.2
+  SLIDE_REGISTRY.set(12, () => {
+    const v = [useStackVisible(13, 0), useStackVisible(13, 1), useStackVisible(13, 2)];
+    return (
+      <div className="slide center">
+        {v[0] && <T size={hScale(68)} weight={600} opacity={1} anim="anim-blurIn">Sem legenda.</T>}
+        {v[0] && <Spacer h={8} />}
+        {v[1] && <T size={hScale(68)} weight={600} opacity={0.4} anim="anim-blurIn">Sem esforco.</T>}
+        {v[1] && <Spacer h={8} />}
+        {v[2] && <T size={hScale(68)} weight={600} opacity={0.2} anim="anim-blurIn">Sem ter estudado nada.</T>}
+      </div>
+    );
+  });
+
+  // 14 — ISSO E UMA (audio: "Isso é uma" @ 22.30s)
+
+// S14 @ 0:23.2
+  SLIDE_REGISTRY.set(14, () => (
+    <div className="slide center">
+      <div className="double-glow" />
+      <T size={hScale(100)} weight={800} anim="anim-scaleIn">
+        <span style={{ color: "#fff" }}>Serie </span>
+        <span className="gradient-animated glow-gradient-text">Cantada</span>
+      </T>
+    </div>
+  ));
+
+  // 16 — A cada episodio (audio: "a cada episódio fica mais fácil")
+
+// S15 @ 0:24.2
+  SLIDE_REGISTRY.set(15, () => (
+    <div className="slide left">
+      <T size={44} opacity={0.5} anim="anim-slideLeft">
+        A cada episodio <span className="bold">fica mais facil</span>.
+      </T>
+    </div>
+  ));
+
+  // 17 — Mesmas estruturas (audio: "se repete dentro das mesmas estruturas")
+
+// S16 @ 0:26.4
+  SLIDE_REGISTRY.set(16, () => (
+    <div className="slide right">
+      <T size={42} opacity={0.55} anim="anim-slideRight">
+        o ingles se repete dentro das <span className="gradient-text" style={{ fontWeight: 700 }}>mesmas estruturas</span>
+      </T>
+    </div>
+  ));
+
+  // 18 — som embolado → faz sentido (audio: "som embolado começa a fazer sentido")
+
+// S17 @ 0:31.9
+  SLIDE_REGISTRY.set(17, () => (
+    <div className="slide center">
+      <div style={{ display: "flex", alignItems: "center", gap: 32 }} className="anim-fadeUp">
+        <T size={42} opacity={0.35} anim="anim-fadeIn">som embolado</T>
+        <T size={42} color="#4ECDC4" anim="anim-fadeIn" delay="d2" style={{ margin: "0 8px" }}>&#8594;</T>
+        <T size={42} weight={700} anim="anim-fadeIn" delay="d3">faz sentido</T>
+      </div>
+    </div>
+  ));
+
+  // 19 — Milhares de brasileiros (audio: "milhares de brasileiros já estão usando" — now @ 33.80s)
+
+// S18 @ 0:34.8
+  SLIDE_REGISTRY.set(18, () => (
+    <div className="slide left">
+      <AccentLine />
+      <T size={44} weight={600} opacity={0.7} anim="anim-slideLeft">
+        <span className="teal">Milhares</span> de brasileiros ja estao usando.
+      </T>
+      <Spacer h={12} />
+      <T size={30} opacity={0.25} anim="anim-fadeUp" delay="d2">Para destravar o ingles de uma vez por todas.</T>
+    </div>
+  ));
+
+  // 20 — universities — synced
+
+// S19 @ 0:40.2
+  SLIDE_REGISTRY.set(19, () => {
+    const unis = ["JOHNS HOPKINS", "McGILL", "STANFORD", "MIT"];
+    return (
+      <div className="slide left">
+        {unis.map((u, i) => {
+          if (!useStackVisible(20, i)) return null;
+          return (
+            <div key={u}>
+              <T size={72} weight={900} opacity={[1, 0.85, 0.7, 0.55][i]} anim="anim-slideLeft">{u}</T>
+              {i < 3 && <Spacer h={8} />}
+            </div>
+          );
+        })}
+      </div>
+    );
+  });
+
+  // 21 — VALIDADO HA DECADAS
+
+// S20 @ 0:43.3
+  SLIDE_REGISTRY.set(20, () => (
+    <div className="slide center">
+      <AccentLine />
+      <T size={48} weight={700} anim="anim-fadeUp">VALIDADO HA DECADAS</T>
+      <Spacer h={12} />
+      <T size={28} opacity={0.3} anim="anim-fadeUp" delay="d2">Pesquisas em universidades de referencia mundial</T>
+      <Spacer h={6} />
+      <T size={28} opacity={0.25} anim="anim-fadeUp" delay="d3">confirmam o poder da musica no aprendizado</T>
+    </div>
+  ));
+
+  // 22 — O unico metodo (audio: "único método que você vai precisar na vida, usando a única coisa capaz de instalar fluência")
+
+// S21 @ 0:51.7
+  SLIDE_REGISTRY.set(21, () => (
+    <div className="slide center">
+      <T size={44} opacity={0.5} anim="anim-fadeUp">O unico metodo que voce</T>
+      <Spacer h={8} />
+      <T size={52} weight={700} anim="anim-fadeUp" delay="d2">
+        vai <span className="gradient-animated">precisar na vida</span>.
+      </T>
+    </div>
+  ));
+
+  // 23 — REPETICAO reveal (audio: "a repetição" @ 57.60s — the big reveal)
+
+// S22 @ 0:57.6
+  SLIDE_REGISTRY.set(22, () => (
+    <div className="slide center">
+      <div className="double-glow" />
+      <T size={hScale(120)} weight={900} className="glow-teal-text" anim="anim-scaleIn" style={{ color: "#fff" }}>REPETICAO</T>
+    </div>
+  ));
+
+  // 24 — De um jeito gostoso (audio: "repetição de um jeito gostoso que te faz querer mais")
+
+// S23 @ 0:59.7
+  SLIDE_REGISTRY.set(23, () => (
+    <div className="slide right">
+      <T size={48} opacity={0.6} anim="anim-slideRight">
+        de um jeito <span className="gradient-text" style={{ fontWeight: 700 }}>gostoso</span>
+      </T>
+      <Spacer h={12} />
+      <T size={32} opacity={0.25} anim="anim-fadeUp" delay="d2">que te faz querer mais</T>
+    </div>
+  ));
+
+  // 25 — Nao porque precisa, mas porque quer (audio: "não porque precisa, mas porque quer")
+
+// S24 @ 1:01.5
+  SLIDE_REGISTRY.set(24, () => (
+    <div className="slide center">
+      <T size={48}>
+        Nao porque <span style={{ opacity: 0.2 }}>precisa</span>. Mas porque <span className="teal" style={{ fontWeight: 700 }}>quer</span>.
+      </T>
+    </div>
+  ));
+
+  // 26 — A MUSICA (audio: "a música" @ 65.80s — second big reveal)
+
+// S25 @ 1:06.4
+  SLIDE_REGISTRY.set(25, () => (
+    <div className="slide center">
+      <div className="double-glow" />
+      <T size={hScale(150)} weight={900} className="gradient-animated glow-gradient-text" anim="anim-scaleIn">A MUSICA</T>
+    </div>
+  ));
+
+  // 27 — Como ferramenta de repeticao (audio: "como ferramenta de repetição")
+
+// S26 @ 1:07.4
+  SLIDE_REGISTRY.set(26, () => (
+    <div className="slide center">
+      <T size={32} opacity={0.25} anim="anim-blurIn">como ferramenta de repeticao</T>
+    </div>
+  ));
+
+  // 28 — objectives — synced
+
+// S27 @ 1:10.3
+  SLIDE_REGISTRY.set(27, () => {
+    const items = ["Trabalhar numa multinacional", "Passar em qualquer entrevista", "Assistir series sem legenda", "Curtir viagens internacionais", "Arrumar um emprego fora"];
+    return (
+      <div className="slide left">
+        {items.map((t, i) => {
+          if (!useStackVisible(28, i)) return null;
+          return (
+            <div key={t}>
+              <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                <div style={{ width: 36, height: 2, background: "linear-gradient(90deg,#4ECDC4,#A78BFA)", borderRadius: 2, opacity: 0.5 }} />
+                <T size={36} weight={500} opacity={0.55 + i * 0.08} anim="anim-slideLeft">{t}</T>
+              </div>
+              {i < 4 && <Spacer h={12} />}
+            </div>
+          );
+        })}
+      </div>
+    );
+  });
+
+  // 29 — Fica aqui comigo (audio: "fica aqui comigo porque o que você vai ver vai mudar completamente")
+
+// S28 @ 1:18.0
+  SLIDE_REGISTRY.set(28, () => (
+    <div className="slide center">
+      <T size={44} opacity={0.4} anim="anim-fadeUp">Fica aqui comigo.</T>
+      <Spacer h={16} />
+      <T size={48} weight={600} anim="anim-fadeUp" delay="d2">
+        O que voce vai ver vai <span className="gradient-animated" style={{ fontWeight: 700 }}>mudar completamente</span>
+      </T>
+      <Spacer h={8} />
+      <T size={36} opacity={0.25} anim="anim-fadeUp" delay="d3">a forma como voce enxerga o seu aprendizado.</T>
+    </div>
+  ));
+
+  // 30 — me apresentar / Marcos Lobao (audio: "deixa eu me apresentar, Marcos Lobão")
+
+// S500 @ 0:29.5
+SLIDE_REGISTRY.set(500, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Voce <span className="bold">conecta</span> essas estruturas.</T>
+  
+  </div>
+));
+
+
+// S501 @ 0:46.4
+SLIDE_REGISTRY.set(501, () => (
+  <div className="slide right">
+    <T size={44} weight={500} opacity={0.4} anim="anim-slideRight">Qualquer adulto. Qualquer rotina.</T>
+  </div>
+));
+
+
+// S502 @ 0:54.9
+SLIDE_REGISTRY.set(502, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Que <span className="teal">realmente</span> funciona na vida real.</T>
+  </div>
+));
+
+
+// S505 @ 1:21.4
+SLIDE_REGISTRY.set(505, () => (
+  <div className="slide center">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">O seu proprio <span className="teal">aprendizado</span> de ingles.</T>
+  
+  </div>
+));
+
+
+// S506 @ 1:24.4
+SLIDE_REGISTRY.set(506, () => (
+  <div className="slide right">
+    <T size={44} weight={500} opacity={0.4} anim="anim-slideRight">Deixa eu me <span className="bold">apresentar</span>.</T>
+  </div>
+));
+
+
+// S299 @ 0:38.3
+SLIDE_REGISTRY.set(299, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Um metodo com base em <span className="teal">pesquisas</span>.</T>
+  </div>
+));
+
+
+// S300 @ 0:48.5
+SLIDE_REGISTRY.set(300, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Neste video, vou te <span className="bold">mostrar</span>.</T>
+  </div>
+));
+
+
+// S301 @ 1:04.5
+SLIDE_REGISTRY.set(301, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Ja estava na sua <span className="bold">cara</span>.</T>
+  </div>
+));
+
+

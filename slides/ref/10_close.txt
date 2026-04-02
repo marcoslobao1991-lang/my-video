@@ -1,0 +1,200 @@
+// REF: 10_CLOSE (23 slides)
+// These are REFERENCE slides from the old version. Copy and improve, do not use directly.
+
+// S648 @ 23:22.6
+SLIDE_REGISTRY.set(648, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.55} anim="anim-fadeUp">Gostoso de <span className="teal">verdade</span>.</T>
+  
+  </div>
+));
+
+
+// S649 @ 23:25.7
+SLIDE_REGISTRY.set(649, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Voce ta ouvindo <span className="bold">musica</span>.</T>
+  
+  </div>
+));
+
+
+// S650 @ 23:29.0
+SLIDE_REGISTRY.set(650, () => (
+  <div className="slide center">
+    <T size={48} weight={500} opacity={0.55} anim="anim-fadeUp">O ingles ta entrando <span className="bold">junto</span>.</T>
+  </div>
+));
+
+
+// S652 @ 23:39.3
+SLIDE_REGISTRY.set(652, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Um ingles que nenhum <span className="bold">curso</span> conseguiu te dar.</T>
+  </div>
+));
+
+
+// S654 @ 23:47.3
+SLIDE_REGISTRY.set(654, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Porque o <span className="red" style={{ fontWeight: 700 }}>formato</span> nunca foi feito pra voce.</T>
+  </div>
+));
+
+
+// S294 @ 22:54.6
+SLIDE_REGISTRY.set(294, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Solicitar <span className="bold">reembolso</span>.</T>
+  </div>
+));
+
+
+// S295 @ 23:00.7
+SLIDE_REGISTRY.set(295, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Decisao de <span className="teal">permanencia</span>.</T>
+  </div>
+));
+
+
+// S296 @ 23:10.3
+SLIDE_REGISTRY.set(296, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Testamos nos <span className="bold">piores</span>.</T>
+  </div>
+));
+
+
+// S297 @ 23:16.7
+SLIDE_REGISTRY.set(297, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Continuaram. Mandaram <span className="teal">mensagem</span>.</T>
+  </div>
+));
+
+
+// S298 @ 23:53.4
+SLIDE_REGISTRY.set(298, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Nao diz nada sobre sua <span className="bold">capacidade</span>.</T>
+  </div>
+));
+
+
+// S245 @ 23:06.8
+SLIDE_REGISTRY.set(245, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">A gente sabe o que acontece quando voce da <span className="teal">play</span>.</T>
+  </div>
+));
+
+
+// S246 @ 23:19.5
+SLIDE_REGISTRY.set(246, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Pela primeira vez, treinar ingles ficou <span className="teal">gostoso</span>.</T>
+  </div>
+));
+
+
+// S247 @ 23:32.4
+SLIDE_REGISTRY.set(247, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Nao gostou? <span className="bold">Dinheiro de volta</span>. 1 clique.</T>
+  </div>
+));
+
+
+// S248 @ 23:35.5
+SLIDE_REGISTRY.set(248, () => (
+  <div className="slide center">
+    <T size={52} weight={500} opacity={0.6} anim="anim-fadeUp">E se <span className="bold">funcionar</span>?</T>
+  </div>
+));
+
+
+// S249 @ 23:36.2
+SLIDE_REGISTRY.set(249, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Dessa vez tem tudo pra <span className="teal">funcionar</span>.</T>
+  </div>
+));
+
+
+// S250 @ 23:43.6
+SLIDE_REGISTRY.set(250, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Voce ja tentou. Ja <span className="bold">comprou</span>. Ja parou.</T>
+  </div>
+));
+
+
+// S251 @ 23:48.9
+SLIDE_REGISTRY.set(251, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">O <span className="red" style={{ fontWeight: 700 }}>formato</span> nunca foi feito pra voce. Ate agora.</T>
+  </div>
+));
+
+
+// S252 @ 23:58.6
+SLIDE_REGISTRY.set(252, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Existe um formato que seu cerebro <span className="teal">aceita</span>.</T>
+  </div>
+));
+
+
+// S253 @ 24:01.6
+SLIDE_REGISTRY.set(253, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">O mesmo que fez voce <span className="bold">decorar musicas</span> a vida inteira.</T>
+  </div>
+));
+
+
+// S254 @ 24:05.2
+SLIDE_REGISTRY.set(254, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">So que agora as musicas tem <span className="teal">ingles dentro</span>.</T>
+  </div>
+));
+
+
+// S256 @ 24:16.3
+SLIDE_REGISTRY.set(256, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Voce vai <span className="bold">lembrar</span> desse momento.</T>
+  </div>
+));
+
+
+// S257 @ 24:20.0
+SLIDE_REGISTRY.set(257, () => (
+  <div className="slide center">
+    <div className="glow-teal" style={{ top: "25%", left: "25%" }} />
+    <T size={64} weight={900} opacity={0.7} anim="anim-scaleIn">COMECE <span className="teal">AGORA</span>.</T>
+  </div>
+));
+
+
+// S255 @ 24:09.0
+SLIDE_REGISTRY.set(255, () => {
+  const v = [useStackVisible(255, 0), useStackVisible(255, 1), useStackVisible(255, 2)];
+  return (
+    <div className="slide left">
+      {v[0] && <T size={42} weight={500} opacity={0.4} anim="anim-slideLeft"><span className="teal">Chuveiro</span> cantarolando em ingles.</T>}
+      {v[0] && <Spacer h={12} />}
+      {v[1] && <T size={42} weight={500} opacity={0.45} anim="anim-slideLeft">Serie sem <span className="bold">legenda</span>.</T>}
+      {v[1] && <Spacer h={12} />}
+      {v[2] && <T size={42} weight={500} opacity={0.5} anim="anim-slideLeft">Aviao sem <span className="bold">Google Tradutor</span>.</T>}
+    </div>
+  );
+});
+
+// ─── Register graph slides (IDs 302-313) ──────────────
+

@@ -5,7 +5,7 @@
 // ~20 slides | 0 stacks
 
 import React from "react";
-import { staticFile } from "remotion";
+import { staticFile, useCurrentFrame, Img } from "remotion";
 import { T, Spacer, AccentLine } from "./components";
 
 type UseStackVisible = (slide: number, itemIndex: number) => boolean;
@@ -95,17 +95,39 @@ R.set(802, () => (
 ));
 
 // 22:26.00 — "não pedi pra cantar, vai ouvir"
-R.set(8021, () => (
-  <div className="slide center">
-    <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp">
-      Nao pedi pra cantar.
-    </T>
-    <Spacer h={16} />
-    <T size={50} weight={700} opacity={0.8} anim="anim-scaleIn" delay="d2">
-      Voce vai <span className="teal" style={{ fontWeight: 800 }}>ouvir</span>.
-    </T>
-  </div>
-));
+R.set(8021, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showFone = time >= 1348.84;
+  const showOuvido = time >= 1350.12;
+  return (
+    <div className="slide center">
+      <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp">
+        Nao pedi pra cantar. Voce vai <span className="teal" style={{ fontWeight: 800 }}>ouvir</span>.
+      </T>
+      <div style={{
+        marginTop: 16,
+        opacity: showFone ? 1 : 0,
+        transform: showFone ? "translateY(0)" : "translateY(15px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+      }}>
+        <T size={42} weight={500} opacity={0.55}>
+          Coloca o <span className="bold">fone</span>. Da <span className="teal" style={{ fontWeight: 700 }}>play</span>.
+        </T>
+      </div>
+      <div style={{
+        marginTop: 10,
+        opacity: showOuvido ? 1 : 0,
+        transform: showOuvido ? "translateY(0)" : "translateY(15px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+      }}>
+        <T size={42} weight={500} opacity={0.55}>
+          Seu ouvido faz o <span className="bold">trabalho pesado</span>.
+        </T>
+      </div>
+    </div>
+  );
+});
 
 // 22:32.00 — "coloca o fone, dá play"
 R.set(8022, () => (
@@ -163,46 +185,72 @@ R.set(804, () => (
 ));
 
 // 22:47.30 — "100% reembolso" — GARANTIA DETAIL
-R.set(805, () => (
-  <div className="slide center">
-    <div className="double-glow" />
-    <T size={80} weight={900} opacity={1} anim="anim-scaleIn" className="teal glow-teal-text">
-      100%
-    </T>
-    <Spacer h={4} />
-    <T size={44} weight={600} opacity={0.6} anim="anim-fadeUp" delay="d2">
-      do seu investimento de volta.
-    </T>
-    <Spacer h={28} />
-    <div style={{ display: "flex", flexDirection: "column", gap: 10, alignItems: "center" }}>
-      {[
-        "Um clique dentro da plataforma",
-        "Sem explicar nada",
-        "Sem pedir ajuda",
-        "Sem avisar ninguem",
-      ].map((item, i) => (
-        <div key={i} className={`anim-slideLeft d${i + 1}`} style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <span className="teal" style={{ fontSize: 18 }}>✓</span>
-          <T size={30} weight={400} opacity={0.4}>{item}</T>
-        </div>
-      ))}
+R.set(805, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  // 1369.84 "reembolso", 1373.06 "clicar solicitar", 1377.04 "explicar nada", 1378.28 "ajuda", 1379.44 "ninguém"
+  const showClique = time >= 1373.06;
+  const showExplicar = time >= 1377.04;
+  const showAjuda = time >= 1378.28;
+  const showNinguem = time >= 1379.44;
+  const items = [
+    { show: showClique, text: "Um clique dentro da plataforma" },
+    { show: showExplicar, text: "Sem explicar nada" },
+    { show: showAjuda, text: "Sem pedir ajuda" },
+    { show: showNinguem, text: "Sem avisar ninguem" },
+  ];
+  return (
+    <div className="slide center">
+      <div className="double-glow" />
+      <T size={80} weight={900} opacity={1} anim="anim-scaleIn" className="teal glow-teal-text">
+        100%
+      </T>
+      <Spacer h={4} />
+      <T size={44} weight={600} opacity={0.6} anim="anim-fadeUp" delay="d2">
+        do seu investimento de volta.
+      </T>
+      <Spacer h={24} />
+      <div style={{ display: "flex", flexDirection: "column", gap: 10, alignItems: "center" }}>
+        {items.map((item, i) => (
+          <div key={i} style={{
+            display: "flex", alignItems: "center", gap: 10,
+            opacity: item.show ? 1 : 0,
+            transform: item.show ? "translateX(0)" : "translateX(-20px)",
+            transition: "opacity 0.3s ease, transform 0.3s ease",
+          }}>
+            <span style={{ fontSize: 18, color: "#4ECDC4" }}>✓</span>
+            <T size={30} weight={400} opacity={0.4}>{item.text}</T>
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
-));
+  );
+});
 
 // 22:58.30 — "a decisão é sua"
-R.set(806, () => (
-  <div className="slide center">
-    <div className="double-glow" />
-    <T size={48} weight={600} opacity={0.7} anim="anim-blurIn">
-      A decisao e <span className="gradient-text" style={{ fontWeight: 800 }}>sua</span>.
-    </T>
-    <Spacer h={12} />
-    <T size={42} weight={400} opacity={0.35} anim="anim-fadeUp" delay="d2">
-      A um clique de distancia.
-    </T>
-  </div>
-));
+R.set(806, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showClique = time >= 1383.00;
+  return (
+    <div className="slide center">
+      <div className="double-glow" />
+      <T size={48} weight={600} opacity={0.7} anim="anim-blurIn">
+        A decisao e <span className="gradient-text" style={{ fontWeight: 800 }}>sua</span>.
+      </T>
+      <div style={{
+        marginTop: 12,
+        opacity: showClique ? 1 : 0,
+        transform: showClique ? "translateY(0)" : "translateY(10px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+      }}>
+        <T size={42} weight={400} opacity={0.35}>
+          A um clique de distancia.
+        </T>
+      </div>
+    </div>
+  );
+});
 
 // 23:05.60 — "a gente sabe o que acontece quando dá play"
 R.set(807, () => (
@@ -227,35 +275,94 @@ R.set(808, () => (
 ));
 
 // 23:20.10 — "gostoso de verdade"
-R.set(809, () => (
-  <div className="slide center">
-    <T size={48} weight={600} opacity={0.7} anim="anim-scaleIn" className="gradient-text">
-      Gostoso de verdade.
-    </T>
-  </div>
-));
+R.set(809, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showGostoso = time >= 1402.26;
+  return (
+    <div className="slide center">
+      <T size={42} weight={400} opacity={0.45} anim="anim-fadeUp">
+        Treinar ingles ficou
+      </T>
+      <div style={{
+        marginTop: 12,
+        opacity: showGostoso ? 1 : 0,
+        transform: showGostoso ? "scale(1)" : "scale(0.7)",
+        transition: "opacity 0.3s ease, transform 0.3s cubic-bezier(.16,1,.3,1)",
+      }}>
+        <span style={{
+          fontSize: 52, fontWeight: 800,
+          background: "linear-gradient(135deg, #4ECDC4, #A78BFA)",
+          WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+          filter: "drop-shadow(0 0 20px rgba(78,205,196,0.4))",
+        }}>gostoso de verdade.</span>
+      </div>
+    </div>
+  );
+});
 
 // 23:27.20 — "inglês entrando junto"
-R.set(810, () => (
-  <div className="slide center">
-    <T size={44} weight={400} opacity={0.45} anim="anim-fadeUp">
-      Voce ta ouvindo musica. O ingles ta <span className="teal" style={{ fontWeight: 600 }}>entrando junto</span>.
-    </T>
-  </div>
-));
+R.set(810, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showEntrando = time >= 1408.34;
+  return (
+    <div className="slide center">
+      <T size={44} weight={400} opacity={0.45} anim="anim-fadeUp">
+        Voce ta ouvindo <span className="bold">musica</span>.
+      </T>
+      <div style={{
+        marginTop: 14,
+        opacity: showEntrando ? 1 : 0,
+        transform: showEntrando ? "translateX(0)" : "translateX(-20px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+      }}>
+        <T size={46} weight={600} opacity={0.7}>
+          O ingles ta <span className="teal" style={{ fontWeight: 800 }}>entrando junto</span>.
+        </T>
+      </div>
+    </div>
+  );
+});
 
 // 23:31.10 — "se não gostar → dinheiro de volta"
-R.set(811, () => (
-  <div className="slide center">
-    <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp">
-      Nao gostou? <span className="bold">Dinheiro de volta</span>.
-    </T>
-    <Spacer h={16} />
-    <T size={50} weight={600} opacity={0.75} anim="anim-scaleIn" delay="d2" className="teal glow-teal-text">
-      E se funcionar?
-    </T>
-  </div>
-));
+R.set(811, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showSeFuncionar = time >= 1415.28;
+  const showTemTudo = time >= 1416.80;
+  return (
+    <div className="slide center">
+      <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp">
+        Nao gostou? <span className="bold">Dinheiro de volta</span>.
+      </T>
+      <div style={{
+        marginTop: 20,
+        opacity: showSeFuncionar ? 1 : 0,
+        transform: showSeFuncionar ? "scale(1)" : "scale(0.6)",
+        transition: "opacity 0.3s ease, transform 0.3s cubic-bezier(.16,1,.3,1)",
+      }}>
+        <span style={{
+          fontSize: 56, fontWeight: 900,
+          color: "#4ECDC4",
+          textShadow: "0 0 30px rgba(78,205,196,0.5), 0 0 60px rgba(78,205,196,0.2)",
+        }}>E se funcionar?</span>
+      </div>
+      <div style={{
+        marginTop: 12,
+        opacity: showTemTudo ? 1 : 0,
+        transform: showTemTudo ? "translateY(0)" : "translateY(10px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+      }}>
+        <span style={{
+          fontSize: 34, fontWeight: 600,
+          background: "linear-gradient(135deg, #4ECDC4, #A78BFA)",
+          WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+        }}>Tem tudo pra funcionar.</span>
+      </div>
+    </div>
+  );
+});
 
 // 23:38.50 — "nenhum curso conseguiu te dar"
 R.set(812, () => (
@@ -288,7 +395,31 @@ R.set(814, () => (
   </div>
 ));
 
-// 23:56.70 — "seu cérebro sempre aceitou"
+// 23:52.26 — "não diz nada sobre sua capacidade / sobre o formato"
+R.set(85, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showFormato = time >= 1436.14;
+  return (
+    <div className="slide center">
+      <T size={44} weight={400} opacity={0.45} anim="anim-fadeUp">
+        Nao diz nada sobre a sua <span className="bold">capacidade</span>.
+      </T>
+      <div style={{
+        marginTop: 14,
+        opacity: showFormato ? 1 : 0,
+        transform: showFormato ? "translateY(0)" : "translateY(10px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+      }}>
+        <T size={44} weight={500} opacity={0.55}>
+          E sim sobre o <span className="gradient-text" style={{ fontWeight: 700 }}>formato</span> que voce usou.
+        </T>
+      </div>
+    </div>
+  );
+});
+
+// 23:58.12 — "seu cérebro sempre aceitou"
 R.set(815, () => (
   <div className="slide center">
     <T size={44} weight={400} opacity={0.45} anim="anim-blurIn">
@@ -316,16 +447,6 @@ R.set(817, () => (
   </div>
 ));
 
-// 24:18.80 — CTA FINAL
-R.set(818, () => (
-  <div className="slide center">
-    <div className="double-glow" />
-    <T size={36} weight={400} opacity={0.3} anim="anim-fadeIn">Clica no botao abaixo.</T>
-    <Spacer h={24} />
-    <div className="cta-btn anim-scaleIn d2">QUERO SER MEMBRO GOLD</div>
-    <Spacer h={24} />
-    <T size={32} weight={400} opacity={0.25} anim="anim-fadeIn" delay="d4">Te vejo dentro do Ingles Cantado.</T>
-  </div>
-));
+// 24:18.80 — CTA FINAL → fullscreen graph in GraphSlides (ID 818)
 
 } // end registerClose

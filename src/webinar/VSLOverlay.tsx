@@ -63,11 +63,11 @@ function SlideContent({ index }: { index: number }) {
 }
 
 // ─── Repetition counter overlay (LEAD 4.78s–18.12s) ───────
-// Counter 1→40 synced to speech. "30" @ ~5.8s, "40" @ ~6.2s
+// Centralized counter 1→40 synced to speech. "30" @ ~5.8s, "40" @ ~6.2s
 function RepetitionCounter({ time }: { time: number }) {
-  if (time < 4.78 || time >= 18.12) return null;
+  if (time < 4.78 || time >= 6.98) return null;
 
-  // Interpolate count: ramp 1→30 (4.78-5.8s), 30→40 (5.8-6.2s), hold 40 after
+  // Interpolate count: ramp 1→30 (4.78-5.8s), 30→40 (5.8-6.2s), hold 40 until 6.98
   let count: number;
   if (time < 5.8) {
     const p = (time - 4.78) / (5.8 - 4.78);
@@ -79,65 +79,66 @@ function RepetitionCounter({ time }: { time: number }) {
     count = 40;
   }
 
-  // Progress bar fills proportionally
   const progress = count / 40;
 
   return (
     <div style={{
       position: "absolute",
-      top: 16,
-      right: 32,
+      inset: 0,
       zIndex: 30,
       display: "flex",
       flexDirection: "column",
-      alignItems: "flex-end",
-      gap: 8,
-      animation: "fadeIn 0.4s ease both",
+      alignItems: "center",
+      justifyContent: "center",
+      pointerEvents: "none",
     }}>
+      {/* Label */}
+      <div style={{
+        fontSize: 22,
+        fontWeight: 600,
+        letterSpacing: 6,
+        color: "rgba(255,255,255,0.4)",
+        fontFamily: "'DM Sans', sans-serif",
+        textTransform: "uppercase",
+        marginBottom: 20,
+      }}>
+        REPETIÇÕES
+      </div>
+
       {/* Counter number */}
       <div style={{
-        fontSize: 52,
+        fontSize: 180,
         fontWeight: 900,
         fontFamily: "'DM Sans', sans-serif",
-        color: progress >= 1 ? "transparent" : "#4ECDC4",
+        lineHeight: 1,
         background: progress >= 1 ? "linear-gradient(135deg, #4ECDC4, #A78BFA)" : "none",
         WebkitBackgroundClip: progress >= 1 ? "text" : "unset",
-        WebkitTextFillColor: progress >= 1 ? "transparent" : undefined,
-        textShadow: progress >= 1 ? "none" : "0 0 30px rgba(78,205,196,0.4)",
-        filter: progress >= 1 ? "drop-shadow(0 0 20px rgba(78,205,196,0.4))" : "none",
-        lineHeight: 1,
+        WebkitTextFillColor: progress >= 1 ? "transparent" : "#4ECDC4",
+        textShadow: progress >= 1 ? "none" : "0 0 40px rgba(78,205,196,0.4), 0 0 80px rgba(78,205,196,0.15)",
+        filter: progress >= 1 ? "drop-shadow(0 0 30px rgba(78,205,196,0.4)) drop-shadow(0 0 60px rgba(167,139,250,0.2))" : "none",
       }}>
         {count}×
       </div>
-      {/* Mini progress bar */}
+
+      {/* Progress bar */}
       <div style={{
-        width: 100,
-        height: 4,
-        borderRadius: 2,
+        width: 200,
+        height: 6,
+        borderRadius: 3,
         background: "rgba(255,255,255,0.06)",
         overflow: "hidden",
+        marginTop: 24,
       }}>
         <div style={{
           height: "100%",
           width: `${progress * 100}%`,
-          borderRadius: 2,
+          borderRadius: 3,
           background: progress >= 1
             ? "linear-gradient(90deg, #4ECDC4, #A78BFA)"
             : "#4ECDC4",
           transition: "width 0.15s linear",
-          boxShadow: `0 0 8px rgba(78,205,196,0.3)`,
+          boxShadow: `0 0 12px rgba(78,205,196,0.4)`,
         }} />
-      </div>
-      {/* Label */}
-      <div style={{
-        fontSize: 12,
-        fontWeight: 600,
-        letterSpacing: 2,
-        opacity: 0.3,
-        fontFamily: "'DM Sans', sans-serif",
-        textTransform: "uppercase",
-      }}>
-        repetições
       </div>
     </div>
   );

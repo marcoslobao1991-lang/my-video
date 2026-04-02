@@ -3,6 +3,7 @@
 // 20 slides | 0 stacks
 
 import React from "react";
+import { useCurrentFrame } from "remotion";
 import { T, Spacer, AccentLine } from "./components";
 
 type UseStackVisible = (slide: number, itemIndex: number) => boolean;
@@ -70,33 +71,11 @@ R.set(50, () => (
   </div>
 ));
 
-// 1:43.58 — "FLUENCY ROUTE"
-R.set(34, () => (
-  <div className="slide center">
-    <div className="double-glow" />
-    <T size={72} weight={800} opacity={1} anim="anim-scaleIn" className="gradient-animated glow-gradient-text">
-      FLUENCY ROUTE.
-    </T>
-  </div>
-));
+// 1:43.58 — "FLUENCY ROUTE" → fullscreen graph in GraphSlides (ID 34)
 
-// 1:46.80 — "maiores escolas do Brasil"
-R.set(35, () => (
-  <div className="slide left">
-    <T size={44} weight={400} opacity={0.5} anim="anim-slideLeft">
-      Uma das <span className="bold">maiores escolas</span> de ingles do Brasil.
-    </T>
-  </div>
-));
+// 1:46.80 — absorbed into graph 34
 
-// 1:49.74 — "30 países / 1M horas"
-R.set(36, () => (
-  <div className="slide center">
-    <T size={56} weight={700} opacity={0.9} anim="anim-scaleIn" className="bold">30+ paises</T>
-    <Spacer h={14} />
-    <T size={56} weight={700} opacity={0.9} anim="anim-scaleIn" delay="d2" className="bold">1M+ horas</T>
-  </div>
-));
+// 1:49.74 — "30 países / 1M horas" → fullscreen graph in GraphSlides (ID 36)
 
 // 1:53.88 — "milhões de visualizações"
 R.set(37, () => (
@@ -116,18 +95,84 @@ R.set(38, () => (
   </div>
 ));
 
-// 1:59.76 — "fluência é habilidade → repetição"
-R.set(39, () => (
-  <div className="slide center">
-    <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp">
-      Fluencia e <span className="teal" style={{ fontWeight: 600 }}>habilidade</span>.
-    </T>
-    <Spacer h={16} />
-    <T size={44} weight={400} opacity={0.4} anim="anim-fadeUp" delay="d2">
-      Habilidade entra por <span className="bold">repeticao</span>.
-    </T>
-  </div>
-));
+// 1:59.76 — "fluência → habilidade → repetição" chain
+R.set(39, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  // 119.76 "fluência", 120.50 "habilidade", 124.10 "repetição"
+  const showFluencia = time >= 119.76;
+  const showHabilidade = time >= 120.50;
+  const showRepeticao = time >= 124.10;
+
+  const nodeStyle = (show: boolean, color: string, glow: string): React.CSSProperties => ({
+    padding: "14px 28px",
+    borderRadius: 14,
+    background: show ? `rgba(${glow},0.08)` : "rgba(255,255,255,0.02)",
+    border: `1.5px solid ${show ? color : "rgba(255,255,255,0.04)"}`,
+    opacity: show ? 1 : 0.15,
+    transform: show ? "scale(1)" : "scale(0.85)",
+    transition: "all 0.5s cubic-bezier(.16,1,.3,1)",
+    boxShadow: show ? `0 0 24px rgba(${glow},0.15)` : "none",
+  });
+
+  const arrowStyle = (show: boolean): React.CSSProperties => ({
+    fontSize: 28,
+    opacity: show ? 0.6 : 0.1,
+    transition: "opacity 0.4s ease",
+    background: "linear-gradient(135deg, #4ECDC4, #A78BFA)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  });
+
+  return (
+    <div className="slide center">
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        {/* FLUÊNCIA */}
+        <div style={nodeStyle(showFluencia, "#4ECDC4", "78,205,196")}>
+          <div style={{
+            fontSize: 28, fontWeight: 800,
+            color: showFluencia ? "#4ECDC4" : "rgba(255,255,255,0.3)",
+            transition: "color 0.4s ease",
+            textShadow: showFluencia ? "0 0 20px rgba(78,205,196,0.3)" : "none",
+          }}>FLUÊNCIA</div>
+        </div>
+
+        <div style={arrowStyle(showHabilidade)}>→</div>
+
+        {/* HABILIDADE */}
+        <div style={nodeStyle(showHabilidade, "#A78BFA", "167,139,250")}>
+          <div style={{
+            fontSize: 28, fontWeight: 800,
+            color: showHabilidade ? "#A78BFA" : "rgba(255,255,255,0.3)",
+            transition: "color 0.4s ease",
+            textShadow: showHabilidade ? "0 0 20px rgba(167,139,250,0.3)" : "none",
+          }}>HABILIDADE</div>
+        </div>
+
+        <div style={arrowStyle(showRepeticao)}>→</div>
+
+        {/* REPETIÇÃO */}
+        <div style={{
+          ...nodeStyle(showRepeticao, "#4ECDC4", "78,205,196"),
+          ...(showRepeticao ? {
+            background: "linear-gradient(135deg, rgba(78,205,196,0.12), rgba(167,139,250,0.06))",
+            border: "1.5px solid rgba(78,205,196,0.25)",
+            boxShadow: "0 0 30px rgba(78,205,196,0.2), 0 0 60px rgba(167,139,250,0.1)",
+          } : {}),
+        }}>
+          <div style={{
+            fontSize: 28, fontWeight: 900,
+            background: showRepeticao ? "linear-gradient(135deg, #4ECDC4, #A78BFA)" : "none",
+            WebkitBackgroundClip: showRepeticao ? "text" : "unset",
+            WebkitTextFillColor: showRepeticao ? "transparent" : "rgba(255,255,255,0.3)",
+            filter: showRepeticao ? "drop-shadow(0 0 16px rgba(78,205,196,0.4))" : "none",
+            transition: "filter 0.4s ease",
+          }}>REPETIÇÃO</div>
+        </div>
+      </div>
+    </div>
+  );
+});
 
 // 2:05.28 — "essa ideia mudou milhares"
 R.set(40, () => (
@@ -138,18 +183,29 @@ R.set(40, () => (
   </div>
 ));
 
-// 2:10.18 — "aluno morava fora, largou tudo"
-R.set(41, () => (
-  <div className="slide left">
-    <T size={44} weight={400} opacity={0.5} anim="anim-slideLeft">
-      Morava nos <span className="teal" style={{ fontWeight: 600 }}>EUA</span>. Fazia aula presencial.
-    </T>
-    <Spacer h={10} />
-    <T size={44} weight={600} opacity={0.7} anim="anim-slideLeft" delay="d2">
-      <span className="bold">Largou tudo</span> pra usar a nossa plataforma.
-    </T>
-  </div>
-));
+// 2:10.32 — "aluno morava fora, largou tudo"
+R.set(41, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showLargou = time >= 133.32;
+  return (
+    <div className="slide left">
+      <T size={44} weight={400} opacity={0.5} anim="anim-slideLeft">
+        Morava nos <span className="teal" style={{ fontWeight: 600 }}>EUA</span>. Fazia aula presencial.
+      </T>
+      <div style={{
+        opacity: showLargou ? 1 : 0,
+        transform: showLargou ? "translateX(0)" : "translateX(-30px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+        marginTop: 10,
+      }}>
+        <T size={44} weight={600} opacity={0.7}>
+          <span className="bold">Largou tudo</span> pra usar a nossa plataforma.
+        </T>
+      </div>
+    </div>
+  );
+});
 
 // 2:16.02 — "tentado de tudo, nada funcionou"
 R.set(42, () => (
@@ -182,10 +238,19 @@ R.set(43, () => (
   </div>
 ));
 
-// 2:27.20 — "cresci dentro da música"
+// 2:27.20 — "cresci dentro da música" — with waveform
 R.set(44, () => (
   <div className="slide left">
     <div className="glow-teal" style={{ top: "25%", left: "-5%" }} />
+    <div className="waveform" style={{ marginBottom: 20, opacity: 0.6, animation: "fadeIn 0.5s ease both" }}>
+      {Array.from({ length: 16 }, (_, i) => (
+        <div key={i} className="bar" style={{
+          height: 8 + Math.sin(i * 0.8) * 20 + Math.random() * 10,
+          animation: `float ${0.8 + i * 0.08}s ease infinite alternate`,
+          animationDelay: `${i * 0.05}s`,
+        }} />
+      ))}
+    </div>
     <T size={50} weight={600} opacity={0.75} anim="anim-slideLeft">
       Cresci dentro da <span className="teal" style={{ fontWeight: 700 }}>musica</span>.
     </T>
@@ -214,11 +279,12 @@ R.set(46, () => (
   </div>
 ));
 
-// 2:38.18 — "até que esse dia chegou"
+// 2:38.18 — "até que esse dia chegou" — dramatic pivot
 R.set(47, () => (
   <div className="slide center">
     <div className="double-glow" />
-    <T size={52} weight={600} opacity={0.8} anim="anim-blurIn" className="gradient-text">
+    <div className="double-glow" />
+    <T size={60} weight={700} opacity={0.9} anim="anim-blurIn" className="gradient-animated glow-gradient-text">
       Ate que esse dia chegou.
     </T>
   </div>

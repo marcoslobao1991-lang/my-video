@@ -4,7 +4,7 @@
 // ~40 slides | 1 stack | 1 graph (261: dopamina)
 
 import React from "react";
-import { staticFile } from "remotion";
+import { staticFile, useCurrentFrame } from "remotion";
 import { T, Spacer, AccentLine, HeadphoneSVG } from "./components";
 
 type UseStackVisible = (slide: number, itemIndex: number) => boolean;
@@ -86,14 +86,29 @@ R.set(206, () => (
   </div>
 ));
 
-// 8:14.80 — "aula não funciona pra criança"
-R.set(207, () => (
-  <div className="slide center">
-    <T size={44} weight={400} opacity={0.45} anim="anim-fadeUp">
-      Voce nao faz <span className="red" style={{ fontWeight: 600 }}>aula</span> pra crianca.
-    </T>
-  </div>
-));
+// 8:12.24 — "não faz aula pra criança" + "espera que assistam" @ 494.64
+R.set(207, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showEspera = time >= 494.64;
+  return (
+    <div className="slide center">
+      <T size={44} weight={400} opacity={0.45} anim="anim-fadeUp">
+        Voce nao faz <span className="red" style={{ fontWeight: 600 }}>aula</span> pra crianca.
+      </T>
+      <div style={{
+        marginTop: 14,
+        opacity: showEspera ? 1 : 0,
+        transform: showEspera ? "translateY(0)" : "translateY(15px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+      }}>
+        <T size={40} weight={400} opacity={0.4}>
+          E espera que elas <span className="bold">assistam</span> aulas e fiquem estudando.
+        </T>
+      </div>
+    </div>
+  );
+});
 
 // 8:22.10 — "pesadas e entediantes demais"
 R.set(208, () => (
@@ -104,29 +119,33 @@ R.set(208, () => (
   </div>
 ));
 
-// 8:26.00 — "a resposta: Música"
-R.set(209, () => (
-  <div className="slide center">
-    <T size={40} weight={400} opacity={0.3} anim="anim-fadeUp">A resposta veio na hora.</T>
-    <Spacer h={20} />
-    <T size={70} weight={800} opacity={1} anim="anim-scaleIn" delay="d2" className="teal glow-teal-text">
-      Musica.
-    </T>
-  </div>
-));
+// 8:23.02 — "a resposta: Música" — synced @ 508.34
+R.set(209, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showMusica = time >= 508.34;
+  return (
+    <div className="slide center">
+      <T size={40} weight={400} opacity={0.3} anim="anim-fadeUp">A resposta veio na hora.</T>
+      <div style={{
+        marginTop: 20,
+        opacity: showMusica ? 1 : 0,
+        transform: showMusica ? "scale(1)" : "scale(0.6)",
+        transition: "opacity 0.3s ease, transform 0.3s cubic-bezier(.16,1,.3,1)",
+      }}>
+        <span style={{
+          fontSize: 70, fontWeight: 800,
+          color: "#4ECDC4",
+          textShadow: "0 0 40px rgba(78,205,196,0.4), 0 0 80px rgba(78,205,196,0.15)",
+        }}>
+          Musica.
+        </span>
+      </div>
+    </div>
+  );
+});
 
-// 8:29.70 — "disfarça o conteúdo"
-R.set(210, () => (
-  <div className="slide left">
-    <T size={44} weight={400} opacity={0.5} anim="anim-slideLeft">
-      A musica <span className="teal" style={{ fontWeight: 600 }}>disfarça</span> o conteudo.
-    </T>
-    <Spacer h={10} />
-    <T size={44} weight={400} opacity={0.5} anim="anim-slideLeft" delay="d2">
-      Repetem varias vezes. <span className="bold">Aprendem sem perceber</span>.
-    </T>
-  </div>
-));
+// 8:29.70 — vertical chain FULLSCREEN in GraphSlides (ID 210)
 
 // 8:37.50 — "por que não com adultos?"
 R.set(211, () => (
@@ -268,18 +287,29 @@ R.set(223, () => (
   </div>
 ));
 
-// 9:51.40 — "pacientes cantavam o tempo todo"
-R.set(224, () => (
-  <div className="slide left">
-    <T size={44} weight={400} opacity={0.45} anim="anim-slideLeft">
-      Esqueciam o nome dos <span className="red">filhos</span>.
-    </T>
-    <Spacer h={10} />
-    <T size={44} weight={400} opacity={0.45} anim="anim-slideLeft" delay="d2">
-      Cantavam musicas da <span className="teal" style={{ fontWeight: 600 }}>adolescencia</span>.
-    </T>
-  </div>
-));
+// 9:54.22 — "esqueciam filhos / cantavam adolescência" @ 597.26
+R.set(224, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showCantavam = time >= 597.26;
+  return (
+    <div className="slide left">
+      <T size={44} weight={400} opacity={0.45} anim="anim-slideLeft">
+        Esqueciam o nome dos <span className="red">filhos</span>.
+      </T>
+      <div style={{
+        marginTop: 10,
+        opacity: showCantavam ? 1 : 0,
+        transform: showCantavam ? "translateX(0)" : "translateX(-20px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+      }}>
+        <T size={44} weight={400} opacity={0.45}>
+          Cantavam musicas da <span className="teal" style={{ fontWeight: 600 }}>adolescencia</span>.
+        </T>
+      </div>
+    </div>
+  );
+});
 
 // 10:02.50 — "o que a música tem de especial"
 R.set(225, () => (
@@ -290,7 +320,16 @@ R.set(225, () => (
   </div>
 ));
 
-// 10:13.30 — "McGill University"
+// 10:08.44 — "provar não é simples"
+R.set(66, () => (
+  <div className="slide center">
+    <T size={44} weight={400} opacity={0.45} anim="anim-fadeUp">
+      Provar o que todo mundo ja sentia? <span className="bold">Nao e simples</span>.
+    </T>
+  </div>
+));
+
+// 10:12.26 — "McGill University"
 R.set(226, () => (
   <div className="slide left">
     <AccentLine />
@@ -329,35 +368,31 @@ R.set(228, () => (
 
 // 10:32.40 — GRAPH 261: Dopamina flow (fica ~5s)
 
-// 10:36.00 — "entra mais fácil, grava mais forte"
-R.set(229, () => (
-  <div className="slide left">
-    <T size={46} weight={500} opacity={0.6} anim="anim-slideLeft">
-      Entra mais <span className="teal" style={{ fontWeight: 600 }}>facil</span>.
-    </T>
-    <Spacer h={10} />
-    <T size={46} weight={500} opacity={0.6} anim="anim-slideLeft" delay="d2">
-      Grava mais <span className="teal" style={{ fontWeight: 600 }}>forte</span>.
-    </T>
-    <Spacer h={10} />
-    <T size={46} weight={500} opacity={0.6} anim="anim-slideLeft" delay="d3">
-      Dura mais <span className="teal" style={{ fontWeight: 600 }}>tempo</span>.
-    </T>
-  </div>
-));
+// 10:34.34 — FULLSCREEN graph in GraphSlides (ID 229)
 
-// 10:39.80 — "esquece professor, lembra música de 20 anos"
-R.set(230, () => (
-  <div className="slide center">
-    <T size={42} weight={400} opacity={0.4} anim="anim-fadeUp">
-      Voce <span className="red">esquece</span> o que o professor falou ontem.
-    </T>
-    <Spacer h={14} />
-    <T size={42} weight={400} opacity={0.4} anim="anim-fadeUp" delay="d2">
-      Mas <span className="teal" style={{ fontWeight: 600 }}>lembra</span> uma musica de 20 anos.
-    </T>
-  </div>
-));
+// 10:38.54 — "esquece professor / lembra música 20 anos" — synced
+R.set(230, () => {
+  const frame = useCurrentFrame();
+  const time = frame / 30;
+  const showLembra = time >= 640.70;
+  return (
+    <div className="slide center">
+      <T size={42} weight={400} opacity={0.4} anim="anim-fadeUp">
+        Voce <span className="red">esquece</span> o que o professor falou ontem.
+      </T>
+      <div style={{
+        marginTop: 14,
+        opacity: showLembra ? 1 : 0,
+        transform: showLembra ? "translateY(0)" : "translateY(15px)",
+        transition: "opacity 0.4s ease, transform 0.4s ease",
+      }}>
+        <T size={42} weight={400} opacity={0.4}>
+          Mas <span className="teal" style={{ fontWeight: 600 }}>lembra</span> uma musica de 20 anos.
+        </T>
+      </div>
+    </div>
+  );
+});
 
 // 10:44.18 — "Completa a frase."
 R.set(231, () => (

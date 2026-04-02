@@ -1,0 +1,322 @@
+// REF: 99_UNSCHEDULED (36 slides)
+// These are REFERENCE slides from the old version. Copy and improve, do not use directly.
+
+// S13 @ unscheduled
+  SLIDE_REGISTRY.set(13, () => (
+    <div className="slide center">
+      <T size={20} weight={600} color="#4ECDC4" style={{ letterSpacing: 8, textTransform: "uppercase" }} anim="anim-fadeUp">
+        ISSO E UMA
+      </T>
+    </div>
+  ));
+
+  // 15 — Serie Cantada (audio: "série cantada" @ 23.20s)
+
+// S62 @ unscheduled
+  SLIDE_REGISTRY.set(62, () => (
+    <div className="slide center">
+      <T size={52} weight={600} anim="anim-blurIn">1 em 150.</T>
+    </div>
+  ));
+
+  // 64 — O problema nao era o conteudo
+
+// S74 @ unscheduled
+  SLIDE_REGISTRY.set(74, () => (
+    <div className="slide center">
+      <T size={42} anim="anim-fadeUp">A academia que voce quer ir e <span className="red" style={{ fontWeight: 700 }}>nao vai</span>.</T>
+      <Spacer h={12} />
+      <T size={42} opacity={0.4} anim="anim-fadeUp" delay="d2">O projeto pessoal que nao sai da <span className="bold">gaveta</span>.</T>
+    </div>
+  ));
+
+  // 76 — Seu corpo se recusa (audio: "isso não tem nada a ver com falta de vontade")
+
+// S79 @ unscheduled
+  SLIDE_REGISTRY.set(79, () => (
+    <div className="slide center">
+      <T size={48} weight={600} anim="anim-scaleIn">90% recusaram e foram embora.</T>
+    </div>
+  ));
+
+  // 81 — regiao de recompensa DESLIGADA
+  // S80 — audio: "visita ao asilo, presenciou algo que mudou a pesquisa"
+
+// S95 @ unscheduled
+  SLIDE_REGISTRY.set(95, () => (
+    <div className="slide left">
+      <T size={42} anim="anim-slideLeft">Precisava funcionar com fadiga cognitiva.</T>
+    </div>
+  ));
+
+  // 97 — criteria STACK — synced
+  // S96 — audio: "pra entender é só pensar em tudo que você já tem no subconsciente"
+
+// S103 @ unscheduled
+  SLIDE_REGISTRY.set(103, () => (
+    <div className="slide center">
+      <T size={44}>Por que nao fazer com adulto tambem?</T>
+    </div>
+  ));
+
+  // 105 — Um dos formatos mais antigos
+
+// S421 @ unscheduled
+SLIDE_REGISTRY.set(421, () => {
+  const v = [useStackVisible(421, 0), useStackVisible(421, 1), useStackVisible(421, 2)];
+  return (
+    <div className="slide left">
+      {v[0] && <T size={40} weight={500} opacity={0.5} anim="anim-slideLeft"><span className="teal">1.</span> Sem esforco consciente</T>}
+      {v[0] && <Spacer h={12} />}
+      {v[1] && <T size={40} weight={500} opacity={0.5} anim="anim-slideLeft"><span className="teal">2.</span> Repetir 50x sem cansar</T>}
+      {v[1] && <Spacer h={12} />}
+      {v[2] && <T size={40} weight={500} opacity={0.5} anim="anim-slideLeft"><span className="teal">3.</span> Fazer porque quer, nao porque precisa</T>}
+    </div>
+  );
+});
+
+
+// S503 @ unscheduled
+SLIDE_REGISTRY.set(503, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-slideLeft">Assistir series <span className="bold">sem legenda</span>.</T>
+  </div>
+));
+
+
+// S504 @ unscheduled
+SLIDE_REGISTRY.set(504, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-slideLeft">Ate arrumar um emprego <span className="bold">fora</span>.</T>
+  </div>
+));
+
+
+// S511 @ unscheduled
+SLIDE_REGISTRY.set(511, () => (
+  <div className="slide center">
+    <T size={42} weight={500} opacity={0.5} anim="anim-fadeUp">E mais de <span className="teal">1 milhao de horas</span> reproduzidas.</T>
+  </div>
+));
+
+
+// S515 @ unscheduled
+SLIDE_REGISTRY.set(515, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.4} anim="anim-fadeUp">Fiz o que qualquer <span className="bold">dono de curso</span> faria.</T>
+  </div>
+));
+
+
+// S516 @ unscheduled
+SLIDE_REGISTRY.set(516, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Mudei a ordem das aulas. <span className="bold">Contratei</span> gente nova.</T>
+  </div>
+));
+
+
+// S527 @ unscheduled
+SLIDE_REGISTRY.set(527, () => (
+  <div className="slide center">
+    <T size={48} weight={500} opacity={0.55} anim="anim-fadeUp">Gastar <span className="red" style={{ fontWeight: 700 }}>energia mental</span>.</T>
+  </div>
+));
+
+
+// S530 @ unscheduled
+SLIDE_REGISTRY.set(530, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">A qualidade nao <span className="bold">importa</span>.</T>
+  
+  </div>
+));
+
+
+// S531 @ unscheduled
+SLIDE_REGISTRY.set(531, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.4} anim="anim-fadeUp">A importancia do projeto de <span className="teal">ingles</span>.</T>
+  </div>
+));
+
+
+// S543 @ unscheduled
+SLIDE_REGISTRY.set(543, () => (
+  <div className="slide center">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Porque <span className="bold">quer</span>. Nao porque <span className="bold">precisa</span>.</T>
+  </div>
+));
+
+
+// S545 @ unscheduled
+SLIDE_REGISTRY.set(545, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Eu cresci dentro da <span className="teal">musica</span>.</T>
+  </div>
+));
+
+
+// S547 @ unscheduled
+SLIDE_REGISTRY.set(547, () => (
+  <div className="slide center">
+    <T size={48} weight={500} opacity={0.55} anim="anim-fadeUp">Eu quis <span className="bold">provar</span>.</T>
+  </div>
+));
+
+
+// S549 @ unscheduled
+SLIDE_REGISTRY.set(549, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Ensinam principios atraves de <span className="teal">musica</span>.</T>
+  </div>
+));
+
+
+// S554 @ unscheduled
+SLIDE_REGISTRY.set(554, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Cantavam o tempo todo. <span className="bold">Mesmo</span>.</T>
+  </div>
+));
+
+
+// S556 @ unscheduled
+SLIDE_REGISTRY.set(556, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Como se tivessem acabado de <span className="bold">aprender</span>.</T>
+  </div>
+));
+
+
+// S559 @ unscheduled
+SLIDE_REGISTRY.set(559, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Provar o que todo mundo ja sentia por <span className="bold">experiencia</span>.</T>
+  </div>
+));
+
+
+// S595 @ unscheduled
+SLIDE_REGISTRY.set(595, () => (
+  <div className="slide center">
+    <T size={52} weight={500} opacity={0.6} anim="anim-scaleIn">A <span className="bold">repeticao musical</span>.</T>
+  </div>
+));
+
+
+// S597 @ unscheduled
+SLIDE_REGISTRY.set(597, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Aqui estao os <span className="bold">blocos essenciais</span>.</T>
+  </div>
+));
+
+
+// S621 @ unscheduled
+SLIDE_REGISTRY.set(621, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Voce simplesmente <span className="bold">ouviu</span>. E a musica fez o resto.</T>
+  </div>
+));
+
+
+// S632 @ unscheduled
+SLIDE_REGISTRY.set(632, () => (
+  <div className="slide center">
+    <T size={52} weight={500} opacity={0.6} anim="anim-fadeUp">So <span className="teal">R$199</span> mensais.</T>
+  </div>
+));
+
+
+// S634 @ unscheduled
+SLIDE_REGISTRY.set(634, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Material <span className="bold">bilingue</span>. Tudo incluido.</T>
+  
+  </div>
+));
+
+
+// S635 @ unscheduled
+SLIDE_REGISTRY.set(635, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp"><span className="teal">R$99</span> por mes.</T>
+  
+  </div>
+));
+
+
+// S637 @ unscheduled
+SLIDE_REGISTRY.set(637, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Se ja tentou de tudo e <span className="red" style={{ fontWeight: 700 }}>nada funcionou</span>.</T>
+  </div>
+));
+
+
+// S647 @ unscheduled
+SLIDE_REGISTRY.set(647, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Voce pode cancelar <span className="bold">quando quiser</span>.</T>
+  </div>
+));
+
+
+// S651 @ unscheduled
+SLIDE_REGISTRY.set(651, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Se nao gostar, <span className="bold">pede o dinheiro</span> de volta.</T>
+  </div>
+));
+
+
+// S653 @ unscheduled
+SLIDE_REGISTRY.set(653, () => (
+  <div className="slide center">
+    <T size={44} weight={500} opacity={0.55} anim="anim-fadeUp">Voce nao chegou ate aqui por <span className="teal">acaso</span>.</T>
+  </div>
+));
+
+
+// S655 @ unscheduled
+SLIDE_REGISTRY.set(655, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Serie sem <span className="bold">legenda</span>.</T>
+  
+  </div>
+));
+
+
+// S656 @ unscheduled
+SLIDE_REGISTRY.set(656, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Voce <span className="bold">vai</span> lembrar.</T>
+  </div>
+));
+
+
+// Split S44 (stack) — midpoint
+
+// S657 @ unscheduled
+SLIDE_REGISTRY.set(657, () => (
+  <div className="slide left">
+    <T size={42} weight={500} opacity={0.4} anim="anim-fadeUp">Eles <span className="red" style={{ fontWeight: 700 }}>nao voltavam</span> mais.</T>
+  </div>
+));
+
+// Split S46 (stack) — after 'didatica' second mention
+
+// S658 @ unscheduled
+SLIDE_REGISTRY.set(658, () => (
+  <div className="slide left">
+    <T size={42} weight={500} opacity={0.45} anim="anim-slideLeft">Melhorou a <span className="bold">didatica</span>. De novo.</T>
+  </div>
+));
+
+// ─── Rebuilt slides (135-298, 400-401) ────────────────
+

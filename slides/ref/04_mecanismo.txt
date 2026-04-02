@@ -1,0 +1,621 @@
+// REF: 04_MECANISMO (66 slides)
+// These are REFERENCE slides from the old version. Copy and improve, do not use directly.
+
+// S80 @ 9:21.9
+  SLIDE_REGISTRY.set(80, () => (
+    <div className="slide center">
+      <T size={42} opacity={0.5} anim="anim-fadeUp">Uma visita ao <span className="bold">asilo</span></T>
+      <Spacer h={10} />
+      <T size={42} opacity={0.5} anim="anim-fadeUp" delay="d2">mudou a direcao da pesquisa dele <span className="teal" style={{ fontWeight: 700 }}>pra sempre</span>.</T>
+    </div>
+  ));
+
+  // 82 — FADIGA COGNITIVA
+
+// S81 @ 7:42.3
+  SLIDE_REGISTRY.set(81, () => (
+    <div className="slide center">
+      <div className="glow-red" style={{ top: "25%", left: "25%" }} />
+      <T size={90} weight={900} color="#FF6B6B" anim="anim-scaleIn" className="glow-red-text">FADIGA COGNITIVA</T>
+    </div>
+  ));
+
+  // 83 — O aluno vai desistir (audio: "acontece o óbvio, o aluno vai desistir, se sente culpado")
+
+// S90 @ 11:16.8
+  SLIDE_REGISTRY.set(90, () => (
+    <div className="slide center">
+      <T size={42} opacity={0.5} anim="anim-fadeUp">Quem mais precisa chega <span className="red" style={{ fontWeight: 700 }}>DESTRUIDO</span>.</T>
+    </div>
+  ));
+
+  // 92 — O problema nunca foi O QUE
+
+// S91 @ 7:33.6
+  SLIDE_REGISTRY.set(91, () => (
+    <div className="slide center">
+      <T size={44} anim="anim-fadeUp">O problema nunca foi O QUE ensinavam.</T>
+    </div>
+  ));  // S92 — moved to VSLSlides_unused.tsx  // S93 — moved to VSLSlides_unused.tsx
+
+  // 95 — Quais sao os formatos
+
+// S94 @ 7:34.5
+  SLIDE_REGISTRY.set(94, () => (
+    <div className="slide center">
+      <T size={44}>Quais sao os formatos disponiveis?</T>
+    </div>
+  ));
+
+  // 96 — Precisava funcionar com fadiga
+
+// S99 @ 8:43.9
+  SLIDE_REGISTRY.set(99, () => (
+    <div className="slide left">
+      <T size={42} anim="anim-slideLeft">Crianca nao aguenta 5min de aula.</T>
+    </div>
+  ));
+
+  // 101 — Mas fica HORAS
+
+// S100 @ 8:46.9
+  SLIDE_REGISTRY.set(100, () => (
+    <div className="slide right">
+      <T size={42} anim="anim-slideRight">
+        Mas fica <span className="teal" style={{ fontWeight: 700 }}>HORAS</span> aprendendo por musica.
+      </T>
+    </div>
+  ));
+
+  // 102 — Carga cognitiva leve
+
+// S101 @ 8:50.8
+  SLIDE_REGISTRY.set(101, () => (
+    <div className="slide center">
+      <T size={44} weight={500}>Carga cognitiva leve.</T>
+    </div>
+  ));
+
+  // 103 — MUSICA
+
+// S102 @ 8:48.6
+  SLIDE_REGISTRY.set(102, () => (
+    <div className="slide center">
+      <div className="glow-teal" style={{ top: "30%", left: "30%" }} />
+      <T size={90} weight={800} color="#4ECDC4" anim="anim-scaleIn" className="glow-teal-text">MUSICA</T>
+    </div>
+  ));
+
+  // 104 — Por que nao fazer com adulto
+
+// S104 @ 9:03.6
+  SLIDE_REGISTRY.set(104, () => (
+    <div className="slide left">
+      <T size={42} opacity={0.6} anim="anim-slideLeft">Um dos formatos mais antigos da civilizacao.</T>
+    </div>
+  ));
+
+  // 106 — Todas as civilizacoes
+
+// S105 @ 9:06.5
+  SLIDE_REGISTRY.set(105, () => (
+    <div className="slide center">
+      <T size={42}>Todas as civilizacoes ensinam por musica.</T>
+    </div>
+  ));  // S106 — moved to VSLSlides_unused.tsx  // S107 — moved to VSLSlides_unused.tsx
+
+  // 109 — Senhor de 80 anos
+
+// S108 @ 9:27.3
+  SLIDE_REGISTRY.set(108, () => (
+    <div className="slide center">
+      <T size={42}>Senhor de 80 anos cantando sozinho.</T>
+    </div>
+  ));
+
+  // 110 — Nao lembrava o nome dos netos
+
+// S109 @ 9:30.6
+  SLIDE_REGISTRY.set(109, () => (
+    <div className="slide center">
+      <T size={42} opacity={0.4} anim="anim-blurIn">Nao lembrava o nome dos netos.</T>
+    </div>
+  ));  // S110 — moved to VSLSlides_unused.tsx
+
+  // 112 — Uma lingua que nunca estudou
+
+// S111 @ 9:42.5
+  SLIDE_REGISTRY.set(111, () => (
+    <div className="slide center">
+      <T size={42} opacity={0.6}>Uma lingua que nunca estudou.</T>
+    </div>
+  ));
+
+  // 113 — 40 anos depois
+  // S112 — audio: "música que aprendeu há mais de 40 anos... tinha um detalhe"
+
+// S112 @ 9:39.7
+  SLIDE_REGISTRY.set(112, () => (
+    <div className="slide center">
+      <T size={44} opacity={0.5} anim="anim-blurIn">So que tinha um <span className="bold">detalhe</span>.</T>
+    </div>
+  ));
+
+  // 114 — O estudo que mostrou (audio: "esse foi o estudo que mostrou pra gente o que a música tem de especial")
+  // S113 — audio: "o que a música tem de tão especial pra gravar conteúdo no cérebro"
+
+// S113 @ 10:01.3
+  SLIDE_REGISTRY.set(113, () => (
+    <div className="slide center">
+      <T size={42} opacity={0.5} anim="anim-fadeUp">O que a musica tem de tao especial</T>
+      <Spacer h={10} />
+      <T size={44} weight={600} anim="anim-fadeUp" delay="d2">pra <span className="teal" style={{ fontWeight: 700 }}>gravar</span> conteudo no cerebro.</T>
+    </div>
+  ));
+
+  // 115 — McGill University (audio: "foi na McGill University no Canadá que ele conseguiu")
+
+// S114 @ 10:16.4
+  SLIDE_REGISTRY.set(114, () => (
+    <div className="slide left">
+      <AccentLine />
+      <T size={48} weight={600} anim="anim-slideLeft">McGill University — Canada</T>
+      <Spacer h={12} />
+      <T size={30} opacity={0.3} anim="anim-fadeUp" delay="d2">Onde ele conseguiu provar.</T>
+    </div>
+  ));
+
+  // S115 DELETED — duplicate of S114
+
+  // 117 — Nature Neuroscience
+
+// S116 @ 10:21.9
+  SLIDE_REGISTRY.set(116, () => (
+    <div className="slide center">
+      <T size={52} weight={700} anim="anim-fadeUp">Nature Neuroscience</T>
+      <Spacer h={12} />
+      <T size={28} opacity={0.3} anim="anim-fadeUp" delay="d2">uma das maiores revistas cientificas do mundo</T>
+    </div>
+  ));
+
+  // 118 — Musica + prazer → DOPAMINA
+
+// S117 @ 10:26.9
+  SLIDE_REGISTRY.set(117, () => (
+    <div className="slide center">
+      <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap", justifyContent: "center" }} className="anim-fadeUp">
+        <T size={42}>Musica + prazer</T>
+        <T size={42} color="#4ECDC4">&#8594;</T>
+        <T size={52} weight={700} color="#4ECDC4">DOPAMINA</T>
+      </div>
+    </div>
+  ));  // S118 — moved to VSLSlides_unused.tsx  // S119 — moved to VSLSlides_unused.tsx  // S120 — moved to VSLSlides_unused.tsx  // S121 — moved to VSLSlides_unused.tsx
+
+  // 123 — Complete a frase
+
+// S122 @ 10:44.9
+  SLIDE_REGISTRY.set(122, () => (
+    <div className="slide center">
+      <T size={44} opacity={0.7}>Complete a frase:</T>
+    </div>
+  ));
+
+  // 124 — Eu tenho tanto pra lhe falar
+
+// S123 @ 10:45.7
+  SLIDE_REGISTRY.set(123, () => (
+    <div className="slide center">
+      <T size={38} opacity={0.6} style={{ fontStyle: "italic" }} anim="anim-blurIn">
+        Eu tenho tanto pra lhe falar, mas com palavras nao sei dizer...
+      </T>
+    </div>
+  ));
+
+  // 125 — Como e grande meu amor por voce
+
+// S124 @ 10:55.8
+  SLIDE_REGISTRY.set(124, () => (
+    <div className="slide center">
+      <T size={44} color="#4ECDC4" weight={600} anim="anim-fadeUp">Como e grande meu amor por voce.</T>
+    </div>
+  ));
+
+  // 126 — A dona aranha subiu pela...
+
+// S125 @ 11:00.6
+  SLIDE_REGISTRY.set(125, () => (
+    <div className="slide center">
+      <T size={44} opacity={0.6}>A dona aranha subiu pela...</T>
+    </div>
+  ));
+
+  // 127 — PAREDE
+
+// S126 @ 11:03.0
+  SLIDE_REGISTRY.set(126, () => (
+    <div className="slide center">
+      <T size={72} weight={800} anim="anim-scaleIn">PAREDE.</T>
+    </div>
+  ));
+
+  // 128 — A educacao ignora isso
+
+// S127 @ 11:04.5
+  SLIDE_REGISTRY.set(127, () => (
+    <div className="slide center">
+      <T size={44} anim="anim-fadeUp">A educacao ignora isso.</T>
+      <Spacer h={12} />
+      <T size={28} opacity={0.35} anim="anim-fadeUp" delay="d2">musica virou coisa de crianca</T>
+    </div>
+  ));
+
+  // 129 — O adulto e quem MAIS precisa
+
+// S128 @ 11:13.4
+  SLIDE_REGISTRY.set(128, () => (
+    <div className="slide center">
+      <T size={44}>
+        O adulto e quem <span className="teal" style={{ fontWeight: 700 }}>MAIS</span> precisa.
+      </T>
+    </div>
+  ));
+
+  // 130 — O formato / A ciencia / A logica / Faltava
+
+// S420 @ 7:46.6
+SLIDE_REGISTRY.set(420, () => (
+  <div className="slide left">
+    <T size={36} opacity={0.4} anim="anim-slideLeft">Tinha que funcionar dentro de varios criterios:</T>
+  </div>
+));
+
+
+// S422 @ 7:57.6
+SLIDE_REGISTRY.set(422, () => (
+  <div className="slide center">
+    <T size={44} opacity={0.6} anim="anim-blurIn">Quando voce junta tudo isso,</T>
+    <Spacer h={12} />
+    <T size={48} weight={700} anim="anim-fadeUp" delay="d2">a resposta fica <span className="gradient-animated">obvia</span>.</T>
+  </div>
+));
+
+// #10 area — S105 (9:07-9:21) 14s → 2 novos
+
+// S423 @ 9:13.1
+SLIDE_REGISTRY.set(423, () => (
+  <div className="slide center">
+    <T size={40} opacity={0.5} anim="anim-fadeUp">A ciencia ja tinha resposta disso ha decadas.</T>
+  </div>
+));
+
+
+// S424 @ 9:15.6
+SLIDE_REGISTRY.set(424, () => (
+  <div className="slide left">
+    <T size={36} opacity={0.4} anim="anim-slideLeft">Um trabalho em particular chamou a atencao.</T>
+    <Spacer h={16} />
+    <T size={44} weight={600} anim="anim-slideLeft" delay="d2">Robert Zatorre</T>
+    <T size={28} opacity={0.3} anim="anim-fadeIn" delay="d3">Neurocientista</T>
+  </div>
+));
+
+// #11 area — S111 (9:43-9:59) 17s → 2 novos
+
+// S425 @ 9:44.7
+SLIDE_REGISTRY.set(425, () => (
+  <div className="slide center">
+    <T size={42} opacity={0.5} anim="anim-fadeUp">Mesmo com a mente em completo <span className="red" style={{ fontWeight: 700 }}>declinio</span>,</T>
+    <Spacer h={12} />
+    <T size={42} opacity={0.5} anim="anim-fadeUp" delay="d2">ele cantava <span className="bold">palavra por palavra</span>.</T>
+  </div>
+));
+
+
+// S426 @ 9:54.4
+SLIDE_REGISTRY.set(426, () => (
+  <div className="slide center">
+    <T size={42} anim="anim-blurIn">Esqueciam o nome dos filhos.</T>
+    <Spacer h={12} />
+    <T size={42} anim="anim-blurIn" delay="d2">Mas cantavam musicas da adolescencia.</T>
+  </div>
+));
+
+// #12 area — S117 (10:27-10:39) 12s → 1 novo
+
+// S427 @ 10:34.3
+SLIDE_REGISTRY.set(427, () => (
+  <div className="slide center">
+    <T size={38} opacity={0.5} anim="anim-fadeUp">Entra mais facil. Grava mais forte.</T>
+    <Spacer h={12} />
+    <T size={44} weight={700} className="gradient-text" anim="anim-scaleIn" delay="d2">Dura mais tempo.</T>
+  </div>
+));
+
+// #14 area — S136 (12:00-12:15) 15s → 2 novos
+
+// S443 @ 9:41.6
+SLIDE_REGISTRY.set(443, () => (
+  <div className="slide center">
+    <T size={80} weight={900} anim="anim-scaleIn" className="gradient-animated glow-gradient-text">LATIM.</T>
+  </div>
+));
+
+// S444 — A memória estava APAGANDO (9:32)
+
+// S444 @ 9:32.6
+SLIDE_REGISTRY.set(444, () => (
+  <div className="slide center">
+    <T size={42} opacity={0.5} anim="anim-blurIn">A memoria estava <span className="red" style={{ fontWeight: 700 }}>apagando</span>.</T>
+  </div>
+));
+
+// S445 — Sem ninguém colocar nada pra tocar (9:34)
+
+// S445 @ 9:34.6
+SLIDE_REGISTRY.set(445, () => (
+  <div className="slide center">
+    <T size={42} opacity={0.4} anim="anim-fadeUp">Sem ninguem colocar <span className="bold">nada</span> pra tocar.</T>
+  </div>
+));
+
+// S446 — Cantando uma música de 40 ANOS atrás (9:36)
+
+// S446 @ 9:36.6
+SLIDE_REGISTRY.set(446, () => (
+  <div className="slide center">
+    <T size={42} opacity={0.5} anim="anim-fadeUp">Cantando uma musica de</T>
+    <Spacer h={10} />
+    <T size={52} weight={700} color="#4ECDC4" anim="anim-scaleIn" delay="d2" className="glow-teal-text">40 ANOS atras.</T>
+  </div>
+));
+
+// S442 — Cérebro no limite do CANSAÇO (5:52)
+
+// S539 @ 7:37.6
+SLIDE_REGISTRY.set(539, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Novas <span className="teal">maneiras</span> de passar o mesmo conteudo.</T>
+  </div>
+));
+
+
+// S540 @ 7:40.7
+SLIDE_REGISTRY.set(540, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Pra quem <span className="bold">levava</span> a vida agitada.</T>
+  </div>
+));
+
+
+// S541 @ 7:50.1
+SLIDE_REGISTRY.set(541, () => (
+  <div className="slide center">
+    <T size={48} weight={500} opacity={0.55} anim="anim-fadeUp">Repetisse <span className="teal">30, 40, 50 vezes</span>.</T>
+  </div>
+));
+
+
+// S542 @ 7:53.2
+SLIDE_REGISTRY.set(542, () => (
+  <div className="slide center">
+    <T size={54} weight={500} opacity={0.6} anim="anim-scaleIn">Sem <span className="bold">cansar</span>.</T>
+  </div>
+));
+
+
+// S544 @ 8:00.8
+SLIDE_REGISTRY.set(544, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Cresci dentro da <span className="teal">musica</span>.</T>
+  
+  </div>
+));
+
+
+// S546 @ 8:53.8
+SLIDE_REGISTRY.set(546, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Por isso funciona <span className="teal">tao bem</span>.</T>
+  </div>
+));
+
+
+// S548 @ 9:09.5
+SLIDE_REGISTRY.set(548, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp"><span className="bold">Todas</span> as civilizacoes.</T>
+  </div>
+));
+
+
+// S550 @ 9:18.8
+SLIDE_REGISTRY.set(550, () => (
+  <div className="slide center">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-scaleIn">Robert <span className="bold">Zatorre</span>. Neurocientista.</T>
+  
+  </div>
+));
+
+
+// S551 @ 9:25.1
+SLIDE_REGISTRY.set(551, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">No corredor do <span className="bold">asilo</span>.</T>
+  
+  </div>
+));
+
+
+// S552 @ 9:47.8
+SLIDE_REGISTRY.set(552, () => (
+  <div className="slide center">
+    <T size={46} weight={500} opacity={0.55} anim="anim-fadeUp">Cantando <span className="teal">palavra por palavra</span>.</T>
+  </div>
+));
+
+
+// S553 @ 9:51.0
+SLIDE_REGISTRY.set(553, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">A equipe disse que aquilo era <span className="bold">normal</span>.</T>
+  </div>
+));
+
+
+// S555 @ 9:57.6
+SLIDE_REGISTRY.set(555, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Musicas da <span className="teal">adolescencia</span>.</T>
+  
+  </div>
+));
+
+
+// S557 @ 10:04.4
+SLIDE_REGISTRY.set(557, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Gravar conteudo no <span className="teal">cerebro</span>.</T>
+  
+  </div>
+));
+
+
+// S558 @ 10:07.7
+SLIDE_REGISTRY.set(558, () => (
+  <div className="slide center">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Provar o que todo mundo ja <span className="bold">sentia</span>.</T>
+  
+  </div>
+));
+
+
+// S560 @ 10:19.6
+SLIDE_REGISTRY.set(560, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Virou <span className="teal">referencia</span> mundial.</T>
+  
+  </div>
+));
+
+
+// S561 @ 10:29.9
+SLIDE_REGISTRY.set(561, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">Essa <span className="teal">dopamina</span> turbina sua memoria.</T>
+  </div>
+));
+
+
+// S562 @ 10:33.3
+SLIDE_REGISTRY.set(562, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">E e por isso que o que voce <span className="bold">ouve com prazer</span>, voce grava.</T>
+  </div>
+));
+
+
+// S563 @ 10:49.2
+SLIDE_REGISTRY.set(563, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Mas com <span className="bold">palavra</span>...</T>
+  </div>
+));
+
+
+// S564 @ 10:53.5
+SLIDE_REGISTRY.set(564, () => (
+  <div className="slide center">
+    <T size={48} weight={500} opacity={0.55} anim="anim-fadeUp"><span className="bold">Sem pensar</span>, voce completa.</T>
+  </div>
+));
+
+
+// S565 @ 11:07.5
+SLIDE_REGISTRY.set(565, () => (
+  <div className="slide left">
+    
+    <T size={44} weight={500} opacity={0.45} anim="anim-fadeUp">Musiquinha de <span className="bold">escola</span>.</T>
+  
+  </div>
+));
+
+
+// S566 @ 11:10.6
+SLIDE_REGISTRY.set(566, () => (
+  <div className="slide left">
+    <T size={44} weight={500} opacity={0.5} anim="anim-fadeUp">E parou de ser levada a serio como <span className="teal">ferramenta</span>.</T>
+  </div>
+));
+
+
+// S267 @ 8:03.8
+SLIDE_REGISTRY.set(267, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Cresci dentro da <span className="teal">musica</span>.</T>
+  </div>
+));
+
+
+// S268 @ 8:20.0
+SLIDE_REGISTRY.set(268, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Aulas pesadas demais pra <span className="bold">crianca</span>.</T>
+  </div>
+));
+
+
+// S269 @ 8:23.0
+SLIDE_REGISTRY.set(269, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Mudanca de <span className="bold">formato</span>.</T>
+  </div>
+));
+
+
+// S270 @ 8:32.1
+SLIDE_REGISTRY.set(270, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Musica <span className="teal">disfarca</span> o conteudo.</T>
+  </div>
+));
+
+
+// S271 @ 8:41.6
+SLIDE_REGISTRY.set(271, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Por que nao com <span className="bold">adultos</span>?</T>
+  </div>
+));
+
+
+// S272 @ 8:57.7
+SLIDE_REGISTRY.set(272, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">O fundamento <span className="bold">real</span> da musica.</T>
+  </div>
+));
+
+
+// S274 @ 10:11.1
+SLIDE_REGISTRY.set(274, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Ver dentro do <span className="teal">cerebro</span>.</T>
+  </div>
+));
+
+
+// S275 @ 10:38.9
+SLIDE_REGISTRY.set(275, () => (
+  <div className="slide center">
+    <T size={36} weight={600} opacity={0.4} anim="anim-blurIn">Esquece o professor. Lembra a <span className="bold">musica</span>.</T>
+  </div>
+));
+
+
